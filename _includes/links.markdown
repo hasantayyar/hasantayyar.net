@@ -1,18 +1,19 @@
 Here are blogs and profiles that belongs to me :  
 
 - [<span class="fa fa-linkedin" style="color:#4875B4"></span> LinkedIn][linkedin]
+- [<span class="fa fa-twitter" style="color:#33CCFF"></span> @htayyar][twitter]
+- [<span class="fa fa-facebook" style="color:#3B5998"></span> Facebook][face] - I am not an active facebook user.
 - A blog about web and computer technologies [tayyar-code.blogspot.com][blog1]
 - A Turkish blog most about art events  [hasantayyar.blogspot.com][blog2]
-- Last.fm profile [http://last.fm/{{site.github_username}}](http://last.fm/{{site.github_username}})
+- Last.fm profile [http://last.fm/user/{{site.github_username}}](http://last.fm/user/{{site.github_username}})
 - Music blog [kafadinliyorum.com][music-blog]
 - <span class="fa fa-tumblr" style="color:#2B4964"></span> Tumblr blogs 
   - [hasantayyar.tumblr.com][tumblr1] 
   - [my-shots.tumblr.com][tumblr2]
 - [<span class="fa fa-google-plus" style="color:#C63D2D"></span>  Google+][plus]
 - [Quora][quora]
-- <span class="fa fa-twitter" style="color:#33CCFF"></span> Twitter [@htayyar][twitter]
-- <span class="fa fa-twitter" style="color:#3B5998"></span> [Facebook][face] - I am not so active on facebook
 - [<span class="fa fa-flickr" style="color:#FE0883"></span> Flickr][flickr] - I like taking photos.  I have a Zenit Ttl 1982.
+- [Behance][behance] 
 - [Slideshare][slideshare] 
 - <span class="fa fa-youtube" style="color:#FF3333"></span> [Youtube Channel][yt]
 - <span class="fa fa-vimeo-square" style="color:#86B32D"></span>  [Vimeo channel][vimeo]
@@ -33,3 +34,4 @@ Here are blogs and profiles that belongs to me :
 [quora]: http://www.quora.com/hasan-tayyar-be%c5%9fik
 [slideshare]: http://www.slideshare.net/hasantayyar
 [flickr]: http://www.flickr.com/people/hasantayyar/
+[behance]: https://www.behance.net/hasantayyar
