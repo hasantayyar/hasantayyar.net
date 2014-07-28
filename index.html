@@ -4,14 +4,24 @@ layout: default
 
 <div class="home">
 
+
+
   <ul class="posts">
+    <li>
+      <div class="content">
+          {% capture links %}{% include links.markdown %}{% endcapture %}
+          {{ links | markdownify }}
+      </div>
+      <br>
+    </li>
     {% for post in site.posts %}
       <li>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        <div>{{ post.content }}<br> 
+        <div class="content">{{ post.content }}<br> 
         </div>
       </li>
+      <br>
     {% endfor %}
   </ul> 
 

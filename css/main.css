@@ -7,13 +7,15 @@
 }
 
 html, body { height: 100%; }
-
+ul li ul{margin-left:20px;}
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Oxygen Mono', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
-  background-color: #fdfdfd;
+
+  background-color: #070507;
+ /* background-color: #fdfdfd;*/
 }
 
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
@@ -148,8 +150,8 @@ a:visited { color: #205caa; }
 
 .posts { list-style-type: none; }
 
-.posts li { margin-bottom: 30px; }
-
+.posts li { margin-bottom: 5px; }
+.posts .content{font-size:12px; margin-top:10px;}
 .posts .post-link {
   font-size: 24px;
   letter-spacing: -1px;
@@ -240,7 +242,7 @@ a:visited { color: #205caa; }
 .post code { padding: 1px 5px; }
 
 .post ul,
-.post ol { margin-left: 1.35em; }
+.post ol { margin-left: 1.35em; margin-top:4px; }
 
 .post pre code {
   border: 0;
@@ -400,8 +402,8 @@ a:visited { color: #205caa; }
   .post-content blockquote { padding-left: 10px; }
   .post-content ul,
   .post-content ol { padding-left: 10px; }
-
-  .site-footer .column {
+ 
+  .site-footer .column { 
     float: none;
     clear: both;
     width: auto;

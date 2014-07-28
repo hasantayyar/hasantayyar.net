@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Blog updates"
+date:   2014-07-28 17:31:40
+categories: announcement
+---
+
+You can follow my updates over **[tayyar-code](http://tayyar-code.blogspot.com)** blog
