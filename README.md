@@ -1,4 +1,3 @@
-hasantayyar.net
-===============
+http://hasantayyar.net
 
-source and contents of my personal home page
+just moved hasantayyar.net to github pages.
