@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Tom Waits - Listen Songs</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css" media="screen">
-  </head>
-  <body>
-  	<div class="container">
-  	</div>
+---
+layout: default
+---
 
-  </body>
-</html>
+<div class="home">
+
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <div>{{ post.content }}<br> 
+        </div>
+      </li>
+    {% endfor %}
+  </ul> 
+
+</div>

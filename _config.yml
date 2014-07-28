@@ -1,0 +1,13 @@
+# Site settings
+title: Hasan Tayyar BEŞİK 
+email: tayyar.besik@gmail.com
+description: "software developer,anti-capitalist, web developer, php, nodejs, contextfree"
+baseurl: ""
+url: "http://hasantayyar.net/"
+twitter_username: htayyar
+github_username:  hasantayyar
+
+# Build settings
+highlighter: true
+markdown: redcarpet
+permalink: pretty
