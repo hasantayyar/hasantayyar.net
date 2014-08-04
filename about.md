@@ -6,11 +6,12 @@ permalink: /about/
 Last update : 28.07.2014
 
 Email me: [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
-
+()
 ####Technical skills as keywords
   
   **php**, **mongodb**, **javascript**, python, web, fractal, 
-      
+  
+[![View my linkedin profile](/images/linkedin.gif)](https://www.linkedin.com/in/hasantayyar)
 
 ####Past Works 
 
