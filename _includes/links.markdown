@@ -18,8 +18,8 @@ Here are blogs and profiles that belongs to me :
 - <span class="fa fa-youtube" style="color:#FF3333"></span> [Youtube Channel][yt]
 - <span class="fa fa-vimeo-square" style="color:#86B32D"></span>  [Vimeo channel][vimeo]
 - <span class="fa fa-soundcloud" style="color:#ff3a00"></span> [Sloundcloud][s] 
-- [<span class="fa fa-foursquare" style="color:#FE0883"></span> Foursquare][fq] 
-- [<span class="fa fa-instagram" style="color:#FE0883"></span> Instagram][instagram]
+- [<span class="fa fa-foursquare" style="color:#0072b1"></span> Foursquare][fq] 
+- [<span class="fa fa-instagram" style="color:#517fa4"></span> Instagram][instagram]
 
 [s]: https://soundcloud.com/hasantayyar
 [vimeo]: http://www.vimeo.com/hasantayyar
