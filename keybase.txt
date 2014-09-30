@@ -1,0 +1,66 @@
+==================================================================
+https://keybase.io/hasantayyar
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://hasantayyar.net
+  * I am hasantayyar (https://keybase.io/hasantayyar) on keybase.
+  * I have a public key with fingerprint 87C5 23AA 47F5 3E0D D12B  77C1 C9D4 520F 8CAC 8931
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "87c523aa47f53e0dd12b77c1c9d4520f8cac8931",
+            "host": "keybase.io",
+            "key_id": "c9d4520f8cac8931",
+            "uid": "d1826836c232ef659015b1d42469ff00",
+            "username": "hasantayyar"
+        },
+        "service": {
+            "hostname": "hasantayyar.net",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1412060148,
+    "expire_in": 157680000,
+    "prev": "068b41dcbbe9bf123b35b223c0b03c79fb560d54f73102f46850c06b79a8c17e",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.0.5
+Comment: https://keybase.io/crypto
+
+yMHlAnicbZFdSBRRFMd3XSvbUgRFkXyIa0TUanPnexYNMxIyUki3TIplPu6sgzoz
+zY62u2oZSNKSmUlCmFFJKRIEfZFIaiVSiCGssRmVD4kE+RIY2gfSjNRT3ZfDPef3
+/59zOOPJLofbOVcRZstl1yPn5NhyvaNiZ/lSIxA0KQy8jaAGrQVZUQPI0A1FNYEX
+sIxI4QTPk4xMEQiTJIgLDCNCkZNICsdkVuRFliMg8IBqLWgrLBuBD6I8RbNy1sev
+SFb2P3z9WkGCLE6zBC3iBI5kmuIwSAlQInGS5mQZw2wwiAyVr0MWXc0HedXkw2He
+AM0eYBUaFBHZY9vd/4XyVGRaDrqhmZqo1dpF09S9ttYM6zZ8Cgn+PzZ+QVEla3tL
+0ICMoKKpwAstUjQV2xeSEMdoDJKsB6CQrhjIr9gExdAsZj27DWqwLDGaFUgoiYKA
+OEGGOCEQlIDjhIgJGCEynCxQNCZRpMwQEMNlkmYpTMRogeF4VoQMAvZiJ1UNeClr
+TD5gWQaVgMqb9QYCzc/Hjic6nG7H+nUJ9v0c7o2pf69anZXkuPtucXD56pbIjC/5
+XIF3d/YVpvTTvD5C35760tpU80Pyvfd1HE6/WDawpzW66v46Go/GVz/o+yfMlqFO
+Pptfyig4tnSijluBufnfPLPXD/i2dveUleSUL9QObO54DXKfjt7s7r0z/LF5bsdw
+KL1fy+rqaQrOBiKuLn80VJl9rfxsyvTP4r1HooMJ030Pt8dqIjcmM0tD+1afFEkO
+XR1vfzXxK+b8nNRb1brp9ELdrgdz7a6iksT+1O9VRzvvTb3NHLmvt5HG+qEz8b7k
+lAuxy6CFTn+Zs63o8Wha9EXapfnMWzPFgyt95yOxN4UwI+DMf1ZYCA4drFxp2xBv
+X6z6DU0GEhg=
+=wnaO
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hasantayyar
+
+==================================================================
+
