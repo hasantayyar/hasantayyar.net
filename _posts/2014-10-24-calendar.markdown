@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Public Calendar"
+date:   2014-10-26 10:10:00
+categories: announcement
+---
+<iframe 
+src="https://www.google.com/calendar/embed?src=cie54oqbm3n8tg932un3g4agp8%40group.calendar.google.com&ctz=Europe/Istanbul&mode=WEEK" 
+style="border: 0" width="600" height="450" frameborder="0" scrolling="no"></iframe>
