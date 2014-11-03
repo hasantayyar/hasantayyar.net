@@ -410,3 +410,13 @@ a:visited { color: #205caa; }
     margin: 0 0 15px; }
 
 }
+
+.badge {
+  background-color: #666;
+  border: 1px solid #777;
+  border-radius: 6px; 
+  box-shadow: 1px 1px 1px black;
+  color: #fff;
+  padding: 2px;
+  text-align: center;
+}
