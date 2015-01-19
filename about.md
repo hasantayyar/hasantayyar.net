@@ -18,5 +18,12 @@ Email me: [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 </iframe> <iframe src="http://ghbtns.com/github-btn.html?user=hasantayyar&amp;type=follow&amp;count=true" height="20" width="168" frameborder="0" scrolling="0" style="width:168px;height:20px;display:inline-block;" allowtransparency="true"></iframe>
 <br>
  
+
+<hr>
+<br>
+<iframe 
+                src="https://www.google.com/calendar/embed?src=cie54oqbm3n8tg932un3g4agp8%40group.calendar.google.com&ctz=Europe/Istanbul&mode=WEEK" 
+                style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
 </div>
 </div>

@@ -8,10 +8,11 @@ layout: default
 
   <ul class="posts">
     <li>
-      <div class="content">
+      	<div class="content">
           {% capture links %}{% include links.markdown %}{% endcapture %}
           {{ links | markdownify }}
-      </div>
+<br>
+	</div>
       <br>
     </li>
     {% for post in site.posts %}
