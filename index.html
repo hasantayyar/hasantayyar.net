@@ -3,8 +3,8 @@ layout: default
 ---
 <div class="home">
   <ul class="posts">
-    <li><div class="content"><span class="badge">#anti-capitalist</span>  <span class="badge">#php</span> <span class="badge">#mongodb</span><span class="badge">#contextfree</span>	<span class="badge">#opensource</span><span class="badge">#coffee</span></div>
-    <li><div class="content"><a href="http://tayyar-code.blogspot.com">[Technical Blog]</a> <a href="http://hasantayyar.blogspot.com">[Blog]</a> <a href="/about/">[More links about me]</a><br><br></div></li>
+    <li><div class="content"><span class="badge">#anti-capitalist</span>  <span class="badge">#php</span> <span class="badge">#mongodb</span> <span class="badge">#contextfree</span>	<span class="badge">#opensource</span> <span class="badge">#coffee</span></div>
+    <li><div class="content"><a href="http://tayyar-code.blogspot.com">[Technical Blog]</a> <a href="http://hasantayyar.blogspot.com">[Blog]</a> <a href="http://kafadinliyorum.com">Music blog</a></a> <a href="/about/">[More links about me]</a> <br><br></div></li>
     {% for post in site.posts %}
       <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><div class="content">{{ post.content }}<br><span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span></div><br></li>
     {% endfor %}
