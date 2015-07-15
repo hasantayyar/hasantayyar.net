@@ -8,4 +8,4 @@ You can see my projects on my **[github profile](https://github.com/{{site.githu
 
 I am currently working with onedio.com developer team. 
 
-~~I am currently working on [OJS - Open Journal System](https://github.com/okulbilisim/ojs).~~ 
+<s>I am currently working on [OJS - Open Journal System](https://github.com/okulbilisim/ojs).</s> 
