@@ -24,12 +24,6 @@ Last update : 03.11.2014
 - [Quora][quora], [Slideshare][slideshare], [last.fm/user/hasantayyar](http://last.fm/user/hasantayyar) Last.fm profile, [<span class="fa fa-google-plus" style="color:#C63D2D"></span>  Google+][plus] , [<span class="fa fa-foursquare" style="color:#0072b1"></span> Foursquare][fq], [<span class="fa fa-flickr" style="color:#FE0883"></span> Flickr][flickr]  I like taking photos.  I have a Zenit Ttl 1982., [Behance][behance], <span class="fa fa-youtube" style="color:#FF3333"></span> [Youtube Channel][yt], <span class="fa fa-vimeo-square" style="color:#86B32D"></span>  [Vimeo channel][vimeo]
 - [Launchpad](https://launchpad.net/~hasantayyar), [Transifex](https://www.transifex.com/user/profile/hasantayyar/)
 
-<hr>
-<br>
-<iframe 
-                src="https://www.google.com/calendar/embed?src=cie54oqbm3n8tg932un3g4agp8%40group.calendar.google.com&ctz=Europe/Istanbul&mode=WEEK" 
-                style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-
 </div>
 </div>
 
