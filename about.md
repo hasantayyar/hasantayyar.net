@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-Last update : 03.11.2014
+Last update : 2016.07.26
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 (+90 505 729 8834)
