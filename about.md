@@ -11,15 +11,7 @@ phone : (+90 505 729 8834)
 
 Skype : [hasan.tayyar.besik](call:hasan.tayyar.besik)
 <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
-<div id="SkypeButton_Call_hasan.tayyar.besik_1">
- <script type="text/javascript">
- Skype.ui({
- "name": "call",
- "element": "SkypeButton_Call_hasan.tayyar.besik_1",
- "participants": ["hasan.tayyar.besik"]
- });
- </script>
-</div>
+<div id="SkypeButton_Call_hasan.tayyar.besik_1"><script type="text/javascript">Skype.ui({"name":"call", "element": "SkypeButton_Call_hasan.tayyar.besik_1", "participants": ["hasan.tayyar.besik"]});</script></div>
 
 
  <hr> <br>
