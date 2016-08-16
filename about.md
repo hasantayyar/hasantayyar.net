@@ -8,6 +8,8 @@ Last update : 2016.07.26
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 
 phone : (+90 505 729 8834)
+
+Skype : [hasan.tayyar.besik](call:hasan.tayyar.besik)
 <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
 <div id="SkypeButton_Call_hasan.tayyar.besik_1">
  <script type="text/javascript">
