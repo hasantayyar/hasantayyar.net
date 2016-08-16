@@ -6,7 +6,21 @@ permalink: /about/
 Last update : 2016.07.26
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
-(+90 505 729 8834)
+
+phone : (+90 505 729 8834)
+
+<script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+<div id="SkypeButton_Call_hasan.tayyar.besik_1">
+ <script type="text/javascript">
+ Skype.ui({
+ "name": "call",
+ "element": "SkypeButton_Call_hasan.tayyar.besik_1",
+ "participants": ["hasan.tayyar.besik"]
+ });
+ </script>
+</div>
+
+
  <hr> <br>
 <span class="badge">#onedio-developer</span> <span class="badge">#nodejs</span> <span class="badge">#php</span> <span class="badge">#mongodb</span> <span class="badge">#redis</span> <span class="badge">#opensource</span> <span class="badge">#mysql</span> <span class="basde">#coffee</span>
 
