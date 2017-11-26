@@ -3,17 +3,13 @@ layout: page
 title: About
 permalink: /about/
 ---
-Last update : 2016.07.26
+Last update : 2017.11.26
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 
-phone : (+90 505 729 8834)
-
-Skype : [hasan.tayyar.besik](call:hasan.tayyar.besik)
-
+I am working as Node.js developer and DevOps in [Bitwala](https://www.bitwala.com).
 
  <hr> <br>
-<span class="badge">#onedio-developer</span> <span class="badge">#nodejs</span> <span class="badge">#php</span> <span class="badge">#mongodb</span> <span class="badge">#redis</span> <span class="badge">#opensource</span> <span class="badge">#mysql</span> <span class="basde">#coffee</span>
 
 [![View my linkedin profile for details](/images/linkedin.gif)](https://www.linkedin.com/in/hasantayyar)
 
@@ -29,8 +25,6 @@ Skype : [hasan.tayyar.besik](call:hasan.tayyar.besik)
 - [Quora][quora], [Slideshare][slideshare], [last.fm/user/hasantayyar](http://last.fm/user/hasantayyar) Last.fm profile, [<span class="fa fa-google-plus" style="color:#C63D2D"></span>  Google+][plus] , [<span class="fa fa-foursquare" style="color:#0072b1"></span> Foursquare][fq], [<span class="fa fa-flickr" style="color:#FE0883"></span> Flickr][flickr]  I like taking photos.  I have a Zenit Ttl 1982., [Behance][behance], <span class="fa fa-youtube" style="color:#FF3333"></span> [Youtube Channel][yt], <span class="fa fa-vimeo-square" style="color:#86B32D"></span>  [Vimeo channel][vimeo]
 - [Launchpad](https://launchpad.net/~hasantayyar), [Transifex](https://www.transifex.com/user/profile/hasantayyar/)
 
-</div>
-</div>
 
 [s]: https://soundcloud.com/hasantayyar
 [vimeo]: http://www.vimeo.com/hasantayyar
@@ -38,8 +32,7 @@ Skype : [hasan.tayyar.besik](call:hasan.tayyar.besik)
 [face]: http://www.facebook.com/profile.php?id=585582134
 [twitter]: http://twitter.com/htayyar
 [linkedin]: http://www.linkedin.com/in/hasantayyar
-[blog1]: http://tayyar-code.blogspot.com
-[blog2]: http://hasantayyar.blogspot.com
+[blog]: https://medium.com/@htayyar
 [music-blog]: http://kafadinliyorum.com
 [tumblr1]: http://hasantayyar.tumblr.com
 [tumblr2]: http://my-shots.tumblr.com
