@@ -26,8 +26,8 @@ I am working as Node.js developer and DevOps in [Bitwala](https://www.bitwala.co
 - [my-shots.tumblr.com][tumblr2] screenshots from movies I've watched
 - [Quora][quora]
 - [Slideshare][slideshare],
-- [Behance][behance], <span class="fa fa-youtube" style="color:#FF3333"></span> 
-- [Youtube Channel][yt]
+- [Behance][behance],
+- [<span class="fa fa-youtube" style="color:#FF3333"></span> Youtube Channel][yt]
 - <span class="fa fa-vimeo-square" style="color:#86B32D"></span>  [Vimeo channel][vimeo]
 - [Launchpad](https://launchpad.net/~hasantayyar)
 - [Transifex](https://www.transifex.com/user/profile/hasantayyar/)
