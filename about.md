@@ -14,9 +14,6 @@ I am working as Node.js developer and DevOps in [Bitwala](https://www.bitwala.co
 [![View my linkedin profile for details](/images/linkedin.gif)](https://www.linkedin.com/in/hasantayyar)
 
 <br>
-<iframe src="http://platform.twitter.com/widgets/follow_button.html?button=null&amp;text_color=null&amp;link_color=null&amp;preview=true&amp;screen_name=htayyar&amp;bg=light&amp;show_count=true&amp;lang=tr" allowtransparency="true" frameborder="0" scrolling="no" class="twitter-follow-button" style="display:inline-block;width:212px; height: 20px;margin:0 auto">
-</iframe> <iframe src="https://ghbtns.com/github-btn.html?user=hasantayyar&amp;type=follow&amp;count=true" height="20" width="168" frameborder="0" scrolling="0" style="width:168px;height:20px;display:inline-block;" allowtransparency="true"></iframe>
-<br>
  
 - [<span class="fa fa-medium" style="color:#030303"></span> Blog][medium]
 - [<span class="fa fa-linkedin" style="color:#4875B4"></span> LinkedIn][linkedin]
