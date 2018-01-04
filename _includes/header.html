@@ -18,7 +18,8 @@
 	<a class='btn' href="https://keybase.io/hasantayyar/pgp_keys.asc?fingerprint=87c523aa47f53e0dd12b77c1c9d4520f8cac8931">PGP</a>
 	<a class='btn' href="https://github.com/hasantayyar" class="page-link github" rel="me">I am on Github</a> 
         {% for page in site.pages %}
-          {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
+          {% if page.title %}
+	      <a class='btn' class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
         {% endfor %}
       </div>
     </nav>
