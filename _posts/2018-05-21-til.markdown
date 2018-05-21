@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Bildigim hersey"
+date:   2018-05-21 13:00:00
+categories: personal
+---
+
+Bir günce diye basladim, her gün kisa kisa ogrendiklerimi not ediyorum https://hasantayyar.github.io/til
+
+Elbette bu çok da mümkün değil yani bildiğim herşeyi yazmak.
+
+Ancak artik hergün kısa kısa öğrendiklerimi yaziyorum. Bir nevi mini-blog ve TIL (Today I've learned) ayarında.
+
+[Medium blogum](http://medium.com/@htayyar) hala aktif.
+
+Okuyucuya onem veririm ancak cogu zaman klavyemi TR klavye yapmaya erinip Turkce karakterleri basmayacagim. Kusruma bakmayin. Ayrica notlar cok dilli olacak.
+
+Tamamen kendim icin. O yuzden TIL yazilarim icin elestiriye acik degilim. Ama umumi yaptim ki dileyen de okyabilsin.
+
+https://hasantayyar.github.io/til
+
+Bu arada bu bir vue-press blogu oldu. Pek sevmedim vue-press'i. 
