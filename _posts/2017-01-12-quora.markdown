@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "I'm still at quora"
+title:  "I'm still on quora"
 date:   2017-01-12 19:00:00
 categories: personal
 ---
 
-I am active at quora. Ask me or follow me [quora.com/profile/Hasan-Tayyar-Beşik](https://www.quora.com/profile/Hasan-Tayyar-Be%C5%9Fik)
+I am active on quora. Ask me or follow me [quora.com/profile/Hasan-Tayyar-Beşik](https://www.quora.com/profile/Hasan-Tayyar-Be%C5%9Fik)
