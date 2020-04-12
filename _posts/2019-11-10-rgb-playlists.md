@@ -7,6 +7,10 @@ categories: announcement
 
 Here I will share my new playlists named as RGB coded colors.
 
+Follow for more color playlists
+
+<iframe src="https://open.spotify.com/follow/1/?uri=spotify:user:hasantayyar&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+
 <h4>RGB: #FFFFFF</h4>
 
 <iframe src="https://open.spotify.com/embed/playlist/57nlDE4zlr4et5oo1g5EUd" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>

@@ -1,7 +1,7 @@
 # Site settings
 title: Hasan Tayyar BESIK 
 email: tayyar.besik@gmail.com
-description: "software developer, anti-capitalist, bitwala developer, #nodejs, #devops, former onedio developer"
+description: "Devops, software developer, anti-capitalist, former @bitwala developer, #nodejs, #devops, former @onedio developer"
 baseurl: ""
 url: "https://hasantayyar.net/"
 twitter_username: htayyar
@@ -11,3 +11,7 @@ github_username:  hasantayyar
 highlighter: true
 markdown: redcarpet
 permalink: pretty
+
+collections:
+  - medium_posts
+

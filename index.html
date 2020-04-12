@@ -3,15 +3,22 @@ layout: default
 ---
 <div class="c">
   
-    <p>
-       <span class="badge">#devops-at-fcg</span> <span class="badge" style="text-decoration:line-through">#bitwala-developer-devops</span> <span class="badge">#nodejs</span> <span class="badge">#devops</span> <span class="badge" style="text-decoration:line-through">#onedio-developer</span> <span class="badge" style="text-decoration:line-through">#php</span> <span class="badge">#contextfree</span>	<span class="badge">#opensource</span>
-    </p>
-    <p><div class="content"><a href="https://medium.com/@htayyar">[Blog]</a> <a href="http://kafadinliyorum.com">[Music blog]</a></a> <a href="/about/">[More links about me]</a> <br><br></div>
-   </p>
-   <ul class="posts">
+<p>
+  <span class="badge">#devops-at-fcg</span> <span class="badge">#kubernetes</span> <span class="badge">#google-cloud</span> <span class="badge">#aws</span> <span class="badge">#nodejs</span> <span class="badge">#devops</span> <span class="badge" style="text-decoration:line-through">#bitwala-developer-devops</span> <span class="badge" style="text-decoration:line-through">#onedio-developer</span> <span class="badge">#contextfree</span>	<span class="badge">#opensource</span>
+</p>
+
+<div class="content">
+  <a href="https://medium.com/@htayyar">[Blog]</a>
+  <a href="http://kafadinliyorum.com">[Music blog]</a>
+  <a href="/about/">[More links about me]</a> <br><br>
+
+<div>
+
+<ul class="posts">
     {% for post in site.posts %}
-      <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-    </li>
+      <li>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </li>
     {% endfor %}
   </ul> 
 </div>

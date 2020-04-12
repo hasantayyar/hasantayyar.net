@@ -1,0 +1,3 @@
+    {% for e in site.medium_posts %}
+      <li><a class="post-link" href="{{ e.medium_link }}" target="_blank">{{e.title}}</a> <span class="post-date">-{{ e.medium_pub_date }}</span></li>
+    {% endfor %}
