@@ -5,6 +5,4 @@ date:   2014-07-28 17:31:40
 categories: announcement
 ---
 
-~~You can follow my technical updates from **[tayyar-code](http://tayyar-code.blogspot.com)** blog.~~
-
 I've started writing at medium and probalby keep writing there : [medium.com/@htayyar](https://medium.com/@htayyar)
