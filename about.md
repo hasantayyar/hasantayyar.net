@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-Last update : 2017.11.26
+Last update : 2020.10.23
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 
