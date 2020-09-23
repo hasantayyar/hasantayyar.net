@@ -7,7 +7,7 @@ Last update : 2017.11.26
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 
-I am working as "DevOps" at [OLXAutos](https://www.olxgroup.com/locations/germany-berlin). You can find more information about my professional life at my [LinkedIn][linkedin] profile.
+I am part of Platform Team ( [DevOps](https://en.wikipedia.org/wiki/DevOps) oriented) at [OLXAutos](https://www.olxgroup.com/locations/germany-berlin). You can find more information about my professional life at my [LinkedIn][linkedin] profile.
 
 <hr> <br>
 
