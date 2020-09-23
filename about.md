@@ -7,11 +7,9 @@ Last update : 2020.10.23
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 
-I am part of Platform Team ( [DevOps](https://en.wikipedia.org/wiki/DevOps) oriented) at [OLXAutos](https://www.olxgroup.com/locations/germany-berlin). You can find more information about my professional life at my [LinkedIn][linkedin] profile.
+I am part of Platform Team ([DevOps](https://en.wikipedia.org/wiki/DevOps) oriented) at [OLXAutos](https://www.olxgroup.com/locations/germany-berlin). You can find more information about my professional life at my [LinkedIn][linkedin] profile.
 
 <hr> <br>
-
-<br>
  
 - [<span class="fa fa-medium" style="color:#030303"></span> Blog][medium]
 - [<span class="fa fa-linkedin" style="color:#4875B4"></span> LinkedIn][linkedin]
