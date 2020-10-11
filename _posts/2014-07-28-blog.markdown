@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Blog Updates"
-date:   2014-07-28 17:31:40
-categories: announcement
----
-
-I've started writing at medium and probalby keep writing there : [medium.com/@htayyar](https://medium.com/@htayyar)
