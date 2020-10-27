@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title:  "[paper] A paper by Google: "Why container Security matters?" 
+title:  "[paper] A paper by Google: Why container Security matters?" 
 date:   2020-10-27 10:00:00
 categories: paper
 ---
