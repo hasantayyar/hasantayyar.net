@@ -11,7 +11,7 @@ Quick snippets, quotes, links, un-strucured posts, quick ideas or comments, thin
       <p>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
       </p>
-    <p>{{ post.excerpt }}</p>
+    <p>{{ post.content }}</p>
     <br />
     {% endfor %}
 </div> 
