@@ -7,7 +7,7 @@ categories: paper
 
 > Understanding the container security concepts that impact your organization
 
-[https://services.google.com/fh/files/misc/why_container_security_matters.pdf](https://services.google.com/fh/files/misc/why_container_security_matters.pdf)
+[PDF](https://services.google.com/fh/files/misc/why_container_security_matters.pdf)
 
 *TLDR;*
 
