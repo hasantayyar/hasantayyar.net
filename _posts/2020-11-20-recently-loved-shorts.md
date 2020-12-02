@@ -16,6 +16,4 @@ K just crashed his Mercedes-Benz into a tree, moments after trying to avoid runn
 
 “Macabre” by Jerónimo Rocha and João Miguel Real
 
-Watch Jerónimo Rocha's other short film "Dedalo": [https://youtu.be/Pan-i3cb1wY](https://youtu.be/Pan-i3cb1wY)
-
 </blockquote>
