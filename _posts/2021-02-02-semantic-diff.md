@@ -13,3 +13,4 @@ categories: software
 
 > diffstter uses the parsers from the tree-sitter project to parse source code. As such, the languages supported by this tool are limited by the languages supported by the tree-sitter project.
 
+A prefect diff tool shows the difference of two files semantically. It is unfortunately only for Rust language but it is very inspiring.
