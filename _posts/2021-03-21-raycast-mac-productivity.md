@@ -9,7 +9,7 @@ Better than Alfred for Mac. Ligt, fast and productivity booster
 
 > Raycast lets you control your tools with a few keystrokes. It’s designed to keep you focused.
 
-https://raycast.com/
+[raycast.com](https://raycast.com/)
 
 
-Best part is the custom script part. https://github.com/raycast/script-commands/tree/master/commands
+Best part is the custom script part: [github.com/raycast/script-commands/tree/master/commands](https://github.com/raycast/script-commands/tree/master/commands)
