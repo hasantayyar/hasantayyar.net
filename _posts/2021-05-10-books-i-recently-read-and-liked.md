@@ -17,6 +17,6 @@ This book reveals how your systems can be attacked.
 
 A triller for SREs and CTOs
 
-#### 4. The Unicorn Project, by Gene Kim - [via O'Reilly](https://www.oreilly.com/library/view/the-unicorn-project/9781098124175/)
+##### 4. The Unicorn Project, by Gene Kim - [via O'Reilly](https://www.oreilly.com/library/view/the-unicorn-project/9781098124175/)
 
 It is again a nice novel about digital transformation developers and all kind of issues related with these two. A part II for the Phoenix Project
