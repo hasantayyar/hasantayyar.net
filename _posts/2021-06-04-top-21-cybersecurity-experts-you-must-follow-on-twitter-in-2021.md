@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[secusity] Cybersecurity experts on Twitter" 
+title:  "[security] Cybersecurity experts on Twitter" 
 date:   2021-06-04 10:00:00
 categories: security
 ---
