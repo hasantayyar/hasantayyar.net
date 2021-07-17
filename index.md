@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-  SRE at [OLX Autos](https://www.olx.com/),
+  Currently at [ROQ](https://roq.tech/),
   #kubernetes,
   #google-cloud,
   #aws,
@@ -13,7 +13,7 @@ layout: default
   #contextfree,
   #opensource,
   #generative-music,
-  Formerly: [Bitwala](https://bitwala.com), [Onedio](https://onedio.com/kurumsal/hakkimizda)
+  Formerly: [OLX Autos](https://www.olx.com/), [Bitwala](https://bitwala.com), [Onedio](https://onedio.com/kurumsal/hakkimizda), [others](https://www.linkedin.com/in/hasantayyar/)
 
 
 ----
