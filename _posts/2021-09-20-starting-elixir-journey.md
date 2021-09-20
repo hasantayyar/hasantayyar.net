@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[programming] A strong start to Elixir"
+title:  "A strong start to Elixir"
 date:   2021-09-20 10:00:00
 categories: programming
 ---
