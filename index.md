@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-  Currently at [ROQ](https://roq.tech/),
+  Currently at [SumUp](https://sumup.com),
   #kubernetes,
   #google-cloud,
   #aws,
@@ -13,7 +13,7 @@ layout: default
   #contextfree,
   #opensource,
   #generative-music,
-  Formerly: [OLX Autos](https://www.olx.com/), [Bitwala](https://bitwala.com), [Onedio](https://onedio.com/kurumsal/hakkimizda), [others](https://www.linkedin.com/in/hasantayyar/)
+  Formerly: [ROQ](https://roq.tech/), [OLX Autos](https://www.olx.com/), [Bitwala](https://bitwala.com), [Onedio](https://onedio.com/kurumsal/hakkimizda), [others](https://www.linkedin.com/in/hasantayyar/)
 
 
 ----
