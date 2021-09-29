@@ -7,7 +7,7 @@ Last update : 2020.10.23
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 
-I working as "[DevOps](https://en.wikipedia.org/wiki/DevOps Engineer" at [SumUp](https://sumup.com/). I focus at Cloud operations and information security. My [LinkedIn][linkedin] profile will tell you more.
+I working as "[DevOps](https://en.wikipedia.org/wiki/DevOps) Engineer" at [SumUp](https://sumup.com/). I focus at Cloud operations and information security. My [LinkedIn][linkedin] profile will tell you more.
 
 <hr> <br>
  
