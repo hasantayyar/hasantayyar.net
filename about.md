@@ -11,7 +11,8 @@ I am working as a "[DevOps](https://en.wikipedia.org/wiki/DevOps) Engineer" at [
 
 Personally I focus at automnation, cloud operations and information security.
 
-My [LinkedIn][linkedin] profile will tell you more.
+My [LinkedIn](http://www.linkedin.com/in/hasantayyar) profile will tell you more.
+
 
 <hr> <br>
  
