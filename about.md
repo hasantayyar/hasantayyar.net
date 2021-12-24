@@ -7,7 +7,11 @@ Last update : 2020.10.23
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 
-I working as "[DevOps](https://en.wikipedia.org/wiki/DevOps) Engineer" at [SumUp](https://sumup.com/). I focus at Cloud operations and information security. My [LinkedIn][linkedin] profile will tell you more.
+I am working as a "[DevOps](https://en.wikipedia.org/wiki/DevOps) Engineer" at [SumUp](https://sumup.com/).
+
+Personally I focus at automnation, cloud operations and information security.
+
+My [LinkedIn][linkedin] profile will tell you more.
 
 <hr> <br>
  
@@ -20,9 +24,6 @@ I working as "[DevOps](https://en.wikipedia.org/wiki/DevOps) Engineer" at [SumUp
 - [Speakerdeck slides](https://speakerdeck.com/hasantayyar/)
 - [<span class="fa fa-camera" style="color:#FE0883"></span> Unsplash][unsplash]  But these days I share my photos on Unsplash.
 - [<span class="fa fa-flickr" style="color:#FE0883"></span> Flickr][flickr]  Previous photo archive mostly taken with Zenit Ttl 1982, a Minolta XD7 and Sony Alpha 6000
-- [Slideshare][slideshare]
-
-
 [spotify]: https://open.spotify.com/user/hasantayyar
 [medium]: https://medium.com/@htayyar
 [vimeo]: http://www.vimeo.com/hasantayyar
