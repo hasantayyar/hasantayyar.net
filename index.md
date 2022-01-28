@@ -21,4 +21,4 @@ layout: default
 [Blog](https://medium.com/@htayyar) • [LinkedIn](https://www.linkedin.com/in/hasantayyar/) • [More links about me](/about/)
 
 
-<a href="https://hasantayyar.net/images/bc-logotype-dark-64.png" title="Bandcamp profile"><img src="https://hasantayyar.net/images/bc-logotype-dark-64.png" width="64px" alt="Bandcamp logo"/></a>
+<a href="https://tayyar.bandcamp.com/follow_me" title="Bandcamp profile"><img src="https://hasantayyar.net/images/bc-logotype-dark-64.png" width="64px" alt="Bandcamp logo"/></a>
