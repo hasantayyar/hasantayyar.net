@@ -2,8 +2,9 @@
 layout: default
 ---
 
-
-  Currently at [SumUp](https://sumup.com),
+  Currently at [SumUp](https://sumup.com)
+  
+  
   #kubernetes,
   #google-cloud,
   #aws,
@@ -12,14 +13,12 @@ layout: default
   #nodejs,
   #contextfree,
   #opensource,
-  #generative-music,
-  Formerly: [ROQ](https://roq.tech/), [OLX Autos](https://www.olx.com/), [Bitwala](https://bitwala.com), [Onedio](https://onedio.com/kurumsal/hakkimizda), [others](https://www.linkedin.com/in/hasantayyar/)
+  #generative-music
 
 
 ----
 
-[[Blog]](https://medium.com/@htayyar)
-[[More links about me]](/about/)
+[Blog](https://medium.com/@htayyar) • [LinkedIn](https://www.linkedin.com/in/hasantayyar/) • [More links about me](/about/)
 
 
-<iframe scrolling="no" style="border: 0;width: 100%;height: 50px;" src="https://bandcamp.com/band_follow_button_deluxe/4051726274"></iframe>
+[![Bandcamp](https://hasantayyar.net/images/bc-logotype-dark-64.png)](https://hasantayyar.net/images/bc-logotype-dark-64.png)
