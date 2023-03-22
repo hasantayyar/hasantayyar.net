@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Optimism has any benefits?"
+date:   2023-03-22 10:00:00
+categories: self-reflection
+---
+
+
+I define myself mostly optimist if I am not acting naturally.
+This post is a reminder to myself to keep the balance of optimism/pessimism.
+
+Being an optimist was something that some people aspired to be.
+It is regarded as a "good" quality to possess.
+Optimism is the belief that things will turn out well in the end, even if there are setbacks.
+Having this mindset can help people in a variety of ways, 
+including building strong connections and assisting people in staying strong during difficult times.
+Let us not forget that optimism is not always the solution to all of our problems because being 
+overly optimistic can lead to unrealistic expectations and poor decisions. 
+In some cases, it can even be harmful to ourselves or others. 
+Furthermore, if we rely too heavily on optimism, we may avoid dealing with harsh realities or challenges. 
+So, it's essential to strike a balance between being optimistic and facing things head-on. 
+Yes it's the **balance** again pffff.
+
+Being an optimist has a lot of potential benefits for me. 
+It is the capability of encouraging resilience in the face of difficult situations. 
+According to studies, people with a positive view of the world are better able to cope with stress and recover 
+from setbacks than those with a pessimistic view (Seligman, 1991). Positive thinking has also been 
+linked to improved physical health outcomes, such as improved immune function and lower rates of 
+cardiovascular disease (Segerstrom & Sephton, 2010). So yeah I can say I am at least more resillient to 
+diffucult situations. But there are some important drawbacks. 
+For example, individuals who are overly optimistic may have unrealistic **expectations** about the future, 
+leading them to take **unnecessary risks** or make **poor decisions**.
+
