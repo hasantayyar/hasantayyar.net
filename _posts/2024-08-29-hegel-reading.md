@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[book] Hegel readings" 
-date:   2020-10-27 10:00:00
+date:   2024-08-29 10:00:00
 categories: book
 ---
 
