@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "[music] Berlin -> Ankara roadtrip Shazamed from radio on the way" 
+title:  "[music] Berlin -> Ankara roadtrip: Shazamed from the radio on the way" 
 date:   2025-05-21 10:00:00
 categories: music
 ---
 
-Songs I loved from the radioa and Shazamed on the way: Berlin <-> Győr - Hungary <-> Niš - Serbia <-> Edirne, Çanakkale, İzmir, Denizli, Bolu, Ereğli, Ankara - Türkiye
+Songs I loved from the radio and Shazamed along the way:  Berlin <-> Győr - Hungary <-> Niš - Serbia <-> Edirne, Çanakkale, İzmir, Denizli, Bolu, Ereğli, Ankara - Türkiye
 
 - 6 Days - Mahmut Orhan & Colonel Bagshot
 - Sweet Nothin's - Brenda Lee
