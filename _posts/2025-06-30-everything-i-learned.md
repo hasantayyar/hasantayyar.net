@@ -8,6 +8,29 @@ categories: EIL
 
 **A new series I hope to keep monthly. Just a simple note of everything I learned whether trivial or significant.**
 
+#### Gleam vs Elixir
+
+Wiki says:
+> **Gleam** is a [general-purpose](https://en.wikipedia.org/wiki/General-purpose_programming_language), [concurrent](https://en.wikipedia.org/wiki/Concurrent_computing), [functional](https://en.wikipedia.org/wiki/Functional_programming) [high-level](https://en.wikipedia.org/wiki/High-level_programming_language) [programming language](https://en.wikipedia.org/wiki/Programming_language) that compiles to [Erlang](https://en.wikipedia.org/wiki/Erlang_(programming_language)) or [JavaScript](https://en.wikipedia.org/wiki/JavaScript) source code.
+> 
+> Gleam is a statically-typed language, which is different from the most popular languages that run on Erlang’s virtual machine [BEAM](https://en.wikipedia.org/wiki/BEAM_(Erlang_virtual_machine)), [Erlang](https://en.wikipedia.org/wiki/Erlang_(programming_language)) and [Elixir](https://en.wikipedia.org/wiki/Elixir_(programming_language)). Gleam has its own type-safe implementation of OTP, Erlang's actor framework. Packages are provided using the Hex [package manager](https://en.wikipedia.org/wiki/Package_manager), and an index for finding packages written for Gleam is available.
+
+So what I understand is Elixir users can easily use Gleam but why. That’s why I have learned:
+
+Gleam and Elixir are both languages that run on the Erlang VM (BEAM), but they primarily different in their type systems and designs. **Gleam** is statically typed, meaning types are checked at **compile time**, which helps catch errors early and ensures predictability. It favors simplicity and performance, with a syntax inspired by ML-style languages. For example, a Gleam function looks like:
+
+```elixir
+fn add(x: Int, y: Int) -> Int {
+  x + y
+}
+```
+
+Elixir, on the other hand, is **dynamically typed ** and focuses on developer productivity, expressiveness, and fault tolerance. It allows for powerful metaprogramming and a flexible development style. While it supports optional type specs, type checking happens at runtime unless explicitly enforced. An equivalent function in Elixir would be:
+
+```elixir
+def add(x, y), do: x + y
+```
+
 #### Natural Greenfly Remedy: Milk Spray
 
 A surprisingly effective natural solution:
