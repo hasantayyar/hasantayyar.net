@@ -8,10 +8,10 @@ Quick snippets, quotes, links, un-strucured posts, quick ideas or comments, thin
 
 <div class="posts">
     {% for post in site.posts %}
-      <p class="post-title">
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-      </p>
+      <h2 class="post-title">
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <time class="post-date">{{ post.date | date: "%b %-d, %Y" }}</time>
+      </h2>
     <p>{{ post.content }}</p>
-    <br />
+    <div class="blog-separator"><span class="line"></span><span class="icon">✦</span><span class="line"></span></div>
     {% endfor %}
 </div> 
