@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Foundational concepts of Karate" 
-date:   2025-06-30 10:00:00
+date:   2025-08-28 10:00:00
 categories: EIL
 ---
 
