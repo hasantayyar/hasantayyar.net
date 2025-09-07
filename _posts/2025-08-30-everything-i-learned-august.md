@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "July - Everything I Learned" 
-date:   2025-07-30 10:00:00
+title:  "August - Everything I Learned" 
+date:   2025-08-30 10:00:00
 categories: EIL
 ---
 
