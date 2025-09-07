@@ -47,4 +47,5 @@ Ascon was developed in 2014 by a team of cryptographers from [Graz University o
 
 #### Banana peel for plants
 
-You can chop up a banana peel, leave it in a jar of water overnight, and then use that water (not the peels) to feed your plants about once a month. This works because banana peels release nutrients like potassium, phosphorus, calcium, and magnesium into the water, which support strong roots, healthier growth, and better flowering. It’s a simple natural fertilizer, but it’s best not to overdo it since too much can cause mold or upset the balance of the soil.
+You can chop up a banana peel, leave it in a jar of water overnight, and then use that water (**not the peels**) to waqter your plants. This can repeat about once a month. This works because banana peels contains nutrients like potassium, phosphorus, calcium, and magnesium into the water, which support strong roots, and better flowering.
+It’s a natural fertilizer, but it’s best not to overdo it since too much can cause mold or disturb the balance of the soil.
