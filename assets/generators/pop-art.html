@@ -1,0 +1,1648 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abstract Expressionist Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .gallery-space {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1000px;
+    }
+    
+    #canvas-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    canvas {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 12px solid #1a1a1a;
+    }
+    
+    .artwork-info {
+      color: #9c9c9c;
+      text-align: center;
+      max-width: 800px;
+      margin-top: 20px;
+    }
+    
+    .artwork-title {
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    
+    .artwork-artist {
+      font-style: italic;
+      font-size: 16px;
+      margin-bottom: 16px;
+      color: #757575;
+    }
+    
+    .artwork-description {
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .artwork-controls {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+    }
+    
+    .control-btn {
+      background: none;
+      border: 1px solid #444;
+      color: #b0b0b0;
+      padding: 8px 16px;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .control-btn:hover {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    .style-selector {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .style-btn {
+      background: none;
+      border: 1px solid #444;
+      color: #9c9c9c;
+      padding: 6px 12px;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .style-btn.active {
+      background-color: #444;
+      color: #fff;
+    }
+    
+    .style-btn:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="gallery-space">
+    <div id="canvas-container"></div>
+    
+    <div class="artwork-info">
+      <div class="artwork-title">Chromatic Resonance No. 7</div>
+      <div class="artwork-artist">Generated in the style of Abstract Expressionism</div>
+      <div class="artwork-description">
+        A meditation on form and color, exploring the tension between spontaneity and structure.
+        This composition draws inspiration from the gestural freedom of Pollock, the color fields of Rothko,
+        and the geometric precision of Mondrian.
+      </div>
+    </div>
+    
+    <div class="style-selector">
+      <button class="style-btn active" data-style="pollock">Pollock</button>
+      <button class="style-btn" data-style="rothko">Rothko</button>
+      <button class="style-btn" data-style="kandinsky">Kandinsky</button>
+      <button class="style-btn" data-style="mondrian">Mondrian</button>
+      <button class="style-btn" data-style="kline">Franz Kline</button>
+      <button class="style-btn" data-style="twombly">Cy Twombly</button>
+    </div>
+    
+    <div class="artwork-controls">
+      <button class="control-btn" id="generate-btn">Generate New Artwork</button>
+      <button class="control-btn" id="fullscreen-btn">View Fullscreen</button>
+    </div>
+  </div>
+  
+  <script>
+    // Global variables
+    let canvas;
+    let currentStyle = "pollock";
+    let currentArtist = "Jackson Pollock";
+    
+    // Artist-specific information
+    const artistInfo = {
+      pollock: { 
+        name: "Jackson Pollock", 
+        descriptions: [
+          "An exploration of controlled chaos and rhythmic movement, dripped and poured onto the canvas in spontaneous gestures of creative energy.",
+          "A dynamic composition embracing the tension between accident and intention, where the physical act of painting becomes integral to the work itself.",
+          "Layered networks of color creating a dense web of visual rhythm, embodying action painting's emphasis on process over representation."
+        ]
+      },
+      rothko: { 
+        name: "Mark Rothko", 
+        descriptions: [
+          "Luminous rectangular forms hover on the canvas, creating a contemplative space that invites deep emotional engagement with color and light.",
+          "Soft-edged color fields pulsate with inner radiance, dissolving boundaries between viewer and painting in silent communion.",
+          "Layers of translucent color create a sense of infinite depth, evoking profound spiritual and emotional resonance."
+        ]
+      },
+      kandinsky: { 
+        name: "Wassily Kandinsky", 
+        descriptions: [
+          "A symphony of color and form, where geometric and biomorphic shapes dance across the canvas in rhythmic counterpoint.",
+          "Lines, circles, and angles interact in a complex visual composition that translates music's emotional power into visual language.",
+          "Precise geometric forms combine with free-flowing lines to create dynamic tension between structure and spontaneity."
+        ]
+      },
+      mondrian: { 
+        name: "Piet Mondrian", 
+        descriptions: [
+          "A balanced composition of primary colors and orthogonal lines creating a harmonic equilibrium that reflects universal order.",
+          "Precise geometric abstraction reduced to fundamental elements—vertical and horizontal lines, primary colors, and white space.",
+          "A search for visual purity through mathematical precision, where asymmetrical balance creates dynamic tension within rigid constraints."
+        ]
+      },
+      kline: { 
+        name: "Franz Kline", 
+        descriptions: [
+          "Bold, architectural black brushstrokes assert themselves against white space with visceral energy and structural integrity.",
+          "Monumental gestures capture the confrontation between positive and negative space, embodying both strength and delicacy.",
+          "Powerful calligraphic forms suggest urban landscapes and industrial structures reduced to their essential expressive force."
+        ]
+      },
+      twombly: { 
+        name: "Cy Twombly", 
+        descriptions: [
+          "Delicate, scrawled marks hover between writing and drawing, creating a personal archaeology of gesture and memory.",
+          "Ethereal scratches and scribbles evoke ancient graffiti and personal notation, suggesting both presence and erasure.",
+          "Palimpsestic layers of markings create a temporal depth, where childlike spontaneity meets sophisticated art historical reference."
+        ]
+      }
+    };
+    
+    // Color schemes inspired by each artist
+    const artistPalettes = {
+      pollock: [
+        ["#F2C84B", "#D94C1A", "#1A1A1A", "#F2F2F2", "#0455BF"],
+        ["#FFFFFF", "#121212", "#B22222", "#FFD700", "#4169E1"],
+        ["#F5F5F5", "#333333", "#8B4513", "#DAA520", "#708090"]
+      ],
+      rothko: [
+        ["#610F0F", "#DC4731", "#EFA22A", "#28282B"],
+        ["#4A0E17", "#85182A", "#CC5803", "#E2711D"],
+        ["#331A12", "#7A4419", "#CD7F32", "#DAA06D"]
+      ],
+      kandinsky: [
+        ["#F20505", "#0477BF", "#F2B705", "#F28705", "#0D0D0D"],
+        ["#BF4904", "#F21905", "#F2CB05", "#F2F2F2", "#260101"],
+        ["#F23557", "#F0D43A", "#22B2DA", "#3B4A6B", "#F18F01"]
+      ],
+      mondrian: [
+        ["#FFFFFF", "#D92929", "#2E56A6", "#F2CB05", "#000000"],
+        ["#FAFAFA", "#D92929", "#0C4076", "#FEEA02", "#020202"],
+        ["#F2F2F2", "#BF0404", "#0D65BF", "#F2B705", "#0D0D0D"]
+      ],
+      kline: [
+        ["#000000", "#FFFFFF", "#222222", "#DDDDDD"],
+        ["#0A0A0A", "#F5F5F5", "#333333", "#EEEEEE"],
+        ["#111111", "#FCFCFC", "#3A3A3A", "#DFDFDF"]
+      ],
+      twombly: [
+        ["#F5F5F5", "#FA8072", "#696969", "#A9A9A9", "#BC8F8F"],
+        ["#FFF5EE", "#CD5C5C", "#808080", "#D3D3D3", "#BC8F8F"],
+        ["#FFFAFA", "#DB7093", "#A9A9A9", "#C0C0C0", "#E9967A"]
+      ]
+    };
+    
+    // Titles for each artist style
+    const artistTitles = {
+      pollock: [
+        "Number 31", "Autumn Rhythm", "Convergence", "Lavender Mist", 
+        "Blue Poles", "Shimmering Substance", "Cathedral", "Reflection of the Big Dipper",
+        "One", "Greyed Rainbow", "Summertime", "Composition (White, Black, Blue and Red)"
+      ],
+      rothko: [
+        "Untitled (Black on Grey)", "Orange and Yellow", "No. 61 (Rust and Blue)", 
+        "White Center (Yellow, Pink and Lavender on Rose)", "Four Darks in Red",
+        "Black in Deep Red", "Ochre and Red on Red", "Blue and Grey", 
+        "Orange, Red, Yellow", "No. 14", "Purple, White, and Red", "Untitled (Violet, Black, Orange, Yellow on White and Red)"
+      ],
+      kandinsky: [
+        "Composition VIII", "Yellow-Red-Blue", "Several Circles", "On White II",
+        "Improvisation 28", "Composition X", "Gentle Ascent", "Circles in a Circle",
+        "Transverse Line", "Blue Segment", "Composition 7", "Multicolored Circle"
+      ],
+      mondrian: [
+        "Composition with Red, Blue, and Yellow", "Broadway Boogie Woogie", "Composition No. II",
+        "Tableau I", "Composition with Yellow, Blue, and Red", "Composition C", 
+        "New York City I", "Composition No. 10", "Grid Composition", "Rhythm of Black Lines"
+      ],
+      kline: [
+        "Mahoning", "Chief", "Zinc Door", "Nijinsky", "Painting No. 7",
+        "Wanamaker Block", "Meryon", "Slate Cross", "Cardinal", "Vawdavitch",
+        "Untitled", "August Day", "Black, White, and Gray"
+      ],
+      twombly: [
+        "Untitled (Bacchus)", "Coronation of Sesostris", "Poems to the Sea", 
+        "Apollo and the Artist", "Fifty Days at Iliam", "The Rose", 
+        "Untitled (Blooming)", "Quattro Stagioni", "Nini's Painting", "Cold Stream"
+      ]
+    };
+    
+    function setup() {
+      // Create canvas with museum-quality proportions
+      canvas = createCanvas(800, 800);
+      canvas.parent('canvas-container');
+      
+      // No animation loop - static artwork
+      noLoop();
+      
+      // Initial drawing
+      generateArtwork();
+      
+      // Setup event listeners
+      document.getElementById('generate-btn').addEventListener('click', generateArtwork);
+      document.getElementById('fullscreen-btn').addEventListener('click', toggleFullscreen);
+      
+      // Style buttons
+      const styleButtons = document.querySelectorAll('.style-btn');
+      styleButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Update active style
+          styleButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Change style and regenerate
+          currentStyle = this.getAttribute('data-style');
+          currentArtist = artistInfo[currentStyle].name;
+          generateArtwork();
+        });
+      });
+    }
+    
+    function generateArtwork() {
+      // Get the selected style's generation function
+      const styleFunctions = {
+        pollock: generatePollock,
+        rothko: generateRothko,
+        kandinsky: generateKandinsky,
+        mondrian: generateMondrian,
+        kline: generateKline,
+        twombly: generateTwombly
+      };
+      
+      // Generate the artwork
+      styleFunctions[currentStyle]();
+      
+      // Update the information
+      updateArtworkInfo();
+    }
+    
+    function updateArtworkInfo() {
+      // Get random title for the current style
+      const titles = artistTitles[currentStyle];
+      const randomTitle = titles[floor(random(titles.length))];
+      
+      // Get random description
+      const descriptions = artistInfo[currentStyle].descriptions;
+      const randomDescription = descriptions[floor(random(descriptions.length))];
+      
+      // Update DOM elements
+      document.querySelector('.artwork-title').textContent = randomTitle;
+      document.querySelector('.artwork-artist').textContent = `Generated in the style of ${currentArtist}`;
+      document.querySelector('.artwork-description').textContent = randomDescription;
+    }
+    
+    function toggleFullscreen() {
+      const canvasElem = document.querySelector('canvas');
+      if (!document.fullscreenElement) {
+        canvasElem.requestFullscreen().catch(err => {
+          console.log(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+    
+    // ===== POLLOCK STYLE =====
+    function generatePollock() {
+      // Choose a palette variation
+      const palettes = artistPalettes.pollock;
+      const palette = random(palettes);
+
+      // Prepare canvas
+      background(255);
+
+      // Layer 1: Base texture
+      for (let i = 0; i < width * height * 0.0005; i++) {
+        const x = random(width);
+        const y = random(height);
+        const size = random(1, 5);
+        const color = random(palette);
+
+        if (color && typeof color === "string" && color.startsWith("#")) {
+          fill(color + "33"); // Add transparency
+          noStroke();
+          ellipse(x, y, size, size);
+        }
+      }
+
+      // Layer 2: Drip lines
+      for (let i = 0; i < 40; i++) {
+        let x = random(width);
+        let y = random(height);
+        const steps = random(20, 100);
+        const color = random(palette);
+
+        if (color && typeof color === "string" && color.startsWith("#")) {
+          const r = parseInt(color.substring(1, 3), 16);
+          const g = parseInt(color.substring(3, 5), 16);
+          const b = parseInt(color.substring(5, 7), 16);
+
+          for (let j = 0; j < steps; j++) {
+            const angle = noise(x * 0.01, y * 0.01) * TWO_PI * 2;
+            const speed = random(2, 8);
+            const prevX = x;
+            const prevY = y;
+
+            x += cos(angle) * speed;
+            y += sin(angle) * speed;
+
+            stroke(r, g, b, random(150, 230));
+            strokeWeight(random(2, 6));
+            line(prevX, prevY, x, y);
+          }
+        }
+      }
+
+      // Layer 3: Splatter effects
+      for (let i = 0; i < 80; i++) {
+        const x = random(width);
+        const y = random(height);
+        const color = random(palette);
+
+        if (color && typeof color === "string" && color.startsWith("#")) {
+          const r = parseInt(color.substring(1, 3), 16);
+          const g = parseInt(color.substring(3, 5), 16);
+          const b = parseInt(color.substring(5, 7), 16);
+
+          for (let j = 0; j < random(3, 10); j++) {
+            const splatX = x + random(-15, 15);
+            const splatY = y + random(-15, 15);
+            const size = random(2, 6);
+
+            noStroke();
+            fill(r, g, b, random(150, 255));
+            ellipse(splatX, splatY, size, size);
+          }
+        }
+      }
+
+      // Layer 4: Paint pools
+      for (let i = 0; i < 15; i++) {
+        const x = random(width);
+        const y = random(height);
+        const color = random(palette);
+
+        if (color && typeof color === "string" && color.startsWith("#")) {
+          const r = parseInt(color.substring(1, 3), 16);
+          const g = parseInt(color.substring(3, 5), 16);
+          const b = parseInt(color.substring(5, 7), 16);
+
+          noStroke();
+          fill(r, g, b, random(50, 150));
+
+          beginShape();
+          for (let angle = 0; angle < TWO_PI; angle += PI / random(5, 12)) {
+            const radius = random(10, 40);
+            const offsetX = cos(angle) * radius;
+            const offsetY = sin(angle) * radius;
+            vertex(x + offsetX, y + offsetY);
+          }
+          endShape(CLOSE);
+        }
+      }
+    }
+    
+    // ===== ROTHKO STYLE =====
+    function generateRothko() {
+      // Choose a palette variation
+      const palettes = artistPalettes.rothko;
+      const palette = random(palettes);
+      
+      // Prepare canvas
+      background(30, 20, 20);
+      
+      // Create Rothko's signature rectangular fields
+      const numRectangles = random(2, 4);
+      
+      // Divide canvas into sections
+      let totalHeight = 0;
+      const margins = height * 0.08;
+      const usableHeight = height - (margins * 2);
+      
+      // Calculate available section heights
+      let sectionHeights = [];
+      for (let i = 0; i < numRectangles; i++) {
+        let h = random(0.2, 0.5) * usableHeight;
+        sectionHeights.push(h);
+        totalHeight += h;
+      }
+      
+      // Normalize heights to fit canvas
+      sectionHeights = sectionHeights.map(h => (h / totalHeight) * usableHeight);
+      
+      // Current y position
+      let currentY = margins;
+      
+      // Create each rectangular field
+      for (let i = 0; i < numRectangles; i++) {
+        // Select a color from palette
+        const baseColor = palette[i % palette.length];
+        
+        const r = parseInt(baseColor.substring(1, 3), 16);
+        const g = parseInt(baseColor.substring(3, 5), 16);
+        const b = parseInt(baseColor.substring(5, 7), 16);
+        
+        // Rectangle properties
+        const rectHeight = sectionHeights[i];
+        const rectWidth = width - (margins * 2);
+        const rectX = margins;
+        const rectY = currentY;
+        
+        // Create the soft-edged rectangle with multiple layers
+        for (let layer = 0; layer < 12; layer++) {
+          // Inner layers have slight color variations
+          const layerR = constrain(r + random(-20, 20), 0, 255);
+          const layerG = constrain(g + random(-20, 20), 0, 255);
+          const layerB = constrain(b + random(-20, 20), 0, 255);
+          
+          // Reduce opacity for feathered edges
+          const edgeSize = 20;
+          
+          // Draw with slight horizontal brushstrokes
+          for (let y = rectY; y < rectY + rectHeight; y += 2) {
+            // Calculate distance from edges for fading
+            const distFromTop = y - rectY;
+            const distFromBottom = (rectY + rectHeight) - y;
+            let opacity;
+            
+            if (distFromTop < edgeSize) {
+              opacity = map(distFromTop, 0, edgeSize, 10, 40);
+            } else if (distFromBottom < edgeSize) {
+              opacity = map(distFromBottom, 0, edgeSize, 10, 40);
+            } else {
+              opacity = random(30, 50);
+            }
+            
+            noStroke();
+            fill(layerR, layerG, layerB, opacity);
+            
+            // Create horizontal brush stroke effect
+            const segments = floor(random(3, 8));
+            const segWidth = rectWidth / segments;
+            
+            for (let s = 0; s < segments; s++) {
+              const segX = rectX + (s * segWidth);
+              const segW = segWidth + random(-5, 5);
+              const brushHeight = random(1, 4);
+              rect(segX, y, segW, brushHeight);
+            }
+          }
+        }
+        
+        // Add subtle texture to the color field
+        for (let t = 0; t < rectWidth * rectHeight * 0.0005; t++) {
+          const x = rectX + random(rectWidth);
+          const y = rectY + random(rectHeight);
+          
+          // Distance from edges determines opacity
+          const distFromEdge = min(
+            x - rectX,
+            (rectX + rectWidth) - x,
+            y - rectY,
+            (rectY + rectHeight) - y
+          );
+          
+          if (distFromEdge > 20) {
+            noStroke();
+            fill(255, random(1, 10));
+            const size = random(1, 4);
+            ellipse(x, y, size, size);
+          }
+        }
+        
+        // Update y position for next rectangle
+        currentY += rectHeight + random(20, 50);
+      }
+      
+      // Apply overall texture and subtle vignette
+      drawRothkoTexture();
+    }
+    
+    function drawRothkoTexture() {
+      // Create canvas-wide texture
+      for (let i = 0; i < width * height * 0.001; i++) {
+        const x = random(width);
+        const y = random(height);
+        const size = random(0.5, 2);
+        
+        // Vignette effect - darker near edges
+        const distFromCenter = dist(x, y, width/2, height/2);
+        const maxDist = dist(0, 0, width/2, height/2);
+        const brightness = map(distFromCenter, 0, maxDist, 0, 50);
+        
+        noStroke();
+        fill(0, brightness);
+        rect(x, y, size, size);
+      }
+      
+      // Add subtle horizontal brushstrokes throughout
+      for (let i = 0; i < 300; i++) {
+        const y = random(height);
+        const x = random(width);
+        const len = random(5, 40);
+        
+        stroke(255, random(1, 5));
+        strokeWeight(random(0.5, 2));
+        line(x, y, x + len, y);
+      }
+    }
+    
+    // ===== KANDINSKY STYLE =====
+    function generateKandinsky() {
+      // Choose a palette variation
+      const palettes = artistPalettes.kandinsky;
+      const palette = random(palettes);
+      
+      // Prepare canvas with light background
+      background(250, 248, 245);
+      
+      // Draw background texture and initial color fields
+      createKandinskyBackground(palette);
+      
+      // Draw primary geometric elements
+      const numElements = floor(random(15, 30));
+      const elements = [];
+      
+      // Create a compositional focal point
+      const focalX = random(width * 0.3, width * 0.7);
+      const focalY = random(height * 0.3, height * 0.7);
+      
+      // Generate elements with relational positioning
+      for (let i = 0; i < numElements; i++) {
+        // Determine if this element is a focal element or subsidiary
+        const isFocal = i < 3; // First few elements are focal
+        
+        // Position with compositional intent
+        let x, y;
+        if (isFocal) {
+          // Place near focal point
+          x = focalX + random(-width * 0.2, width * 0.2);
+          y = focalY + random(-height * 0.2, height * 0.2);
+        } else {
+          // Place in relation to existing elements or compositional grid
+          if (random() < 0.6 && elements.length > 0) {
+            // Position in relation to an existing element
+            const relatedTo = random(elements);
+            x = relatedTo.x + random(-width * 0.25, width * 0.25);
+            y = relatedTo.y + random(-height * 0.25, height * 0.25);
+          } else {
+            // Position on compositional grid
+            x = random(width * 0.1, width * 0.9);
+            y = random(height * 0.1, height * 0.9);
+          }
+        }
+        
+        // Constrain to canvas
+        x = constrain(x, width * 0.05, width * 0.95);
+        y = constrain(y, height * 0.05, height * 0.95);
+        
+        // Select shape type with intention
+        const shapeType = random(["circle", "triangle", "rectangle", "line"]);
+        
+        // Size relates to importance
+        const size = isFocal ? 
+                    random(width * 0.1, width * 0.3) : 
+                    random(width * 0.02, width * 0.15);
+        
+        // Select color with intent
+        const primaryColor = random(palette);
+        
+        // Add to elements array
+        elements.push({
+          x: x,
+          y: y,
+          type: shapeType,
+          size: size,
+          color: primaryColor,
+          isFocal: isFocal
+        });
+      }
+      
+      // Sort to draw larger elements first
+      elements.sort((a, b) => b.size - a.size);
+      
+      // Draw elements
+      elements.forEach(el => {
+        drawKandinskyElement(el, palette);
+      });
+      
+      // Add connecting lines between some elements
+      drawKandinskyConnections(elements, palette);
+      
+      // Final delicate lines and accents
+      drawKandinskyAccents(elements, palette);
+    }
+    
+    function createKandinskyBackground(palette) {
+      // Create subtle color areas in background
+      for (let i = 0; i < random(3, 6); i++) {
+        const x = random(width);
+        const y = random(height);
+        const size = random(width * 0.3, width * 0.6);
+        
+        // Select color from palette
+        const baseColor = random(palette);
+        const r = parseInt(baseColor.substring(1, 3), 16);
+        const g = parseInt(baseColor.substring(3, 5), 16);
+        const b = parseInt(baseColor.substring(5, 7), 16);
+        
+        // Create soft-edged color area
+        noStroke();
+        for (let j = 0; j < 5; j++) {
+          const alpha = map(j, 0, 5, 5, 1);
+          fill(r, g, b, alpha);
+          ellipse(x, y, size - j * 20);
+        }
+      }
+    }
+    
+    function drawKandinskyElement(el, palette) {
+      // Extract color components
+      const c = el.color;
+      const r = parseInt(c.substring(1, 3), 16);
+      const g = parseInt(c.substring(3, 5), 16);
+      const b = parseInt(c.substring(5, 7), 16);
+      
+      // Add style-specific rendering
+      push();
+      translate(el.x, el.y);
+      
+      // Draw element based on type
+      if (el.type === "circle") {
+        // Circle with Kandinsky's characteristic borders
+        if (random() < 0.7) {
+          // Outer ring
+          noFill();
+          stroke(0);
+          strokeWeight(random(1, 3));
+          ellipse(0, 0, el.size);
+        }
+        
+        // Main circle
+        fill(r, g, b, random(150, 230));
+        if (random() < 0.5) {
+          stroke(0);
+          strokeWeight(random(0.5, 2));
+          ellipse(0, 0, el.size * random(0.5, 1.5));
+          // ====================================
+        } else {
+          noStroke();
+        }
+        ellipse(0, 0, el.size * 0.9);
+        
+        // Add inner details
+        if (random() < 0.5) {
+          fill(random(palette));
+          noStroke();
+          ellipse(0, 0, el.size * 0.4);
+        }
+        
+        // Add characteristic accents
+        if (random() < 0.3) {
+          stroke(0);
+          strokeWeight(1);
+          line(-el.size/2, 0, el.size/2, 0);
+        }
+      } else if (el.type === "triangle") {
+        // Kandinsky's triangles often have significance
+        const h = el.size * 0.866; // height of equilateral triangle
+        
+        // Draw triangle
+        fill(r, g, b, random(150, 230));
+        if (random() < 0.6) {
+          stroke(0);
+          strokeWeight(random(0.5, 2));
+        } else {
+          noStroke();
+        }
+        
+        // Rotate for compositional interest
+        rotate(random(TWO_PI));
+        triangle(0, -h/2, -el.size/2, h/2, el.size/2, h/2);
+        
+        // Add inner details
+        if (random() < 0.4) {
+          fill(random(palette));
+          const innerSize = el.size * 0.5;
+          const innerH = innerSize * 0.866;
+          triangle(0, -innerH/2, -innerSize/2, innerH/2, innerSize/2, innerH/2);
+        }
+      } else if (el.type === "rectangle") {
+        // Kandinsky's rectangles often have meaning in composition
+        rotate(random(TWO_PI));
+        
+        // Determine dimensions
+        const w = el.size;
+        const h = el.size * random(0.5, 1.5);
+        
+        // Draw rectangle
+        fill(r, g, b, random(150, 230));
+        if (random() < 0.7) {
+          stroke(0);
+          strokeWeight(random(0.5, 2));
+        } else {
+          noStroke();
+        }
+        rect(-w/2, -h/2, w, h);
+        
+        // Add inner details
+        if (random() < 0.5) {
+          // Inner lines
+          stroke(0);
+          strokeWeight(1);
+          const numLines = floor(random(1, 4));
+          for (let i = 0; i < numLines; i++) {
+            const y = map(i, 0, numLines, -h/2, h/2);
+            line(-w/2, y, w/2, y);
+          }
+        }
+      } else if (el.type === "line") {
+        // Kandinsky's dynamic lines
+        stroke(r, g, b);
+        strokeWeight(random(1, el.isFocal ? 6 : 3));
+        
+        // Line length
+        const len = el.size;
+        
+        // Straight or curved line
+        if (random() < 0.7) {
+          // Straight line with rotation
+          rotate(random(TWO_PI));
+          line(-len/2, 0, len/2, 0);
+          
+          // Add perpendicular accents
+          if (random() < 0.4) {
+            const accentLength = len * 0.2;
+            stroke(0);
+            strokeWeight(1);
+            line(len/3, 0, len/3, -accentLength);
+          }
+        } else {
+          // Curved line
+          noFill();
+          beginShape();
+          for (let i = 0; i < 10; i++) {
+            const angle = map(i, 0, 9, 0, PI);
+            const x = cos(angle) * len/2;
+            const y = sin(angle) * len/2;
+            curveVertex(x, y);
+          }
+          endShape();
+        }
+      }
+      pop();
+    }
+    
+    function drawKandinskyConnections(elements, palette) {
+      // Draw lines connecting some elements
+      const numConnections = floor(random(5, 15));
+      
+      for (let i = 0; i < numConnections; i++) {
+        // Select two elements to connect
+        if (elements.length < 2) continue;
+        
+        const idx1 = floor(random(elements.length));
+        let idx2 = floor(random(elements.length));
+        // Ensure we don't connect an element to itself
+        while (idx2 === idx1) {
+          idx2 = floor(random(elements.length));
+        }
+        
+        const el1 = elements[idx1];
+        const el2 = elements[idx2];
+        
+        // Draw connection line
+        stroke(0, random(50, 150));
+        strokeWeight(random(0.5, 2));
+        
+        if (random() < 0.7) {
+          // Straight line
+          line(el1.x, el1.y, el2.x, el2.y);
+        } else {
+          // Curved line with control point
+          const ctrlX = (el1.x + el2.x)/2 + random(-100, 100);
+          const ctrlY = (el1.y + el2.y)/2 + random(-100, 100);
+          
+          noFill();
+          beginShape();
+          vertex(el1.x, el1.y);
+          quadraticVertex(ctrlX, ctrlY, el2.x, el2.y);
+          endShape();
+        }
+        
+        // Sometimes add decorative elements along the line
+        if (random() < 0.3) {
+          const midX = (el1.x + el2.x) / 2;
+          const midY = (el1.y + el2.y) / 2;
+          
+          fill(random(palette));
+          noStroke();
+          ellipse(midX, midY, random(5, 15));
+        }
+      }
+    }
+    
+    function drawKandinskyAccents(elements, palette) {
+      // Add final delicate accents and details
+      for (let i = 0; i < random(20, 40); i++) {
+        const x = random(width);
+        const y = random(height);
+        
+        if (random() < 0.6) {
+          // Small geometric accents
+          fill(random(palette));
+          noStroke();
+          const size = random(3, 10);
+          
+          if (random() < 0.5) {
+            ellipse(x, y, size);
+          } else {
+            rect(x, y, size, size);
+          }
+        } else {
+          // Fine lines
+          stroke(0, random(100, 200));
+          strokeWeight(random(0.5, 1));
+          const len = random(10, 30);
+          const angle = random(TWO_PI);
+          line(x, y, x + cos(angle) * len, y + sin(angle) * len);
+        }
+      }
+    }
+    
+    // ===== MONDRIAN STYLE =====
+    function generateMondrian() {
+      // Choose a palette variation
+      const palettes = artistPalettes.mondrian;
+      const palette = random(palettes);
+      
+      // Extract colors
+      const white = palette[0];
+      const red = palette[1];
+      const blue = palette[2];
+      const yellow = palette[3];
+      const black = palette[4];
+      
+      // Prepare canvas with white background
+      background(white);
+      
+      // Create a grid-based structure with recursive subdivision
+      // Start with the whole canvas
+      const initialDivisions = [];
+      initialDivisions.push({
+        x: 0,
+        y: 0,
+        w: width,
+        h: height
+      });
+      
+      // Subdivide the canvas recursively
+      const divisions = subdivideRectangles(initialDivisions, 0);
+      
+      // Draw the rectangles
+      divisions.forEach(div => {
+        // Decide color
+        let fillColor;
+        const colorRoll = random();
+        
+        // Mondrian used mostly white with strategic color placement
+        if (colorRoll < 0.7) {
+          fillColor = white; // Majority white
+        } else if (colorRoll < 0.8) {
+          fillColor = red; // Some red
+        } else if (colorRoll < 0.9) {
+          fillColor = blue; // Some blue
+        } else {
+          fillColor = yellow; // Some yellow
+        }
+        
+        // Fill rectangle
+        fill(fillColor);
+        noStroke();
+        rect(div.x, div.y, div.w, div.h);
+      });
+      
+      // Draw the black grid lines
+      drawMondrianGridLines(divisions, black);
+    }
+    
+    function subdivideRectangles(rectangles, depth) {
+      // Stop recursion at a certain depth
+      if (depth > 3) return rectangles;
+      
+      let result = [];
+      
+      rectangles.forEach(rect => {
+        // Decide whether to subdivide this rectangle
+        if (random() < 0.7 && rect.w > 100 && rect.h > 100) {
+          // Decide whether to split horizontally or vertically
+          if (rect.w > rect.h) {
+            // Split horizontally
+            const splitPoint = rect.w * random(0.3, 0.7);
+            
+            // Create two new rectangles
+            const left = {
+              x: rect.x,
+              y: rect.y,
+              w: splitPoint,
+              h: rect.h
+            };
+            
+            const right = {
+              x: rect.x + splitPoint,
+              y: rect.y,
+              w: rect.w - splitPoint,
+              h: rect.h
+            };
+            
+            // Recursively subdivide the new rectangles
+            const subdivided = subdivideRectangles([left, right], depth + 1);
+            result = result.concat(subdivided);
+          } else {
+            // Split vertically
+            const splitPoint = rect.h * random(0.3, 0.7);
+            
+            // Create two new rectangles
+            const top = {
+              x: rect.x,
+              y: rect.y,
+              w: rect.w,
+              h: splitPoint
+            };
+            
+            const bottom = {
+              x: rect.x,
+              y: rect.y + splitPoint,
+              w: rect.w,
+              h: rect.h - splitPoint
+            };
+            
+            // Recursively subdivide the new rectangles
+            const subdivided = subdivideRectangles([top, bottom], depth + 1);
+            result = result.concat(subdivided);
+          }
+        } else {
+          // Don't subdivide, add to result
+          result.push(rect);
+        }
+      });
+      
+      return result;
+    }
+    
+    function drawMondrianGridLines(divisions, blackColor) {
+      // Draw horizontal and vertical lines
+      stroke(blackColor);
+      strokeWeight(8); // Thick black lines
+      
+      // Get all unique x and y coordinates
+      const xCoords = new Set();
+      const yCoords = new Set();
+      
+      divisions.forEach(div => {
+        xCoords.add(div.x);
+        xCoords.add(div.x + div.w);
+        yCoords.add(div.y);
+        yCoords.add(div.y + div.h);
+      });
+      
+      // Convert to arrays and sort
+      const xArray = Array.from(xCoords).sort((a, b) => a - b);
+      const yArray = Array.from(yCoords).sort((a, b) => a - b);
+      
+      // Draw vertical lines
+      xArray.forEach(x => {
+        if (x > 0 && x < width) { // Skip canvas edges
+          line(x, 0, x, height);
+        }
+      });
+      
+      // Draw horizontal lines
+      yArray.forEach(y => {
+        if (y > 0 && y < height) { // Skip canvas edges
+          line(0, y, width, y);
+        }
+      });
+      
+      // Draw canvas border
+      noFill();
+      strokeWeight(10);
+      rect(0, 0, width, height);
+    }
+    
+    // ===== FRANZ KLINE STYLE =====
+    function generateKline() {
+      // Choose a palette variation
+      const palettes = artistPalettes.kline;
+      const palette = random(palettes);
+      
+      // Extract colors - Kline is known for high contrast black and white
+      const white = palette[1]; // Background
+      const black = palette[0]; // Strokes
+      const gray1 = palette[2]; // Optional accent
+      const gray2 = palette[3]; // Optional accent
+      
+      // Prepare canvas with white background
+      background(white);
+      
+      // Create textured background
+      createKlineTexture(white, gray2);
+      
+      // Generate bold, architectural brushstrokes
+      const numStrokes = floor(random(3, 8)); // Kline used fewer, more impactful strokes
+      
+      // Create compositional structure
+      let strokes = [];
+      
+      // Generate primary structural strokes
+      for (let i = 0; i < numStrokes; i++) {
+        // Determine stroke characteristics
+        const isVertical = random() < 0.5;
+        const thickness = random(width * 0.03, width * 0.15);
+        
+        // Position with compositional intent
+        let x1, y1, x2, y2;
+        
+        if (isVertical) {
+          // Vertical stroke
+          x1 = random(width * 0.2, width * 0.8);
+          y1 = random(height * 0.1);
+          x2 = x1 + random(-width * 0.1, width * 0.1);
+          y2 = random(height * 0.8, height * 0.95);
+        } else {
+          // Horizontal stroke
+          x1 = random(width * 0.1);
+          y1 = random(height * 0.2, height * 0.8);
+          x2 = random(width * 0.8, width * 0.95);
+          y2 = y1 + random(-height * 0.1, height * 0.1);
+        }
+        
+        // Add to strokes array
+        strokes.push({
+          x1: x1,
+          y1: y1,
+          x2: x2,
+          y2: y2,
+          thickness: thickness,
+          isPrimary: true
+        });
+      }
+      
+      // Add secondary, reactive strokes
+      const numSecondary = floor(random(5, 15));
+      for (let i = 0; i < numSecondary; i++) {
+        // Often in response to primary strokes
+        const primaryStroke = random(strokes);
+        
+        // Position in relation to primary
+        let x1, y1, x2, y2;
+        const thickness = random(width * 0.01, width * 0.06);
+        
+        if (random() < 0.5) {
+          // Intersecting stroke
+          if (random() < 0.5) {
+            // Horizontal response to vertical
+            x1 = primaryStroke.x1 - random(width * 0.1, width * 0.2);
+            y1 = random(primaryStroke.y1, primaryStroke.y2);
+            x2 = primaryStroke.x1 + random(width * 0.1, width * 0.2);
+            y2 = y1 + random(-height * 0.05, height * 0.05);
+          } else {
+            // Vertical response to horizontal
+            x1 = random(primaryStroke.x1, primaryStroke.x2);
+            y1 = primaryStroke.y1 - random(height * 0.1, height * 0.2);
+            x2 = x1 + random(-width * 0.05, width * 0.05);
+            y2 = primaryStroke.y1 + random(height * 0.1, height * 0.2);
+          }
+        } else {
+          // Parallel or extending stroke
+          if (random() < 0.5) {
+            // Parallel
+            const offset = random(-width * 0.1, width * 0.1);
+            x1 = primaryStroke.x1 + offset;
+            y1 = primaryStroke.y1 + offset;
+            x2 = primaryStroke.x2 + offset;
+            y2 = primaryStroke.y2 + offset;
+          } else {
+            // Extending
+            x1 = primaryStroke.x2;
+            y1 = primaryStroke.y2;
+            x2 = x1 + (primaryStroke.x2 - primaryStroke.x1) * random(0.3, 0.7);
+            y2 = y1 + (primaryStroke.y2 - primaryStroke.y1) * random(0.3, 0.7);
+          }
+        }
+        
+        // Add to strokes array
+        strokes.push({
+          x1: x1,
+          y1: y1,
+          x2: x2,
+          y2: y2,
+          thickness: thickness,
+          isPrimary: false
+        });
+      }
+      
+      // Draw all strokes
+      drawKlineStrokes(strokes, black, gray1);
+    }
+    
+    function createKlineTexture(baseColor, accentColor) {
+      // Create subtle texture in background
+      for (let i = 0; i < width * height * 0.001; i++) {
+        const x = random(width);
+        const y = random(height);
+        const size = random(1, 5);
+
+        // Parse accentColor if it's a hex string
+        let r, g, b;
+        if (typeof accentColor === "string" && accentColor.startsWith("#") && accentColor.length === 7) {
+          r = parseInt(accentColor.substring(1, 3), 16);
+          g = parseInt(accentColor.substring(3, 5), 16);
+          b = parseInt(accentColor.substring(5, 7), 16);
+        } else {
+          // fallback to black
+          r = g = b = 0;
+        }
+
+        noStroke();
+        fill(r, g, b, random(2, 10));
+        rect(x, y, size, size);
+      }
+    }
+    
+    function drawKlineStrokes(strokes, mainColor, accentColor) {
+      // Parse mainColor if it's a hex string
+      let r = 0, g = 0, b = 0;
+      if (typeof mainColor === "string" && mainColor.startsWith("#") && mainColor.length === 7) {
+        r = parseInt(mainColor.substring(1, 3), 16);
+        g = parseInt(mainColor.substring(3, 5), 16);
+        b = parseInt(mainColor.substring(5, 7), 16);
+      }
+
+      // Sort strokes to draw secondary ones first
+      strokes.sort((a, b) => {
+        if (a.isPrimary && !b.isPrimary) return 1;
+        if (!a.isPrimary && b.isPrimary) return -1;
+        return 0;
+      });
+      
+      // Draw each stroke with Kline's characteristic brushwork
+      strokes.forEach(stroke => {
+        const isPrimary = stroke.isPrimary;
+        push();
+        // Calculate stroke direction and length
+        const dx = stroke.x2 - stroke.x1;
+        const dy = stroke.y2 - stroke.y1;
+        const length = sqrt(dx * dx + dy * dy);
+        const angle = atan2(dy, dx);
+
+        // Brushstroke properties
+        const thickness = stroke.thickness;
+        const roughness = isPrimary ? 0.15 : 0.25; // more rough for secondary
+        const alpha = isPrimary ? random(200, 255) : random(120, 180);
+
+        // Draw a bold, expressive, slightly irregular rectangle/quad as brushstroke
+        push();
+        translate(stroke.x1, stroke.y1);
+        rotate(angle + random(-roughness, roughness));
+        // Create 4 points for a quad with some jitter for rough edge
+        let t = thickness;
+        let l = length;
+        let j = isPrimary ? 8 : 16; // jitter amount
+        let x0 = 0, y0 = -t/2 + random(-j, j);
+        let x1 = l, y1 = -t/2 + random(-j, j);
+        let x2 = l, y2 = t/2 + random(-j, j);
+        let x3 = 0, y3 = t/2 + random(-j, j);
+
+        noStroke();
+        fill(r, g, b, alpha);
+        beginShape();
+        vertex(x0, y0);
+        vertex(x1, y1);
+        vertex(x2, y2);
+        vertex(x3, y3);
+        endShape(CLOSE);
+
+        // Add some dry brush effect: random gaps
+        if (random() < 0.5) {
+          fill(255, 255, 255, random(30, 80));
+          let gapW = random(l * 0.1, l * 0.3);
+          let gapX = random(l * 0.1, l * 0.8);
+          rect(gapX, -t/2, gapW, t);
+        }
+        pop();
+
+        // Add a few edge streaks for texture
+        if (isPrimary) {
+          for (let i = 0; i < random(2, 5); i++) {
+            let ex = random(0, length);
+            let ey = -t/2 + random(-j, j);
+            let elen = random(10, 40);
+            let eangle = random(-PI/8, PI/8);
+            stroke(r, g, b, random(80, 160));
+            strokeWeight(random(2, 6));
+            line(ex, ey, ex + cos(eangle) * elen, ey + sin(eangle) * elen);
+          }
+        }
+        pop();
+      });
+
+      // Add small gestural marks
+      for (let i = 0; i < random(10, 20); i++) {
+        const x = random(width);
+        const y = random(height);
+        const len = random(10, 50);
+        const angle = random(TWO_PI);
+        stroke(r, g, b, random(50, 150));
+        strokeWeight(random(1, 3));
+        line(x, y, x + cos(angle) * len, y + sin(angle) * len);
+      }
+    }
+    
+    // ===== CY TWOMBLY STYLE =====
+    function generateTwombly() {
+      // Choose a palette variation
+      const palettes = artistPalettes.twombly;
+      const palette = random(palettes);
+      
+      // Extract colors - Twombly often used muted, pale backgrounds
+      const background = palette[0]; // Light background
+      const primary = palette[1]; // Primary mark color
+      const secondary = palette[2]; // Secondary mark color
+      const tertiary = palette[3]; // Tertiary mark color
+      const accent = palette[4]; // Accent color
+      
+      // Prepare canvas with light background
+      background(background);
+      
+      // Create subtle texture in background
+      createTwomblyTexture(palette);
+      
+      // Create compositional structure
+      // Twombly's work often has a sense of horizontal organization
+      const numRows = floor(random(3, 6));
+      const rowHeight = height / numRows;
+      
+      // Draw each row of marks
+      for (let row = 0; row < numRows; row++) {
+        const y = rowHeight * row + rowHeight/2;
+        const rowDensity = random(0.5, 1.5); // Density multiplier
+        
+        // Determine mark type for this row
+        const markTypes = ["scribble", "text", "line", "shape"];
+        const primaryType = random(markTypes);
+        
+        // Create marks for this row
+        createTwomblyRowMarks(y, rowHeight, primaryType, rowDensity, palette);
+      }
+      
+      // Add characteristic smudges and drips
+      createTwomblySmudges(palette);
+      
+      // Add final sparse, delicate marks
+      createTwomblyDelicateMarks(palette);
+    }
+    
+    function createTwomblyTexture(palette) {
+      // Create subtle texture in background
+      for (let i = 0; i < width * height * 0.001; i++) {
+        const x = random(width);
+        const y = random(height);
+        const size = random(1, 5);
+        
+        noStroke();
+        fill(random(palette), random(2, 10));
+        rect(x, y, size, size);
+      }
+      
+      // Add subtle washes
+      for (let i = 0; i < random(2, 5); i++) {
+        const x = random(width);
+        const y = random(height);
+        const size = random(width * 0.3, width * 0.7);
+        
+        noStroke();
+        fill(random(palette), random(2, 8));
+        
+        beginShape();
+        for (let a = 0; a < TWO_PI; a += 0.2) {
+          const noiseFactor = noise(cos(a) + 1, sin(a) + 1, i) * 1.5;
+          const sx = x + cos(a) * size * noiseFactor;
+          const sy = y + sin(a) * size * noiseFactor;
+          curveVertex(sx, sy);
+        }
+        endShape(CLOSE);
+      }
+    }
+    
+    function createTwomblyRowMarks(y, height, type, density, palette) {
+      // Number of marks in this row
+      const numMarks = floor(random(5, 15) * density);
+      
+      // Create marks
+      for (let i = 0; i < numMarks; i++) {
+        const x = random(width);
+        
+        // Select color
+        const markColor = random(palette);
+        
+        // Draw based on type
+        if (type === "scribble") {
+          drawTwomblyScribble(x, y, markColor);
+        } else if (type === "text") {
+          drawTwomblyText(x, y, markColor);
+        } else if (type === "line") {
+          drawTwomblyLine(x, y, height, markColor);
+        } else if (type === "shape") {
+          drawTwomblyShape(x, y, markColor);
+        }
+      }
+    }
+    
+    function drawTwomblyScribble(x, y, color) {
+      // Twombly's characteristic scribbles
+      push();
+      translate(x, y);
+      
+      // Scribble properties
+      const scribbleSize = random(20, 100);
+      const numPoints = floor(random(10, 30));
+      
+      // Draw scribble
+      stroke(color);
+      strokeWeight(random(0.5, 2));
+      noFill();
+      
+      beginShape();
+      for (let i = 0; i < numPoints; i++) {
+        const angle = random(TWO_PI);
+        const radius = random(scribbleSize);
+        const sx = cos(angle) * radius;
+        const sy = sin(angle) * radius;
+        curveVertex(sx, sy);
+      }
+      endShape();
+      
+      pop();
+    }
+    
+    function drawTwomblyText(x, y, color) {
+      // Twombly's text-like marks
+      push();
+      translate(x, y);
+      
+      // Text properties
+      const textSize = random(10, 40);
+      const numMarks = floor(random(3, 8));
+      
+      // Draw text-like marks
+      stroke(color);
+      strokeWeight(random(0.5, 2));
+      
+      // Create a row of marks
+      for (let i = 0; i < numMarks; i++) {
+        const markX = i * textSize * 0.8;
+        const markHeight = random(textSize * 0.5, textSize);
+        
+        // Draw a mark
+        if (random() < 0.7) {
+          // Vertical line
+          line(markX, -markHeight/2, markX, markHeight/2);
+          
+          // Sometimes add horizontal elements
+          if (random() < 0.5) {
+            line(markX, random(-markHeight/2, markHeight/2), 
+                 markX + random(5, 15), random(-markHeight/2, markHeight/2));
+          }
+        } else {
+          // Circle or loop
+          noFill();
+          ellipse(markX, 0, random(5, 15), random(5, 15));
+        }
+      }
+      
+      pop();
+    }
+    
+    function drawTwomblyLine(x, y, height, color) {
+      // Twombly's characteristic lines
+      push();
+      
+      // Line properties
+      const lineLength = random(50, 200);
+      const angle = random(-0.2, 0.2);
+      
+      // Draw line
+      stroke(color);
+      strokeWeight(random(0.5, 3));
+      
+      // Trembling, uncertain line
+      const segments = floor(random(5, 15));
+      let prevX = x;
+      let prevY = y;
+      
+      for (let i = 1; i <= segments; i++) {
+        const t = i / segments;
+        const newX = x + cos(angle) * lineLength * t + random(-5, 5);
+        const newY = y + sin(angle) * lineLength * t + random(-5, 5);
+        
+        line(prevX, prevY, newX, newY);
+        
+        prevX = newX;
+        prevY = newY;
+      }
+      
+      pop();
+    }
+    
+    function drawTwomblyShape(x, y, color) {
+      // Twombly's simple shapes
+      push();
+      translate(x, y);
+      
+      // Shape properties
+      const shapeSize = random(10, 40);
+      
+      // Draw shape
+      stroke(color);
+      strokeWeight(random(0.5, 2));
+      
+      if (random() < 0.5) {
+        // Circle/oval
+        noFill();
+        ellipse(0, 0, shapeSize, shapeSize * random(0.7, 1.3));
+      } else {
+        // Rectangle/house shape
+        noFill();
+        rect(-shapeSize/2, -shapeSize/2, shapeSize, shapeSize);
+        
+        // Sometimes add roof
+        if (random() < 0.5) {
+          line(-shapeSize/2, -shapeSize/2, 0, -shapeSize);
+          line(0, -shapeSize, shapeSize/2, -shapeSize/2);
+        }
+      }
+      
+      pop();
+    }
+    
+    function createTwomblySmudges(palette) {
+      // Add characteristic smudges and drips
+      for (let i = 0; i < random(5, 15); i++) {
+        const x = random(width);
+        const y = random(height);
+        
+        // Select color
+        const smudgeColor = random(palette);
+        const r = parseInt(smudgeColor.substring(1, 3), 16);
+        const g = parseInt(smudgeColor.substring(3, 5), 16);
+        const b = parseInt(smudgeColor.substring(5, 7), 16);
+        
+        // Draw smudge
+        noStroke();
+        fill(r, g, b, random(10, 40));
+        
+        beginShape();
+        const numPoints = floor(random(5, 10));
+        const smudgeSize = random(10, 50);
+        
+        for (let j = 0; j < numPoints; j++) {
+          const angle = map(j, 0, numPoints - 1, 0, TWO_PI);
+          const radius = smudgeSize * random(0.5, 1.5);
+          const sx = x + cos(angle) * radius;
+          const sy = y + sin(angle) * radius;
+          curveVertex(sx, sy);
+        }
+        endShape(CLOSE);
+        
+        // Sometimes add drips
+        if (random() < 0.3) {
+          const numDrips = floor(random(1, 4));
+          
+          for (let d = 0; d < numDrips; d++) {
+            const dripX = x + random(-smudgeSize/2, smudgeSize/2);
+            const dripY = y + smudgeSize/2;
+            const dripLength = random(10, 50);
+            
+            // Draw drip
+            fill(r, g, b, random(20, 60));
+            beginShape();
+            vertex(dripX - 2, dripY);
+            vertex(dripX + 2, dripY);
+            vertex(dripX + random(1, 3), dripY + dripLength);
+            vertex(dripX - random(1, 3), dripY + dripLength);
+            endShape(CLOSE);
+          }
+        }
+      }
+    }
+    
+    function createTwomblyDelicateMarks(palette) {
+      // Add final sparse, delicate marks
+      for (let i = 0; i < random(20, 50); i++) {
+        const x = random(width);
+        const y = random(height);
+        
+        // Select color
+        const markColor = random(palette);
+        
+        // Draw delicate mark
+        stroke(markColor);
+        strokeWeight(random(0.1, 1));
+        
+        if (random() < 0.7) {
+          // Small line
+          const len = random(5, 20);
+          const angle = random(TWO_PI);
+          line(x, y, x + cos(angle) * len, y + sin(angle) * len);
+        } else {
+          // Small dot
+          point(x, y);
+        }
+      }
+      
+      // Add occasional text-like marks
+      for (let i = 0; i < random(3, 8); i++) {
+        const x = random(width);
+        const y = random(height);
+        
+        // Select color
+        const markColor = random(palette);
+        
+        // Draw text-like mark
+        stroke(markColor);
+        strokeWeight(random(0.5, 1));
+        noFill();
+        
+        // Create a small cluster of marks
+        push();
+        translate(x, y);
+        
+        const numMarks = floor(random(3, 8));
+        const clusterWidth = random(20, 60);
+        
+        for (let j = 0; j < numMarks; j++) {
+          const markX = map(j, 0, numMarks - 1, 0, clusterWidth);
+          const markHeight = random(5, 15);
+          
+          // Draw a mark
+          if (random() < 0.6) {
+            // Vertical line
+            line(markX, -markHeight/2, markX, markHeight/2);
+          } else {
+            // Circle or loop
+            ellipse(markX, 0, random(3, 8), random(3, 8));
+          }
+        }
+        
+        pop();
+      }
+    }
+  </script>
+</body>
+</html>
