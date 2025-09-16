@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Morphogenesis - Computational Art</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 200;
+        }
+        
+        canvas {
+            display: block;
+            background: linear-gradient(45deg, #000000, #0a0a0a, #000000);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.1) 100%);
+        }
+        
+        .info {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            z-index: 20;
+            opacity: 0;
+            animation: fadeIn 3s ease-out 2s forwards;
+        }
+        
+        .title {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            font-weight: 200;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            z-index: 20;
+            text-align: right;
+            opacity: 0;
+            animation: fadeIn 3s ease-out 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="overlay"></div>
+    
+    <div class="title">
+        Data Morphogenesis<br>
+        <span style="font-size: 10px; opacity: 0.5; font-weight: 300;">Computational Art Installation - September 2025</span>
+    </div>
+    
+    <div class="info">
+        Neural Network Visualization
+    </div>
+
+    <script>
+        class DataMorphogenesis {
+            constructor() {
+                this.canvas = document.getElementById('canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.setupCanvas();
+                
+                // Core systems
+                this.dataPoints = [];
+                this.connections = [];
+                this.morphTargets = [];
+                
+                // Animation state
+                this.time = 0;
+                this.morphPhase = 0;
+                this.currentPattern = 0;
+                this.nextPattern = 1;
+                this.transitionSpeed = 0.0005;
+                
+                // Camera system
+                this.camera = {
+                    zoom: 1,
+                    targetZoom: 1,
+                    x: 0,
+                    y: 0,
+                    targetX: 0,
+                    targetY: 0,
+                    phase: 0,
+                    speed: 0.0003
+                };
+                
+                // Visual parameters (optimized for performance)
+                this.nodeCount = 300; // Reduced for better performance
+                this.maxConnections = 150;
+                
+                // Cosmic & Natural Color Schemes (Refik Anadol-inspired)
+                this.colorSchemes = [
+                    // Deep Space Nebula
+                    {
+                        primary: [45, 85, 135],      // Deep space blue
+                        secondary: [85, 45, 105],    // Cosmic purple
+                        accent: [65, 125, 185],      // Nebula cyan
+                        background: [8, 12, 20]      // Deep void
+                    },
+                    // Aurora Borealis
+                    {
+                        primary: [35, 105, 85],      // Aurora green
+                        secondary: [125, 75, 145],   // Aurora purple
+                        accent: [85, 165, 125],      // Northern lights
+                        background: [5, 15, 25]      // Night sky
+                    },
+                    // Golden Hour
+                    {
+                        primary: [145, 95, 55],      // Warm gold
+                        secondary: [165, 125, 85],   // Sunset orange
+                        accent: [115, 135, 165],     // Evening blue
+                        background: [15, 10, 8]      // Twilight
+                    },
+                    // Ocean Depths
+                    {
+                        primary: [25, 65, 95],       // Deep ocean
+                        secondary: [45, 85, 115],    // Ocean blue
+                        accent: [65, 105, 135],      // Seafoam
+                        background: [3, 8, 15]       // Abyss
+                    },
+                    // Cosmic Dust
+                    {
+                        primary: [105, 75, 95],      // Cosmic dust
+                        secondary: [125, 95, 115],   // Star formation
+                        accent: [145, 115, 135],     // Stellar wind
+                        background: [12, 8, 15]      // Space dust
+                    },
+                    // Solar Corona
+                    {
+                        primary: [165, 135, 95],     // Solar gold
+                        secondary: [185, 155, 115],  // Corona orange
+                        accent: [145, 165, 185],     // Solar blue
+                        background: [18, 15, 10]     // Solar darkness
+                    },
+                    // Midnight Forest
+                    {
+                        primary: [45, 75, 65],       // Forest green
+                        secondary: [65, 95, 85],     // Moss green
+                        accent: [85, 115, 105],      // Moonlit leaves
+                        background: [8, 15, 12]      // Deep forest
+                    },
+                    // Quantum Field
+                    {
+                        primary: [85, 65, 125],      // Quantum purple
+                        secondary: [105, 85, 145],   // Energy field
+                        accent: [125, 105, 165],     // Particle glow
+                        background: [10, 8, 18]      // Quantum void
+                    }
+                ];
+                
+                this.currentScheme = this.colorSchemes[0];
+                this.targetScheme = this.colorSchemes[1];
+                
+                this.init();
+                this.animate();
+            }
+            
+            setupCanvas() {
+                this.canvas.width = window.innerWidth * window.devicePixelRatio;
+                this.canvas.height = window.innerHeight * window.devicePixelRatio;
+                this.canvas.style.width = window.innerWidth + 'px';
+                this.canvas.style.height = window.innerHeight + 'px';
+                this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+                
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+            }
+            
+            init() {
+                this.generateDataPoints();
+                this.generateDataStreams();
+                this.generateMorphTargets();
+            }
+            
+            generateDataPoints() {
+                this.dataPoints = [];
+                
+                // Generate points in multiple formation patterns for rich visuals
+                for (let i = 0; i < this.nodeCount; i++) {
+                    // Create various initial patterns
+                    const patternType = Math.floor(Math.random() * 4);
+                    let x, y;
+                    
+                    switch(patternType) {
+                        case 0: // Spiral formation
+                            const spiralAngle = (i / this.nodeCount) * Math.PI * 4;
+                            const spiralRadius = (i / this.nodeCount) * Math.min(this.width, this.height) * 0.2;
+                            x = this.width / 2 + Math.cos(spiralAngle) * spiralRadius;
+                            y = this.height / 2 + Math.sin(spiralAngle) * spiralRadius;
+                            break;
+                        case 1: // Grid formation
+                            const cols = Math.ceil(Math.sqrt(this.nodeCount / 4));
+                            x = (i % cols) * (this.width / cols) + Math.random() * 50;
+                            y = Math.floor(i / cols) * (this.height / Math.ceil(this.nodeCount / 4 / cols)) + Math.random() * 50;
+                            break;
+                        case 2: // Circular formation
+                            const circleAngle = (i / this.nodeCount) * Math.PI * 2;
+                            const circleRadius = Math.min(this.width, this.height) * 0.3;
+                            x = this.width / 2 + Math.cos(circleAngle) * circleRadius;
+                            y = this.height / 2 + Math.sin(circleAngle) * circleRadius;
+                            break;
+                        default: // Random organic formation
+                            x = Math.random() * this.width;
+                            y = Math.random() * this.height;
+                    }
+
+                    this.dataPoints.push({
+                        id: i,
+                        x: x,
+                        y: y,
+                        originalX: x,
+                        originalY: y,
+                        targetX: x,
+                        targetY: y,
+                        vx: (Math.random() - 0.5) * 2,
+                        vy: (Math.random() - 0.5) * 2,
+                        size: Math.random() * 4 + 1,
+                        intensity: Math.random() * 0.8 + 0.2,
+                        phase: Math.random() * Math.PI * 2,
+                        frequency: Math.random() * 0.02 + 0.005,
+                        connections: [],
+                        trail: [],
+                        energy: Math.random()
+                    });
+                }
+                
+                this.generateConnections();
+            }
+            
+            generateConnections() {
+                this.connections = [];
+                
+                for (let i = 0; i < this.dataPoints.length; i++) {
+                    const point = this.dataPoints[i];
+                    const nearbyPoints = [];
+                    
+                    for (let j = 0; j < this.dataPoints.length; j++) {
+                        if (i !== j) {
+                            const target = this.dataPoints[j];
+                            const distance = Math.sqrt(
+                                Math.pow(point.x - target.x, 2) + 
+                                Math.pow(point.y - target.y, 2)
+                            );
+                            
+                            if (distance < 180) {
+                                nearbyPoints.push({ point: target, distance });
+                            }
+                        }
+                    }
+                    
+                    nearbyPoints.sort((a, b) => a.distance - b.distance);
+                    const connectionsToMake = Math.min(3, nearbyPoints.length);
+                    
+                    for (let k = 0; k < connectionsToMake; k++) {
+                        const target = nearbyPoints[k];
+                        this.connections.push({
+                            from: point,
+                            to: target.point,
+                            strength: 1 - (target.distance / 180),
+                            phase: Math.random() * Math.PI * 2,
+                            frequency: Math.random() * 0.02 + 0.01
+                        });
+                    }
+                }
+            }
+            
+            generateDataStreams() {
+                this.dataStreams = [];
+                this.cosmicDust = [];
+                this.energyFields = [];
+                
+                // Generate flowing data streams
+                for (let i = 0; i < 8; i++) {
+                    this.dataStreams.push({
+                        particles: [],
+                        spawnRate: Math.random() * 0.5 + 0.2,
+                        direction: Math.random() * Math.PI * 2,
+                        speed: Math.random() * 2 + 0.5,
+                        color: i % 3,
+                        turbulence: Math.random() * 0.02 + 0.005
+                    });
+                }
+                
+                // Generate cosmic dust field
+                for (let i = 0; i < 150; i++) {
+                    this.cosmicDust.push({
+                        x: Math.random() * this.width,
+                        y: Math.random() * this.height,
+                        z: Math.random() * 100, // depth
+                        vx: (Math.random() - 0.5) * 0.3,
+                        vy: (Math.random() - 0.5) * 0.3,
+                        vz: Math.random() * 0.5 + 0.1,
+                        size: Math.random() * 2 + 0.5,
+                        life: Math.random(),
+                        phase: Math.random() * Math.PI * 2
+                    });
+                }
+                
+                // Generate organic energy fields
+                for (let i = 0; i < 6; i++) {
+                    this.energyFields.push({
+                        centerX: Math.random() * this.width,
+                        centerY: Math.random() * this.height,
+                        radius: Math.random() * 200 + 100,
+                        intensity: Math.random() * 0.3 + 0.1,
+                        rotation: Math.random() * Math.PI * 2,
+                        rotationSpeed: (Math.random() - 0.5) * 0.002,
+                        pulsePhase: Math.random() * Math.PI * 2,
+                        pulseSpeed: Math.random() * 0.005 + 0.002
+                    });
+                }
+            }
+            
+            generateMorphTargets() {
+                this.morphTargets = [];
+                
+                // Create different morphing patterns
+                const patterns = [
+                    'spiral', 'wave', 'burst', 'grid', 'organic'
+                ];
+                
+                patterns.forEach((pattern, index) => {
+                    const targets = [];
+                    
+                    for (let i = 0; i < this.nodeCount; i++) {
+                        let targetX, targetY;
+                        
+                        switch (pattern) {
+                            case 'spiral':
+                                const angle = (i / this.nodeCount) * Math.PI * 8;
+                                const radius = (i / this.nodeCount) * Math.min(this.width, this.height) * 0.3;
+                                targetX = this.width / 2 + Math.cos(angle) * radius;
+                                targetY = this.height / 2 + Math.sin(angle) * radius;
+                                break;
+                                
+                            case 'wave':
+                                targetX = (i / this.nodeCount) * this.width;
+                                targetY = this.height / 2 + Math.sin(targetX * 0.01) * 100;
+                                break;
+                                
+                            case 'burst':
+                                const burstAngle = Math.random() * Math.PI * 2;
+                                const burstRadius = Math.random() * Math.min(this.width, this.height) * 0.4;
+                                targetX = this.width / 2 + Math.cos(burstAngle) * burstRadius;
+                                targetY = this.height / 2 + Math.sin(burstAngle) * burstRadius;
+                                break;
+                                
+                            case 'grid':
+                                const cols = Math.ceil(Math.sqrt(this.nodeCount));
+                                const rows = Math.ceil(this.nodeCount / cols);
+                                const col = i % cols;
+                                const row = Math.floor(i / cols);
+                                targetX = (col / cols) * this.width * 0.8 + this.width * 0.1;
+                                targetY = (row / rows) * this.height * 0.8 + this.height * 0.1;
+                                break;
+                                
+                            case 'organic':
+                            default:
+                                targetX = this.width / 2 + (Math.random() - 0.5) * this.width * 0.6;
+                                targetY = this.height / 2 + (Math.random() - 0.5) * this.height * 0.6;
+                                break;
+                        }
+                        
+                        targets.push({ x: targetX, y: targetY });
+                    }
+                    
+                    this.morphTargets.push(targets);
+                });
+            }
+            
+            updateMorphing() {
+                // Update morphing phase for continuous transitions
+                this.morphPhase += this.transitionSpeed;
+                
+                if (this.morphPhase >= 1) {
+                    this.morphPhase = 0;
+                    this.currentPattern = this.nextPattern;
+                    this.nextPattern = (this.nextPattern + 1) % this.morphTargets.length;
+                    
+                    // Update color schemes
+                    this.currentScheme = this.targetScheme;
+                    this.targetScheme = this.colorSchemes[(this.colorSchemes.indexOf(this.targetScheme) + 1) % this.colorSchemes.length];
+                    
+                    // Update camera target when pattern changes
+                    this.updateCameraTarget();
+                }
+                
+                // Morph data points towards target positions
+                this.dataPoints.forEach((point, index) => {
+                    if (this.morphTargets[this.currentPattern] && this.morphTargets[this.nextPattern]) {
+                        const currentTarget = this.morphTargets[this.currentPattern][index];
+                        const nextTarget = this.morphTargets[this.nextPattern][index];
+                        
+                        if (currentTarget && nextTarget) {
+                            point.targetX = this.lerp(currentTarget.x, nextTarget.x, this.morphPhase);
+                            point.targetY = this.lerp(currentTarget.y, nextTarget.y, this.morphPhase);
+                            
+                            // Smooth movement towards targets
+                            const dx = point.targetX - point.x;
+                            const dy = point.targetY - point.y;
+                            point.vx += dx * 0.002;
+                            point.vy += dy * 0.002;
+                            
+                            // Apply velocity with damping
+                            point.vx *= 0.95;
+                            point.vy *= 0.95;
+                            point.x += point.vx;
+                            point.y += point.vy;
+                        }
+                    }
+                    
+                    // Update trails
+                    point.trail.push({ x: point.x, y: point.y, alpha: 1 });
+                    if (point.trail.length > 20) {
+                        point.trail.shift();
+                    }
+                    
+                    // Update energy for pulsing effects
+                    point.energy = Math.sin(this.time * point.frequency + point.phase) * 0.5 + 0.5;
+                });
+            }
+            
+            updateCameraTarget() {
+                // Define different camera behaviors for each pattern
+                const cameraStates = [
+                    // Deep Space - Wide view
+                    { zoom: 0.8, x: 0, y: 0 },
+                    // Aurora - Macro zoom on center
+                    { zoom: 2.5, x: -this.width * 0.2, y: -this.height * 0.1 },
+                    // Golden Hour - Pan right and zoom
+                    { zoom: 1.8, x: -this.width * 0.3, y: -this.height * 0.2 },
+                    // Ocean - Wide with slight offset
+                    { zoom: 1.2, x: this.width * 0.1, y: this.height * 0.1 },
+                    // Cosmic Dust - Close macro
+                    { zoom: 3.2, x: -this.width * 0.4, y: -this.height * 0.3 }
+                ];
+                
+                const targetState = cameraStates[this.currentPattern % cameraStates.length];
+                this.camera.targetZoom = targetState.zoom;
+                this.camera.targetX = targetState.x;
+                this.camera.targetY = targetState.y;
+            }
+            
+            updateCamera() {
+                // Update camera phase for additional organic movement
+                this.camera.phase += this.camera.speed;
+                
+                // Smooth interpolation to targets
+                this.camera.zoom += (this.camera.targetZoom - this.camera.zoom) * 0.005;
+                this.camera.x += (this.camera.targetX - this.camera.x) * 0.008;
+                this.camera.y += (this.camera.targetY - this.camera.y) * 0.008;
+                
+                // Add subtle organic movement
+                const organicX = Math.sin(this.camera.phase * 2.3) * 20;
+                const organicY = Math.sin(this.camera.phase * 1.7) * 15;
+                const organicZoom = Math.sin(this.camera.phase * 0.8) * 0.1;
+                
+                // Apply camera transform
+                this.ctx.save();
+                this.ctx.translate(this.width / 2, this.height / 2);
+                this.ctx.scale(this.camera.zoom + organicZoom, this.camera.zoom + organicZoom);
+                this.ctx.translate(-this.width / 2 + this.camera.x + organicX, -this.height / 2 + this.camera.y + organicY);
+            }
+            
+            resetCamera() {
+                this.ctx.restore();
+            }
+            
+            renderBackground() {
+                // Simplified but still beautiful background
+                const bg = this.getCurrentColor('background');
+                const primary = this.getCurrentColor('primary');
+                
+                // Single optimized gradient
+                const gradient = this.ctx.createRadialGradient(
+                    this.width / 2, this.height / 2, 0,
+                    this.width / 2, this.height / 2, Math.max(this.width, this.height) * 0.7
+                );
+                gradient.addColorStop(0, `rgba(${bg.join(',')}, 1)`);
+                gradient.addColorStop(0.8, `rgba(${primary.join(',')}, 0.02)`);
+                gradient.addColorStop(1, `rgba(${primary.join(',')}, 0.005)`);
+                
+                this.ctx.fillStyle = gradient;
+                this.ctx.fillRect(0, 0, this.width, this.height);
+            }
+            
+            renderBackgroundElements() {
+                // Render cosmic dust field for depth
+                this.renderCosmicDust();
+                
+                // Render organic energy fields
+                this.renderEnergyFields();
+                
+                // Render flowing data streams
+                this.renderDataStreams();
+            }
+            
+            renderCosmicDust() {
+                this.ctx.globalCompositeOperation = 'lighter';
+                
+                this.cosmicDust.forEach(dust => {
+                    // Update dust position and properties
+                    dust.x += dust.vx;
+                    dust.y += dust.vy;
+                    dust.z += dust.vz;
+                    dust.life += 0.003;
+                    
+                    // Wrap around screen
+                    if (dust.x < -50) dust.x = this.width + 50;
+                    if (dust.x > this.width + 50) dust.x = -50;
+                    if (dust.y < -50) dust.y = this.height + 50;
+                    if (dust.y > this.height + 50) dust.y = -50;
+                    if (dust.z > 100) dust.z = 0;
+                    
+                    // Calculate size and alpha based on depth
+                    const depthFactor = dust.z / 100;
+                    const size = dust.size * (0.3 + depthFactor * 0.7);
+                    const alpha = (1 - depthFactor) * 0.4 * Math.sin(dust.life + dust.phase) * 0.5 + 0.5;
+                    
+                    if (alpha > 0.01) {
+                        const colors = [
+                            this.getCurrentColor('primary'),
+                            this.getCurrentColor('secondary'),
+                            this.getCurrentColor('accent')
+                        ];
+                        const color = colors[Math.floor(dust.phase * 3) % 3];
+                        
+                        const gradient = this.ctx.createRadialGradient(
+                            dust.x, dust.y, 0,
+                            dust.x, dust.y, size * 3
+                        );
+                        gradient.addColorStop(0, `rgba(${color.join(',')}, ${alpha})`);
+                        gradient.addColorStop(1, `rgba(${color.join(',')}, 0)`);
+                        
+                        this.ctx.fillStyle = gradient;
+                        this.ctx.beginPath();
+                        this.ctx.arc(dust.x, dust.y, size * 3, 0, Math.PI * 2);
+                        this.ctx.fill();
+                    }
+                });
+                
+                this.ctx.globalCompositeOperation = 'source-over';
+            }
+            
+            renderEnergyFields() {
+                this.energyFields.forEach((field, index) => {
+                    // Update field properties
+                    field.rotation += field.rotationSpeed;
+                    field.pulsePhase += field.pulseSpeed;
+                    
+                    const pulse = Math.sin(field.pulsePhase) * 0.3 + 0.7;
+                    const currentRadius = field.radius * pulse;
+                    const currentIntensity = field.intensity * pulse;
+                    
+                    // Slowly move field centers
+                    field.centerX += Math.sin(this.time * 0.0005 + index) * 0.3;
+                    field.centerY += Math.cos(this.time * 0.0007 + index * 1.3) * 0.2;
+                    
+                    // Keep fields within bounds
+                    if (field.centerX < 0) field.centerX = this.width;
+                    if (field.centerX > this.width) field.centerX = 0;
+                    if (field.centerY < 0) field.centerY = this.height;
+                    if (field.centerY > this.height) field.centerY = 0;
+                    
+                    // Create organic field pattern
+                    const segments = 24;
+                    const color = this.getCurrentColor(index % 2 === 0 ? 'accent' : 'secondary');
+                    
+                    for (let i = 0; i < segments; i++) {
+                        const angle = (i / segments) * Math.PI * 2 + field.rotation;
+                        const nextAngle = ((i + 1) / segments) * Math.PI * 2 + field.rotation;
+                        
+                        const radiusVariation = 0.7 + Math.sin(angle * 3 + this.time * 0.004) * 0.3;
+                        const radius1 = currentRadius * radiusVariation;
+                        const radius2 = currentRadius * (0.7 + Math.sin(nextAngle * 3 + this.time * 0.004) * 0.3);
+                        
+                        const x1 = field.centerX + Math.cos(angle) * radius1;
+                        const y1 = field.centerY + Math.sin(angle) * radius1;
+                        const x2 = field.centerX + Math.cos(nextAngle) * radius2;
+                        const y2 = field.centerY + Math.sin(nextAngle) * radius2;
+                        
+                        const segmentAlpha = currentIntensity * (0.8 + Math.sin(angle + this.time * 0.01) * 0.2);
+                        
+                        // Create gradient line
+                        const gradient = this.ctx.createLinearGradient(
+                            field.centerX, field.centerY, x1, y1
+                        );
+                        gradient.addColorStop(0, `rgba(${color.join(',')}, ${segmentAlpha * 0.1})`);
+                        gradient.addColorStop(1, `rgba(${color.join(',')}, ${segmentAlpha})`);
+                        
+                        this.ctx.strokeStyle = gradient;
+                        this.ctx.lineWidth = 0.8;
+                        this.ctx.globalAlpha = 0.6;
+                        this.ctx.beginPath();
+                        this.ctx.moveTo(field.centerX, field.centerY);
+                        this.ctx.lineTo(x1, y1);
+                        this.ctx.stroke();
+                        this.ctx.globalAlpha = 1;
+                    }
+                });
+            }
+            
+            renderDataStreams() {
+                this.dataStreams.forEach((stream, streamIndex) => {
+                    // Spawn new particles
+                    if (Math.random() < stream.spawnRate * 0.3) {
+                        const spawnEdge = Math.floor(Math.random() * 4);
+                        let x, y;
+                        
+                        switch(spawnEdge) {
+                            case 0: x = Math.random() * this.width; y = -10; break;
+                            case 1: x = this.width + 10; y = Math.random() * this.height; break;
+                            case 2: x = Math.random() * this.width; y = this.height + 10; break;
+                            case 3: x = -10; y = Math.random() * this.height; break;
+                        }
+                        
+                        stream.particles.push({
+                            x: x,
+                            y: y,
+                            vx: Math.cos(stream.direction) * stream.speed,
+                            vy: Math.sin(stream.direction) * stream.speed,
+                            life: 1,
+                            size: Math.random() * 2 + 0.5,
+                            trail: []
+                        });
+                    }
+                    
+                    // Update and render particles
+                    stream.particles = stream.particles.filter(particle => {
+                        // Add turbulence
+                        const turbulenceX = Math.sin(this.time * 0.005 + particle.x * stream.turbulence) * 0.5;
+                        const turbulenceY = Math.cos(this.time * 0.007 + particle.y * stream.turbulence) * 0.3;
+                        
+                        particle.x += particle.vx + turbulenceX;
+                        particle.y += particle.vy + turbulenceY;
+                        particle.life -= 0.008;
+                        
+                        // Add to trail
+                        particle.trail.push({ x: particle.x, y: particle.y, alpha: particle.life });
+                        if (particle.trail.length > 15) {
+                            particle.trail.shift();
+                        }
+                        
+                        // Render particle and trail
+                        if (particle.life > 0) {
+                            const colors = [
+                                this.getCurrentColor('primary'),
+                                this.getCurrentColor('secondary'),
+                                this.getCurrentColor('accent')
+                            ];
+                            const color = colors[stream.color];
+                            
+                            // Render trail
+                            particle.trail.forEach((point, index) => {
+                                const trailAlpha = (index / particle.trail.length) * point.alpha * 0.3;
+                                if (trailAlpha > 0.01) {
+                                    this.ctx.fillStyle = `rgba(${color.join(',')}, ${trailAlpha})`;
+                                    this.ctx.beginPath();
+                                    this.ctx.arc(point.x, point.y, 0.8, 0, Math.PI * 2);
+                                    this.ctx.fill();
+                                }
+                            });
+                            
+                            // Render main particle
+                            const gradient = this.ctx.createRadialGradient(
+                                particle.x, particle.y, 0,
+                                particle.x, particle.y, particle.size * 2
+                            );
+                            gradient.addColorStop(0, `rgba(${color.join(',')}, ${particle.life * 0.8})`);
+                            gradient.addColorStop(1, `rgba(${color.join(',')}, 0)`);
+                            
+                            this.ctx.fillStyle = gradient;
+                            this.ctx.beginPath();
+                            this.ctx.arc(particle.x, particle.y, particle.size * 2, 0, Math.PI * 2);
+                            this.ctx.fill();
+                            
+                            return true;
+                        }
+                        return false;
+                    });
+                    
+                    // Update stream direction slightly
+                    stream.direction += Math.sin(this.time * 0.002 + streamIndex) * 0.01;
+                });
+            }
+            
+            renderConnections() {
+                this.ctx.globalCompositeOperation = 'lighter';
+                
+                this.connections.forEach(connection => {
+                    const distance = Math.sqrt(
+                        Math.pow(connection.from.x - connection.to.x, 2) + 
+                        Math.pow(connection.from.y - connection.to.y, 2)
+                    );
+                    
+                    if (distance < 180) {
+                        const alpha = (1 - distance / 180) * 0.25;
+                        const pulse = Math.sin(this.time * connection.frequency + connection.phase) * 0.4 + 0.6;
+                        const color = this.getCurrentColor('accent');
+                        const secondaryColor = this.getCurrentColor('secondary');
+                        
+                        // Create organic curve control points
+                        const midX = (connection.from.x + connection.to.x) / 2;
+                        const midY = (connection.from.y + connection.to.y) / 2;
+                        
+                        // Add organic curves with time-based variations
+                        const curvature1 = Math.sin(this.time * 0.005 + connection.phase) * (distance * 0.3);
+                        const curvature2 = Math.cos(this.time * 0.007 + connection.phase * 1.3) * (distance * 0.2);
+                        
+                        // Calculate perpendicular offset for natural curve
+                        const dx = connection.to.x - connection.from.x;
+                        const dy = connection.to.y - connection.from.y;
+                        const perpX = -dy / distance;
+                        const perpY = dx / distance;
+                        
+                        const control1X = midX + perpX * curvature1 + Math.sin(this.time * 0.003 + connection.phase) * 20;
+                        const control1Y = midY + perpY * curvature1 + Math.cos(this.time * 0.004 + connection.phase) * 15;
+                        const control2X = midX + perpX * curvature2 + Math.sin(this.time * 0.006 + connection.phase * 0.7) * 15;
+                        const control2Y = midY + perpY * curvature2 + Math.cos(this.time * 0.005 + connection.phase * 0.8) * 20;
+                        
+                        // Draw organic connection with varying thickness
+                        const segments = 12;
+                        for (let i = 0; i < segments; i++) {
+                            const t1 = i / segments;
+                            const t2 = (i + 1) / segments;
+                            
+                            // Calculate points on bezier curve
+                            const p1 = this.getBezierPoint(
+                                connection.from.x, connection.from.y,
+                                control1X, control1Y,
+                                control2X, control2Y,
+                                connection.to.x, connection.to.y,
+                                t1
+                            );
+                            const p2 = this.getBezierPoint(
+                                connection.from.x, connection.from.y,
+                                control1X, control1Y,
+                                control2X, control2Y,
+                                connection.to.x, connection.to.y,
+                                t2
+                            );
+                            
+                            // Organic thickness variation
+                            const thickness = connection.strength * (1.2 + Math.sin(t1 * Math.PI * 2 + this.time * 0.01) * 0.4) * pulse;
+                            const segmentAlpha = alpha * (0.8 + Math.sin(t1 * Math.PI + this.time * 0.008) * 0.2);
+                            
+                            // Main organic stroke
+                            this.ctx.strokeStyle = `rgba(${color.join(',')}, ${segmentAlpha})`;
+                            this.ctx.lineWidth = thickness;
+                            this.ctx.lineCap = 'round';
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(p1.x, p1.y);
+                            this.ctx.lineTo(p2.x, p2.y);
+                            this.ctx.stroke();
+                            
+                            // Add inner glow
+                            if (thickness > 1) {
+                                this.ctx.strokeStyle = `rgba(${secondaryColor.join(',')}, ${segmentAlpha * 0.6})`;
+                                this.ctx.lineWidth = thickness * 0.4;
+                                this.ctx.beginPath();
+                                this.ctx.moveTo(p1.x, p1.y);
+                                this.ctx.lineTo(p2.x, p2.y);
+                                this.ctx.stroke();
+                            }
+                        }
+                        
+                        // Organic flowing energy particles
+                        const numParticles = 2 + Math.floor(pulse * 2);
+                        for (let p = 0; p < numParticles; p++) {
+                            const flow = ((this.time * 0.008 + connection.phase + p * 0.3) % 1);
+                            const flowPoint = this.getBezierPoint(
+                                connection.from.x, connection.from.y,
+                                control1X, control1Y,
+                                control2X, control2Y,
+                                connection.to.x, connection.to.y,
+                                flow
+                            );
+                            
+                            const particleSize = (2 + Math.sin(this.time * 0.01 + p) * 1) * pulse;
+                            const particleAlpha = alpha * (1.2 - p * 0.3);
+                            
+                            // Organic particle glow
+                            const gradient = this.ctx.createRadialGradient(
+                                flowPoint.x, flowPoint.y, 0,
+                                flowPoint.x, flowPoint.y, particleSize * 3
+                            );
+                            gradient.addColorStop(0, `rgba(${color.join(',')}, ${particleAlpha})`);
+                            gradient.addColorStop(0.5, `rgba(${secondaryColor.join(',')}, ${particleAlpha * 0.6})`);
+                            gradient.addColorStop(1, `rgba(${color.join(',')}, 0)`);
+                            
+                            this.ctx.fillStyle = gradient;
+                            this.ctx.beginPath();
+                            this.ctx.arc(flowPoint.x, flowPoint.y, particleSize * 3, 0, Math.PI * 2);
+                            this.ctx.fill();
+                        }
+                    }
+                });
+                
+                this.ctx.globalCompositeOperation = 'source-over';
+            }
+            
+            getBezierPoint(x1, y1, cx1, cy1, cx2, cy2, x2, y2, t) {
+                // Cubic bezier curve calculation
+                const mt = 1 - t;
+                const mt2 = mt * mt;
+                const mt3 = mt2 * mt;
+                const t2 = t * t;
+                const t3 = t2 * t;
+                
+                return {
+                    x: mt3 * x1 + 3 * mt2 * t * cx1 + 3 * mt * t2 * cx2 + t3 * x2,
+                    y: mt3 * y1 + 3 * mt2 * t * cy1 + 3 * mt * t2 * cy2 + t3 * y2
+                };
+            }
+            
+            renderDataPoints() {
+                this.dataPoints.forEach(point => {
+                    // Render organic trail with varying opacity
+                    point.trail.forEach((trailPoint, index) => {
+                        const trailAlpha = (index / point.trail.length) * 0.15;
+                        const color = this.getCurrentColor('primary');
+                        
+                        // Add subtle color variation to trails
+                        const colorVariation = color.map(c => c + Math.sin(this.time * 0.01 + index) * 6);
+                        
+                        this.ctx.fillStyle = `rgba(${colorVariation.join(',')}, ${trailAlpha})`;
+                        this.ctx.beginPath();
+                        const trailSize = 0.6 + Math.sin(this.time * 0.005 + index) * 0.2;
+                        this.ctx.arc(trailPoint.x, trailPoint.y, trailSize, 0, Math.PI * 2);
+                        this.ctx.fill();
+                        
+                        trailPoint.alpha *= 0.96;
+                    });
+                    
+                    // Main organic neuron with irregular shape
+                    const pulse = point.energy;
+                    const baseSize = point.size * (pulse * 0.3 + 0.7);
+                    const color = this.getCurrentColor('primary');
+                    const secondaryColor = this.getCurrentColor('secondary');
+                    const accentColor = this.getCurrentColor('accent');
+                    
+                    // Add organic color variations
+                    const colorNoise = Math.sin(this.time * 0.003 + point.phase) * 10;
+                    const organicColor = color.map(c => Math.max(0, Math.min(255, c + colorNoise)));
+                    const organicSecondary = secondaryColor.map(c => Math.max(0, Math.min(255, c + colorNoise * 0.5)));
+                    
+                    // Create organic neuron shape with membrane-like edges
+                    const segments = 8;
+                    const irregularity = 0.3;
+                    
+                    // Outer atmospheric glow
+                    const outerGradient = this.ctx.createRadialGradient(
+                        point.x, point.y, 0,
+                        point.x, point.y, baseSize * 10
+                    );
+                    outerGradient.addColorStop(0, `rgba(${accentColor.join(',')}, ${point.intensity * pulse * 0.08})`);
+                    outerGradient.addColorStop(0.4, `rgba(${organicColor.join(',')}, ${point.intensity * 0.05})`);
+                    outerGradient.addColorStop(1, `rgba(${organicColor.join(',')}, 0)`);
+                    
+                    this.ctx.fillStyle = outerGradient;
+                    this.ctx.beginPath();
+                    this.ctx.arc(point.x, point.y, baseSize * 10, 0, Math.PI * 2);
+                    this.ctx.fill();
+                    
+                    // Main organic neuron body with irregular shape
+                    this.ctx.beginPath();
+                    for (let i = 0; i <= segments; i++) {
+                        const angle = (i / segments) * Math.PI * 2;
+                        
+                        // Create organic shape variation
+                        const radiusVariation = 1 + Math.sin(angle * 3 + this.time * 0.005 + point.phase) * irregularity;
+                        const membraneFlutter = Math.sin(angle * 5 + this.time * 0.01 + point.phase * 1.3) * 0.1;
+                        const pulsatingRadius = (baseSize * 3) * (radiusVariation + membraneFlutter) * pulse;
+                        
+                        const x = point.x + Math.cos(angle) * pulsatingRadius;
+                        const y = point.y + Math.sin(angle) * pulsatingRadius;
+                        
+                        if (i === 0) {
+                            this.ctx.moveTo(x, y);
+                        } else {
+                            this.ctx.lineTo(x, y);
+                        }
+                    }
+                    this.ctx.closePath();
+                    
+                    // Fill with organic gradient
+                    const mainGradient = this.ctx.createRadialGradient(
+                        point.x, point.y, 0,
+                        point.x, point.y, baseSize * 3
+                    );
+                    mainGradient.addColorStop(0, `rgba(${organicColor.join(',')}, ${point.intensity * pulse * 0.7})`);
+                    mainGradient.addColorStop(0.5, `rgba(${organicSecondary.join(',')}, ${point.intensity * 0.5})`);
+                    mainGradient.addColorStop(0.8, `rgba(${organicColor.join(',')}, ${point.intensity * 0.15})`);
+                    mainGradient.addColorStop(1, `rgba(${organicColor.join(',')}, 0)`);
+                    
+                    this.ctx.fillStyle = mainGradient;
+                    this.ctx.fill();
+                    
+                    // Inner nucleus with organic pulsing
+                    const nucleusSize = baseSize * (0.8 + Math.sin(this.time * 0.008 + point.phase) * 0.2);
+                    const nucleusVariation = 0.15;
+                    
+                    this.ctx.beginPath();
+                    for (let i = 0; i <= 6; i++) {
+                        const angle = (i / 6) * Math.PI * 2;
+                        const radiusVar = 1 + Math.sin(angle * 4 + this.time * 0.012 + point.phase) * nucleusVariation;
+                        const radius = nucleusSize * radiusVar;
+                        
+                        const x = point.x + Math.cos(angle) * radius;
+                        const y = point.y + Math.sin(angle) * radius;
+                        
+                        if (i === 0) {
+                            this.ctx.moveTo(x, y);
+                        } else {
+                            this.ctx.lineTo(x, y);
+                        }
+                    }
+                    this.ctx.closePath();
+                    
+                    // Nucleus glow
+                    const nucleusColor = organicColor.map(c => Math.min(255, c + 25));
+                    const nucleusGradient = this.ctx.createRadialGradient(
+                        point.x, point.y, 0,
+                        point.x, point.y, nucleusSize
+                    );
+                    nucleusGradient.addColorStop(0, `rgba(${nucleusColor.join(',')}, ${pulse * 0.6})`);
+                    nucleusGradient.addColorStop(0.7, `rgba(${organicSecondary.join(',')}, ${pulse * 0.3})`);
+                    nucleusGradient.addColorStop(1, `rgba(${nucleusColor.join(',')}, 0)`);
+                    
+                    this.ctx.fillStyle = nucleusGradient;
+                    this.ctx.fill();
+                });
+            }
+            
+            renderParticleField() {
+                // Add floating particles for atmosphere
+                if (!this.particles) this.particles = [];
+                
+                // Generate new particles
+                if (Math.random() < 0.3) {
+                    this.particles.push({
+                        x: Math.random() * this.width,
+                        y: this.height + 10,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: -Math.random() * 2 - 0.5,
+                        size: Math.random() * 2 + 0.5,
+                        life: 1,
+                        decay: Math.random() * 0.02 + 0.005
+                    });
+                }
+                
+                // Update and render particles
+                this.particles = this.particles.filter(particle => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    particle.life -= particle.decay;
+                    
+                    if (particle.life > 0) {
+                        const color = this.getCurrentColor('accent');
+                        this.ctx.fillStyle = `rgba(${color.join(',')}, ${particle.life * 0.5})`;
+                        this.ctx.beginPath();
+                        this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                        this.ctx.fill();
+                        return true;
+                    }
+                    return false;
+                });
+            }
+            
+            getCurrentColor(type) {
+                const current = this.currentScheme[type];
+                const target = this.targetScheme[type];
+                
+                // More organic, breathing transition
+                const baseTransition = Math.sin(this.morphPhase * Math.PI) * 0.5 + 0.5;
+                const organicVariation = Math.sin(this.time * 0.002) * 0.1 + 0.9;
+                const t = baseTransition * organicVariation;
+                
+                return [
+                    Math.floor(this.lerp(current[0], target[0], t)),
+                    Math.floor(this.lerp(current[1], target[1], t)),
+                    Math.floor(this.lerp(current[2], target[2], t))
+                ];
+            }
+            
+            lerp(start, end, t) {
+                return start + (end - start) * t;
+            }
+            
+            animate() {
+                this.time += 0.4;
+                
+                // Clear canvas completely first
+                this.ctx.globalCompositeOperation = 'source-over';
+                this.ctx.fillStyle = '#000000';
+                this.ctx.fillRect(0, 0, this.width, this.height);
+                
+                // Update systems
+                this.updateMorphing();
+                this.updateCamera();
+                
+                // Render background with camera perspective
+                this.renderBackground();
+                
+                // Apply atmospheric fade with camera transform
+                const bg = this.getCurrentColor('background');
+                const fadeAlpha = 0.06 + Math.sin(this.time * 0.001) * 0.02;
+                this.ctx.fillStyle = `rgba(${bg.join(',')}, ${fadeAlpha})`;
+                this.ctx.fillRect(-this.width, -this.height, this.width * 3, this.height * 3);
+                
+                // Render layers in correct order for depth (all within camera transform)
+                this.renderBackgroundElements();
+                this.renderConnections();
+                this.renderParticleField();
+                this.renderDataPoints();
+                
+                // Reset camera transform
+                this.resetCamera();
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        
+        let artInstance;
+        
+        window.addEventListener('load', () => {
+            artInstance = new DataMorphogenesis();
+        });
+        
+        window.addEventListener('resize', () => {
+            if (artInstance) {
+                artInstance.setupCanvas();
+                artInstance.generateMorphTargets(); // Recalculate targets for new dimensions
+                artInstance.generateDataStreams(); // Regenerate background elements for new dimensions
+            }
+        });
+    </script>
+</body>
+</html>
