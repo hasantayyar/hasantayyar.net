@@ -7,8 +7,10 @@ categories: Visual
 
 Inspired by this shortest film (256 **Bytes** of Code) [Bitwise Liminal](https://killedbyapixel.github.io/TinyCode/256B/BitwiseLiminal/), I've vibe coded some small animation with the power of SVG.
 
-- [**A 193 Bytes animation**](https://hasantayyar.net/assets/micro-animations/193b.html) 
-- [**An 209 Bytes of animation**](https://hasantayyar.net/assets/micro-animations/209b.html)
+- [**193 Bytes**](https://hasantayyar.net/assets/micro-animations/193b.html) 
+- [**209 Bytes**](https://hasantayyar.net/assets/micro-animations/209b.html)
+- [**209 Bytes**](https://hasantayyar.net/assets/micro-animations/288b.html)
+
 
 
 Also see:
