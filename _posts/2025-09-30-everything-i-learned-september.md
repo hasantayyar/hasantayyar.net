@@ -32,9 +32,12 @@ There are other interesting compact databases here in this tool to benchmark the
 - [Elixir Koans](https://github.com/elixirkoans/elixir-koans): a fun, interactive way to learn idiomatic Elixir.
 
 #### Copying Files Faster on Linux
-- For large local copies: <pre>rsync -a --info=progress2 /source/ /destination/</pre>
-- For tons of small files: <pre>tar cf - /source | (cd /destination && tar xf -)</pre>
-- Across disks: <pre>rsync -a --info=progress2 --inplace --no-whole-file /source/ /destination/</pre>
+- For large local copies:
+<pre>rsync -a --info=progress2 /source/ /destination/</pre>
+- For tons of small files:
+<pre>tar cf - /source | (cd /destination && tar xf -)</pre>
+- Across disks:
+<pre>rsync -a --info=progress2 --inplace --no-whole-file /source/ /destination/</pre>
 
 #### 256 Bytes of Art
 
