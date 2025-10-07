@@ -38,6 +38,6 @@ There are other interesting compact databases here in this tool to benchmark the
 
 #### 256 Bytes of Art
 
-Discovered **A Mind Is Born** by **Linus Åkesson**. A full audiovisual demo packed into just 256 bytes of code. Crazy part is it's audio_visual and it's some random abstract shapes.
+Discovered **A Mind Is Born** by **Linus Åkesson**. A full audiovisual demo packed into just 256 bytes of code. Crazy part is it's audio and visual.
 
 - https://linusakesson.net/scene/a-mind-is-born/
