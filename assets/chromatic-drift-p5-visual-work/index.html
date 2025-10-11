@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromatic Drift - Generative Art</title>
+    <style>
+        body{margin:0;padding:0;overflow:hidden;background:#1a1a1a;font-family:'Arial',sans-serif;}
+        canvas{display:block;width:100vw!important;height:100vh!important;}
+        .info{position:absolute;bottom:20px;right:20px;color:rgba(255,255,255,0.3);font-size:12px;text-align:right;z-index:10;}
+        .info a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s ease;}
+        .info a:hover{color:rgba(255,255,255,0.8);}
+    </style>
+</head>
+<body>
+    <div class="info">
+        CHROMATIC DRIFT<br>
+        Generative Art, 2025<br>
+        <a href="https://hasantayyar.net" target="_blank">Hasan Tayyar Besik</a>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.2/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.brush"></script>
+    
+    <script>
+        //////////////////////////////////////////////////
+        // CANVAS CONFIGURATION
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+
+        //////////////////////////////////////////////////
+        // COLOR PALETTES - Multiple palettes for transitions
+        const palettes = [
+            ["#2d4654", "#7fa99b", "#fbf2d5", "#fdc57b", "#dd614a"],
+            ["#002185", "#fcd300", "#ff2702", "#6b9404", "#3d5a80"],
+            ["#e63946", "#f1faee", "#a8dadc", "#457b9d", "#1d3557"],
+            ["#264653", "#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"],
+            ["#6a4c93", "#1982c4", "#8ac926", "#ffca3a", "#ff595e"],
+            ["#390099", "#9e0059", "#ff0054", "#ff5400", "#ffbd00"]
+        ];
+
+        let currentPaletteIndex = 0;
+        let nextPaletteIndex = 1;
+        let paletteTransition = 0;
+
+        //////////////////////////////////////////////////
+        // SHAPE DEFINITIONS
+        class OrganicShape {
+            constructor(centerX, centerY, numPoints, radius, variation, colorIndex) {
+                this.baseCenterX = centerX;
+                this.baseCenterY = centerY;
+                this.centerX = centerX;
+                this.centerY = centerY;
+                this.targetCenterX = centerX;
+                this.targetCenterY = centerY;
+                this.numPoints = numPoints;
+                this.baseRadius = radius;
+                this.variation = variation;
+                this.colorIndex = colorIndex;
+                this.driftRange = radius * 0.15; // Drift range scales with shape size
+                
+                this.currentPoints = [];
+                this.targetPoints = [];
+                this.initPoints();
+                this.generateNewTarget();
+            }
+
+            initPoints() {
+                for (let i = 0; i < this.numPoints; i++) {
+                    let angle = (TWO_PI / this.numPoints) * i;
+                    let r = this.baseRadius + random(-this.variation, this.variation);
+                    this.currentPoints.push({
+                        x: this.centerX + cos(angle) * r,
+                        y: this.centerY + sin(angle) * r
+                    });
+                }
+            }
+
+            generateNewTarget() {
+                // Generate new center position with gentle drift
+                this.targetCenterX = this.baseCenterX + random(-this.driftRange, this.driftRange);
+                this.targetCenterY = this.baseCenterY + random(-this.driftRange, this.driftRange);
+                
+                this.targetPoints = [];
+                let morphType = floor(random(5));
+                
+                for (let i = 0; i < this.numPoints; i++) {
+                    let angle = (TWO_PI / this.numPoints) * i;
+                    let r;
+                    
+                    switch(morphType) {
+                        case 0: // Circular variation
+                            r = this.baseRadius + sin(angle * 3) * this.variation * 0.5;
+                            break;
+                        case 1: // Star-like
+                            r = this.baseRadius + (i % 2 === 0 ? this.variation : -this.variation * 0.5);
+                            break;
+                        case 2: // Wave
+                            r = this.baseRadius + sin(angle * 2) * this.variation * 0.7;
+                            break;
+                        case 3: // Organic blob
+                            r = this.baseRadius + cos(angle * 1.5) * sin(angle * 2.7) * this.variation;
+                            break;
+                        case 4: // Flower-like
+                            r = this.baseRadius + cos(angle * 4) * this.variation * 0.6;
+                            break;
+                    }
+                    
+                    this.targetPoints.push({
+                        x: this.targetCenterX + cos(angle) * r,
+                        y: this.targetCenterY + sin(angle) * r
+                    });
+                }
+            }
+
+            update(speed) {
+                // Smooth easing for more gradual transitions like clouds drifting
+                let easing = speed * 0.5; // Slower, smoother
+                
+                // Update center position
+                let dcx = this.targetCenterX - this.centerX;
+                let dcy = this.targetCenterY - this.centerY;
+                this.centerX += dcx * easing;
+                this.centerY += dcy * easing;
+                
+                // Update all vertex points
+                for (let i = 0; i < this.numPoints; i++) {
+                    let dx = this.targetPoints[i].x - this.currentPoints[i].x;
+                    let dy = this.targetPoints[i].y - this.currentPoints[i].y;
+                    this.currentPoints[i].x += dx * easing;
+                    this.currentPoints[i].y += dy * easing;
+                }
+            }
+
+            draw(brushType, opacity, bleedAmount, seed) {
+                brush.fill(this.getCurrentColor(), opacity);
+                brush.bleed(bleedAmount);
+                brush.set(brushType, 1.0);
+                brush.beginShape();
+                
+                for (let i = 0; i < this.currentPoints.length; i++) {
+                    brush.vertex(this.currentPoints[i].x, this.currentPoints[i].y);
+                }
+                
+                // Consistent seed for stable brush texture like in the example
+                randomSeed(seed);
+                brush.endShape(CLOSE);
+            }
+
+            getCurrentColor() {
+                let currentPalette = palettes[currentPaletteIndex];
+                let nextPalette = palettes[nextPaletteIndex];
+                
+                let colorIdx = this.colorIndex % currentPalette.length;
+                if (paletteTransition < 1) {
+                    return lerpColor(
+                        color(currentPalette[colorIdx]),
+                        color(nextPalette[colorIdx]),
+                        paletteTransition
+                    );
+                }
+                return currentPalette[colorIdx];
+            }
+        }
+
+        //////////////////////////////////////////////////
+        // MAIN SKETCH
+        let shapes = [];
+        let backgroundLayers = [];
+        let transitionTimer = 0;
+        let transitionInterval = 200; // frames between morphs (~8 seconds at 24fps)
+        let paletteChangeInterval = 720; // frames between palette changes (~30 seconds at 24fps)
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight, WEBGL);
+            pixelDensity(1);
+            frameRate(24); // Limit to 24fps for lower CPU usage
+            
+            // Center coordinates
+            let centerX = width / 2;
+            let centerY = height / 2;
+            
+            // Responsive sizing based on screen dimensions
+            let scale = min(width, height) / 1000; // Scale factor based on screen size
+            
+            // Reduced number of background shapes (12 -> 6)
+            for (let i = 0; i < 6; i++) {
+                backgroundLayers.push(
+                    new OrganicShape(
+                        centerX + random(-width/4, width/4),
+                        centerY + random(-height/4, height/4),
+                        floor(random(6, 10)), // Fewer vertices (8-15 -> 6-10)
+                        random(100, 280) * scale,
+                        random(40, 90) * scale,
+                        i
+                    )
+                );
+            }
+            
+            // Reduced main shapes with fewer vertices (7 -> 5 shapes), responsive sizing
+            shapes.push(new OrganicShape(centerX, centerY, 8, 280 * scale, 90 * scale, 0));
+            shapes.push(new OrganicShape(centerX + 200 * scale, centerY - 150 * scale, 7, 200 * scale, 70 * scale, 1));
+            shapes.push(new OrganicShape(centerX - 200 * scale, centerY + 120 * scale, 9, 220 * scale, 80 * scale, 2));
+            shapes.push(new OrganicShape(centerX, centerY + 180 * scale, 7, 160 * scale, 60 * scale, 3));
+            shapes.push(new OrganicShape(centerX - 150 * scale, centerY - 150 * scale, 8, 190 * scale, 75 * scale, 4));
+        }
+
+        function draw() {
+            // Simple solid background (much faster than gradient)
+            background("#ede9e0");
+            
+            translate(-width/2, -height/2);
+            
+            // Update transition timers
+            transitionTimer++;
+            
+            // Trigger shape morphing
+            if (transitionTimer >= transitionInterval) {
+                transitionTimer = 0;
+                shapes.forEach(shape => shape.generateNewTarget());
+                backgroundLayers.forEach(layer => layer.generateNewTarget());
+            }
+            
+            // Palette transition
+            if (frameCount % paletteChangeInterval === 0) {
+                currentPaletteIndex = nextPaletteIndex;
+                nextPaletteIndex = (nextPaletteIndex + 1) % palettes.length;
+                paletteTransition = 0;
+            }
+            
+            if (paletteTransition < 1) {
+                paletteTransition += 0.003; // Very slow, gradual color transitions
+            }
+            
+            // Smooth interpolation speed - very slow for cloud-like gradual morphing
+            let morphSpeed = 0.03; // Slightly faster since we have fewer frames
+            
+            // Draw background layers with more visible transparency
+            backgroundLayers.forEach((layer, index) => {
+                layer.update(morphSpeed * 0.7);
+                // Simpler opacity calculation
+                let bgOpacity = 45 + sin(frameCount * 0.005 + index * 0.5) * 10;
+                let bgBleed = 0.4 + cos(frameCount * 0.004 + index * 0.3) * 0.15;
+                layer.draw("marker", bgOpacity, bgBleed, 10000 + index);
+            });
+            
+            // Draw main shapes with various brush types and higher visibility
+            let brushTypes = ["marker", "marker2", "marker", "marker2", "marker"];
+            
+            shapes.forEach((shape, index) => {
+                shape.update(morphSpeed);
+                
+                let brushType = brushTypes[index % brushTypes.length];
+                // Simpler calculations
+                let opacity = 82 + sin(frameCount * 0.006 + index * 0.8) * 12;
+                let bleed = 0.5 + cos(frameCount * 0.005 + index * 0.5) * 0.15;
+                
+                shape.draw(brushType, opacity, bleed, 1000 + index);
+            });
+        }
+    </script>
+</body>
+</html>
+
