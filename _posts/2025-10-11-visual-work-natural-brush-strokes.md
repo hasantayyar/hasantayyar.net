@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Chromatic Drift - P5.js visual work" 
-date:   2025-10-11 12:00:00
+date:   2025-10-11 10:00:00
 categories: Visual
 ---
 
