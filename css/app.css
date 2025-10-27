@@ -11,6 +11,7 @@ a{color:#D12;text-decoration:unset}.btn.primary{color:#fff;background:#fa0;borde
 .btn{padding:1em 1.3em;transition:.2s;letter-spacing:.1em;text-transform:uppercase;background:unset;border:solid;font-size:.8em;margin:0 0 1em}a:hover{opacity:.5}.input:focus,hr{border:solid #fa0;outline:0}@media(min-width:35em){.col{margin:1%}.\31.col{width:5%}.\32.col{width:13%}.\33.col{width:22%}.\34.col{width:31%}.\35.col{width:39%}.\36.col{width:48%}.\37.col{width:57%}.\38.col{width:65%}.\39.col{width:74%}.\31 0.col{width:83%}.\31 1.col{width:91%}}
 span.post-date,time.post-date{color:777; font-size:0.8em}
 p.post-title{font:1 1.6em 'Ubuntu Mono';margin:1.5em 0 .4em 0}
+h2.post-title{background-color:#efa; padding: 0.5em}
 .blog-separator{display:flex;align-items:center;justify-content:center;margin:3rem 0;gap:1rem}.blog-separator .line{flex:1;height:1px;background:linear-gradient(to right,#ccc,transparent)}.blog-separator .icon{font-size:1.2rem;color:#999}
 blockquote{background:#f9f9f9;border-left:10px solid #ccc;margin:1.5em 10px;padding:.5em 10px;quotes:"\201C""\201D""\2018""\2019"}
 blockquote:before{color:#ccc;content:open-quote;font-size:4em;line-height:.1em;margin-right:.25em;vertical-align:-.4em}
