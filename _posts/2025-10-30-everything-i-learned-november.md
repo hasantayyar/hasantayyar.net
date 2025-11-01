@@ -9,9 +9,7 @@ Previously: [EIL June](https://hasantayyar.net/eil/2025/06/30/everything-i-learn
 
 #### SAIF framework: Google's Secure AI Framework
 
-A conceptual framework to secure AI systems by Google.
-
-https://safety.google/cybersecurity-advancements/saif/
+A conceptual framework to secure AI systems by Google. [safety.google/cybersecurity-advancements/saif/](https://safety.google/cybersecurity-advancements/saif/)
 
 #### Lattice-based cryptography and Post Quantum Cryptography (PQC)
 
