@@ -14,3 +14,5 @@ Kubernetes now supports true in-place pod resource resizing, allowing **CPU and 
 ### **OpenTelemetry Transformation Language (OTTL)**
 
 **[OTTL](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/ottl/README.md)** is a declarative transformation language integrated into the **[OpenTelemetry](https://opentelemetry.io/) Collector** pipeline. It enables deterministic manipulation of **traces, metrics and logs** through rule-based statements that resemble _fluent-bit_ filter semantics but with stronger typing and composability. [OTTL.run](https://OTTL.run) provides an interactive environment to write, test and validate transformations before deploying them in production. This simplifies complex telemetry normalization tasks such as attribute remapping, sampling logic and record enrichment. Reference: https://ottl.run
+
+<img width="1512" height="703" alt="Screenshot 2025-12-03 at 16 40 10" src="https://github.com/user-attachments/assets/b2212589-cde0-4a28-a512-2e1f33a4e332" />
