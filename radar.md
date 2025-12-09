@@ -4,7 +4,7 @@ title: Radar
 permalink: /feed/
 ---
 
-Quick snippets, quotes, links, un-strucured posts, quick ideas or comments, things I like quickly but probably won't use again, news about security or clourd that I see important and more random stuff
+Quick snippets, quotes, links, unstructured posts, fast ideas or comments, things I like but probably won’t revisit, plus security or cloud news I find important and other occasional topics.
 
 <div class="posts">
     {% for post in site.posts %}
