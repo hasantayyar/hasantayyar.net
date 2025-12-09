@@ -6,10 +6,7 @@ categories: EIL
 ---
 
 
-Previously:
-- [EIL June](https://hasantayyar.net/eil/2025/06/30/everything-i-learned/)
-- [EIL July](https://hasantayyar.net/eil/2025/07/30/everything-i-learned-july/)
-- [EIL August](https://hasantayyar.net/eil/2025/08/30/everything-i-learned-august/)
+<small>Previously: [EIL June](https://hasantayyar.net/eil/2025/06/30/everything-i-learned/), [EIL July](https://hasantayyar.net/eil/2025/07/30/everything-i-learned-july/), [EIL August](https://hasantayyar.net/eil/2025/08/30/everything-i-learned-august/)</small>
 
 #### Databases: RocksDB, FoundationDB & LMDB
 
