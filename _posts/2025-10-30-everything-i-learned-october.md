@@ -5,7 +5,7 @@ date:   2025-10-30 10:00:00
 categories: EIL
 ---
 
-Previously: [EIL June](https://hasantayyar.net/eil/2025/06/30/everything-i-learned/), [EIL July](https://hasantayyar.net/eil/2025/07/30/everything-i-learned-july/), [EIL August](https://hasantayyar.net/eil/2025/08/30/everything-i-learned-august/), [EIL September](https://hasantayyar.net/eil/2025/09/30/everything-i-learned-september/)
+<small>Previously: [EIL June](https://hasantayyar.net/eil/2025/06/30/everything-i-learned/), [EIL July](https://hasantayyar.net/eil/2025/07/30/everything-i-learned-july/), [EIL August](https://hasantayyar.net/eil/2025/08/30/everything-i-learned-august/), [EIL September](https://hasantayyar.net/eil/2025/09/30/everything-i-learned-september/)</small>
 
 #### SAIF framework: Google's Secure AI Framework
 
