@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "November - Everything I Learned" 
+title:  "December - Everything I Learned" 
 date:   2025-11-30 10:00:00
 categories: EIL 
 ---
