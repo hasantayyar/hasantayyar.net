@@ -30,3 +30,10 @@ Datalab's [Chandra](https://github.com/datalab-to/chandra?tab=readme-ov-file) is
 [https://github.com/datalab-to/chandra](https://github.com/datalab-to/chandra)
 
 
+### A very short story of Switzerland
+
+Switzerland stayed out of major foreign wars mainly because it chose **"permanent neutrality"**. European powers formally recognised Switzerland’s neutral status at the Congress of Vienna in 1815, and the Swiss committed to not joining military alliances, not sending troops to fight and not letting warring armies use its territory. This became central to its foreign policy and helped it avoid participation in the World Wars and other conflicts.  Switzerland did not fight in World War I or World War II. Its neutrality was backed by armed defence and diplomacy. Also the Alps and prepared defence forces made invasion unattractive to neighbours.  ￼
+
+Switzerland’s wealth comes from a mix of economic strengths: a very high GDP per capita; **a globally important banking and finance sector supported by decades of stable, "neutral policy"**; advanced pharmaceuticals and chemicals exports; and precision manufacturing like watches.
+
+Neutrality kept Switzerland out of destructive wars, and long-term stability, global trade, and strong financial and tech sectors made it rich.
