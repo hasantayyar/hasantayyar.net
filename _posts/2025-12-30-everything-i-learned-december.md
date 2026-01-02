@@ -12,3 +12,7 @@ Technically, **SCEP (RFC 8894)** is an HTTP-based protocol that automates the di
     - **SCEP** is like a hotel room you enter with a **generic password** (Shared Secret). If someone steals that password, they can get in.
     - **Modern TLS (EST/ACME)** is like a high-end office you enter with a **biometric scan** or a unique, encrypted digital key. It ensures the device is exactly who it claims to be before it ever sees the "key."
 
+### The Passion of the Cut Sleeve - Han Dynasty, China (~7–1 BCE)
+
+A story between Emperor Ai of Han & his favorite official, Dong Xian. While the two were napping together, the Emperor woke to find Dong Xian fast asleep on his long silk sleeve. Emperor didn't want to disturb Dod Xian, so he took a knife and **cut off his own sleeve** to leave quietly. The phrase **"Passion of the Cut Sleeve"** (*duanxiu*) became the standard literary euphemism for male homosexuality in China for two millennia.
+
