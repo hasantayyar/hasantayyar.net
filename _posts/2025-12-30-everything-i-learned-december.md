@@ -10,8 +10,9 @@ categories: EIL
 ### **SCEP - Simple Certificate Enrollment Protocol**
 
 Technically, **[SCEP](https://en.wikipedia.org/wiki/Simple_Certificate_Enrollment_Protocol) (RFC 8894)** is an HTTP-based protocol that automates the distribution of X.509 certificates by wrapping a **PKCS#10** request inside a **PKCS#7** encrypted envelope. It authenticates these requests using a pre-shared **challenge password**, allowing "headless" devices like routers and mobile phones to securely enroll with a Certificate Authority without manual intervention.
-    - **SCEP** is like a hotel room you enter with a **generic password** (Shared Secret). If someone steals that password, they can get in.
-    - **Modern TLS (EST/ACME)** is like a high-end office you enter with a **biometric scan** or a unique, encrypted digital key. It ensures the device is exactly who it claims to be before it ever sees the "key."
+
+- **SCEP** is like a hotel room you enter with a **generic password** (Shared Secret). If someone steals that password, they can get in.
+- **Modern TLS (EST/ACME)** is like a high-end office you enter with a **biometric scan** or a unique, encrypted digital key. It ensures the device is exactly who it claims to be before it ever sees the "key."
 
 ### **The Passion of the Cut Sleeve - Han Dynasty, China (~7–1 BCE)
 **
@@ -26,6 +27,6 @@ Datalab's [Chandra](https://github.com/datalab-to/chandra?tab=readme-ov-file) is
 
 100% open-source.
 
-https://github.com/datalab-to/chandra
+[https://github.com/datalab-to/chandra](https://github.com/datalab-to/chandra)
 
 
