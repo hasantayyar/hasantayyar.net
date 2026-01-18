@@ -1,184 +1,135 @@
 ---
 layout: post
-title:  "2025 clippings from my Kindle" 
-date:   2026-01-10 09:30:00
-categories: EIL 
+title: "2025 clippings from my Kindle"
+date: 2026-01-10 09:31:00
+categories: EIL
 ---
 
-**Below is a list of my 2025 clippings from my Kindle.**
+Below is a list of my 2025 clippings from my Kindle.
 
+---
 
-> A CTO’s Guide to Measuring Software Development Productivity | Amazon Web Services  
-> on page 4 | Location 30-31
+**A CTO’s Guide to Measuring Software Development Productivity | Amazon Web Services | Page 4 | Location 30–31**  
+> Lead time measures the total elapsed time from when a customer need is first identified to when the solution delivers measurable value.
 
-Lead time measures the total elapsed time from when a customer need is first identified to when the solution delivers measurable value.
+---
 
-==========
+**Tools of Systems Thinkers | Albert Rutherford | Page 11 | Location 110–111**  
+> Linear thinking is enforced by our education system. We learn to reduce and dissect problems to smaller, more manageable components without looking at the big picture first.
 
-> Tools of Systems Thinkers - Albert Rutherford
-> on page 11 | Location 110-111
+---
 
-Linear thinking is enforced by our education system. We learn to reduce and dissect problems to smaller, more manageable components without looking at the big picture first.
+**Tools of Systems Thinkers | Albert Rutherford | Page 12 | Location 113–115**  
+> We need to integrate the separate departments of knowledge into one to see how they are connected. This way, we can better understand the complex challenges of the world.
 
-==========
+---
 
-> Tools of Systems Thinkers - Albert Rutherford
-> on page 12 | Location 113-115
+**Tools of Systems Thinkers | Albert Rutherford | Page 14 | Location 139–140**  
+> I’m about to present an example borrowed from Draper Kauffman’s introduction to systems thinking from the 1980s.
 
-We need to integrate the separate departments of knowledge into one to see how they are connected. This way, we can better understand the complex challenges of the world.
+---
 
-==========
+**Tools of Systems Thinkers | Albert Rutherford | Page 16 | Location 174–176**  
+> Because everything is interconnected, the whole system is comprised of a series of feedback loops. When we understand the nature of feedback loops, we can start to plan interventions to resolve the problems they create.
 
-> Tools of Systems Thinkers - Albert Rutherford
-> on page 14 | Location 139-140
+---
 
-I’m about to present an example borrowed from Draper Kauffman’s introduction to systems thinking from the 1980s.
+**Tools of Systems Thinkers | Albert Rutherford | Page 28 | Location 332**  
+> Unfortunately, analysts often ignore delays and their negative consequences when making a diagnosis about a problem.
 
-==========
+---
 
-> Tools of Systems Thinkers - Albert Rutherford
-> on page 16 | Location 174-176
+**Söylevler | Epiktetos | Page 17**  
+> Hükmümüz altında olanları elimizden gelen en iyi biçimde; geri kalanlarını ise doğalarına uygun biçimde kullanmak
 
-Because everything is interconnected, the whole system is comprised of a series of feedback loops. When we understand the nature of feedback loops, we can start to plan interventions to resolve the problems they create.
+---
 
-==========
+**Söylevler | Epiktetos | Page 18**  
+> Yeryüzünde bedeninden ayrılmayacak tek kafanın benimki olduğunu sana ne zaman söyledim?
 
-> Tools of Systems Thinkers - Albert Rutherford
-> on page 28 | Location 332-332
+---
 
-Unfortunately, analysts often ignore delays and their negative consequences when making a diagnosis about a problem.
+**Söylevler | Epiktetos | Page 19**  
+> Daha iyisini seçtim diyorsan, bunu sana veren kim? Verilenle yetinmek için çaba göstermez misin?
 
-==========
+---
 
-> Söylevler - Epiktetos
-> on page 17-17
+**Against Motivation | Laura van den Berg | Location 73–74**  
+> You don’t even have to believe in yourself all the time if you can just believe in the process you have committed to. That steadiness of presence.
 
-Hükmümüz alhnda olanları elimizden gelen en iyi biçimde; geri kalanlarını ise doğalarına uygun biçimde kullanmak
+---
 
-==========
+**Against Motivation | Laura van den Berg | Location 78–79**  
+> This is another thing I love about routine: you can take it with you wherever you go. Routine is a shelter. It gives us someplace to be, regardless of the moment we’re in.
 
-> Söylevler - Epiktetos
-> on page 18-18
+---
 
-Yeryüzünde bedennden ayrılmayacak tek kafanı benimki olduğunu sana ne zan1an söyledim?
+**Tools of Systems Thinkers | Albert Rutherford | Page 38 | Location 463–464**  
+> Key aspects of building a good model: define, expand, and aggregate.
 
-==========
+---
 
-> Söylevler - Epiktetos
-> on page 19-19
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 59 | Location 627–628**  
+> Generally, there are three major ways to position the hip: front facing (shomen), half front or reverse half front facing (hanmi or gyaku hanmi), and side facing (yoko).
 
-Daha iyisini seçtm diyorsan, bunu sana veren kim? Verilenle yetinmek için çaba göstermez misin?
+---
 
-==========
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 73 | Location 780–782**  
+> It is important not to think of the knees as being pushed outward or, worse, to actually do it. Instead, envision a direct connection between the outside edges of the feet and the inside of the hip.
 
-> Against Motivation - Laura van den Berg
-> on Location 73-74
+---
 
-You don’t even have to believe in yourself all the time if you can just believe in the process you have committed to. That steadiness of presence.
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 77 | Location 828–829**  
+> This allows more free movement in the knee joint, making this stance a more highly mobile version of kiba dachi.
 
-==========
+---
 
-> Against Motivation - Laura van den Berg
-> on Location 78-79
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 92 | Location 998–999**  
+> Shime refers to the leg’s connection to the hip.
 
-this is another thing I love about routine: you can take it with you wherever you go. Routine is a shelter. It gives us someplace to be, regardless of the moment we’re in.
+---
 
-==========
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 98 | Location 1072–1077**  
+> There are three principles important for executing tsuki correctly. The first is that the elbow of the striking limb rubs close to the side of the body until the elbow passes the torso. This ensures the correct muscles are connected as the technique accelerates from the hip.
 
-> Tools of Systems Thinkers - AlbertRutherford
-> on page 38 | Location 463-464
+---
 
-key aspects of building a good model: define, expand, and aggregate.
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 119 | Location 1274–1276**  
+> Finally, it is important to develop flexibility and only kick within the limits of your flexibility.
 
-==========
+---
 
-> Karate Science Dynamic Movement (Martial Science) - J. D. Swanson Ph.D.
-> on page 59 | Location 627-628
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 147 | Location 1644**  
+> E. Schmeisser, Advanced Karate-Do (St. Louis: Focus Publications, 1994).
 
-Generally, there are three major ways to position the hip: front facing (shomen), half front or reverse half front facing (hanmi or gyaku hanmi), and side facing (yoko).
+---
 
-==========
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 147 | Location 1647**  
+> H. Kanazawa, Black Belt Karate: The Intensive Course (Tokyo: Kodansha International, 2006).
 
-> Karate Science Dynamic Movement (Martial Science) - J. D. Swanson Ph.D.
-> on page 73 | Location 780-782
+---
 
-It is important not to think of the knees as being pushed outward or, worse, to actually do it. Instead, envision a direct connection between the outside edges of the feet and the inside of the hip.
+**Disaster Recovery Plan for DevOps | Daria Kulikova | Page 6 | Location 56**  
+> Panic is the worst when it comes to a disaster.
 
-==========
+---
 
-> Karate Science Dynamic Movement (Martial Science) - J. D. Swanson Ph.D.
-> on page 77 | Location 828-829
+**Disaster Recovery Plan for DevOps | Daria Kulikova | Page 11 | Location 175–177**  
+> The average downtime cost can exceed $9K per minute, which makes rapid recovery essential.
 
-This allows more free movement in the knee joint, making this stance a more highly mobile version of kiba dachi.
+---
 
-==========
+**Tools of Systems Thinkers | Albert Rutherford | Page 41 | Location 502–504**  
+> Test your knowledge by brainstorming defined questions about your everyday life.
 
-> Karate Science Dynamic Movement (Martial Science) - J. D. Swanson Ph.D.
-> on page 92 | Location 998-999
+---
 
-Shime refers to the leg’s connection to the hip.
+**Tools of Systems Thinkers | Albert Rutherford | Page 42 | Location 518–520**  
+> Our mental models are limited because our life experience is limited; we only know what we have been exposed to.
 
-==========
+---
 
-> Karate Science Dynamic Movement (Martial Science) - J. D. Swanson Ph.D.
-> on page 98 | Location 1072-1077
+**Tools of Systems Thinkers | Albert Rutherford | Page 43 | Location 535–536**  
+> The most critical first step is that we need to leave our echo chamber.
 
-There are three principles important for executing tsuki correctly. The first is that the elbow of the striking limb rubs close to the side of the body until the elbow passes the torso. This is universal for all tsuki, and it could be said that the differentiation in the path of any tsuki technique only occurs once the elbow passes the body. This ensures that the correct muscles in the shoulder, chest, and back are connected to the technique as it accelerates from the hip. It is good to imagine performing all tsuki hitting the imaginary target with the point of the elbow and the forearm (and thus the striking surface, such as the fist, just gets in the way).
-
-==========
-
-> Karate Science Dynamic Movement (Martial Science) - J. D. Swanson Ph.D.
-> on page 119 | Location 1274-1276
-
-Finally, it is important to develop flexibility and only kick within the limits of your flexibility. Flexibility in this context does not mean how high the leg can be swung,
-
-==========
-
-> Karate Science Dynamic Movement (Martial Science) - J. D. Swanson Ph.D.
-> on page 147 | Location 1644-1644
-
-E. Schmeisser, Advanced Karate-Do (St. Louis: Focus Publications, 1994).
-
-==========
-
-> Karate Science Dynamic Movement (Martial Science) - J. D. Swanson Ph.D.
-> on page 147 | Location 1647-1647
-
-H. Kanazawa, Black Belt Karate: The intensive Course (Tokyo: Kodansha International, 2006).
-
-==========
-
-> Disaster Recovery Plan for DevOps (Daria Kulikova)
-> on page 6 | Location 56-56
-
-Panic is the worst when it comes to a disaster.
-
-==========
-
-> Disaster Recovery Plan for DevOps (Daria Kulikova)
-> on page 11 | Location 175-177
-
-The average downtime cost can exceed $ 9K per minute, which makes rapid recovery essential.
-
-==========
-
-> Tools of Systems Thinkers - AlbertRutherford
-> on page 41 | Location 502-504
-
-Test your knowledge by brainstorming defined questions about your everyday life. How do you know you are on the right track in your relationship, work, and self-care?
-
-==========
-
-> Tools of Systems Thinkers - AlbertRutherford
-> on page 42 | Location 518-520
-
-our mental models are limited because our life experience is limited; we only know what we have been exposed to. We know what it is like to be in our wealth group, race, culture, or gender. Suppose you are a middle-aged Black man from San Francisco with a six-figure income.
-
-==========
-
-> Tools of Systems Thinkers - AlbertRutherford
-> on page 43 | Location 535-536
-
-the most critical first step is that we need to leave our echo chamber.
-
-==========
+---
