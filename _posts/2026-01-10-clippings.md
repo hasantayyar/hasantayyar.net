@@ -14,62 +14,43 @@ __________________
 
 __________________
 
-**Tools of Systems Thinkers | Albert Rutherford | Page 11 | Location 110–111**  
+**Tools of Systems Thinkers | Albert Rutherford**  
+
 > Linear thinking is enforced by our education system. We learn to reduce and dissect problems to smaller, more manageable components without looking at the big picture first.
 
-__________________
-
-**Tools of Systems Thinkers | Albert Rutherford | Page 12 | Location 113–115**  
 > We need to integrate the separate departments of knowledge into one to see how they are connected. This way, we can better understand the complex challenges of the world.
 
-__________________
-
-**Tools of Systems Thinkers | Albert Rutherford | Page 14 | Location 139–140**  
 > I’m about to present an example borrowed from Draper Kauffman’s introduction to systems thinking from the 1980s.
 
-__________________
-
-**Tools of Systems Thinkers | Albert Rutherford | Page 16 | Location 174–176**  
 > Because everything is interconnected, the whole system is comprised of a series of feedback loops. When we understand the nature of feedback loops, we can start to plan interventions to resolve the problems they create.
 
+> Key aspects of building a good model: define, expand, and aggregate.
+
+> Test your knowledge by brainstorming defined questions about your everyday life.
+
+> Our mental models are limited because our life experience is limited; we only know what we have been exposed to.
+
+> The most critical first step is that we need to leave our echo chamber.
+
 __________________
 
-**Tools of Systems Thinkers | Albert Rutherford | Page 28 | Location 332**  
-> Unfortunately, analysts often ignore delays and their negative consequences when making a diagnosis about a problem.
-
-__________________
-
-**Söylevler | Epiktetos | Page 17**  
+**Söylevler | Epiktetos **  
 > Hükmümüz altında olanları elimizden gelen en iyi biçimde; geri kalanlarını ise doğalarına uygun biçimde kullanmak
 
-__________________
-
-**Söylevler | Epiktetos | Page 18**  
 > Yeryüzünde bedeninden ayrılmayacak tek kafanın benimki olduğunu sana ne zaman söyledim?
 
-__________________
-
-**Söylevler | Epiktetos | Page 19**  
 > Daha iyisini seçtim diyorsan, bunu sana veren kim? Verilenle yetinmek için çaba göstermez misin?
 
 __________________
 
-**Against Motivation | Laura van den Berg | Location 73–74**  
+**Against Motivation | Laura van den Berg**
 > You don’t even have to believe in yourself all the time if you can just believe in the process you have committed to. That steadiness of presence.
 
-__________________
-
-**Against Motivation | Laura van den Berg | Location 78–79**  
 > This is another thing I love about routine: you can take it with you wherever you go. Routine is a shelter. It gives us someplace to be, regardless of the moment we’re in.
 
 __________________
 
-**Tools of Systems Thinkers | Albert Rutherford | Page 38 | Location 463–464**  
-> Key aspects of building a good model: define, expand, and aggregate.
-
-__________________
-
-**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D. | Page 59 | Location 627–628**  
+**Karate Science Dynamic Movement (Martial Science) | J. D. Swanson Ph.D.**
 > Generally, there are three major ways to position the hip: front facing (shomen), half front or reverse half front facing (hanmi or gyaku hanmi), and side facing (yoko).
 
 > It is important not to think of the knees as being pushed outward or, worse, to actually do it. Instead, envision a direct connection between the outside edges of the feet and the inside of the hip.
@@ -82,27 +63,9 @@ __________________
 
 __________________
 
-**Disaster Recovery Plan for DevOps | Daria Kulikova | Page 6 | Location 56**  
+**Disaster Recovery Plan for DevOps | Daria Kulikova**
+
 > Panic is the worst when it comes to a disaster.
 
-__________________
-
-**Disaster Recovery Plan for DevOps | Daria Kulikova | Page 11 | Location 175–177**  
 > The average downtime cost can exceed $9K per minute, which makes rapid recovery essential.
 
-__________________
-
-**Tools of Systems Thinkers | Albert Rutherford | Page 41 | Location 502–504**  
-> Test your knowledge by brainstorming defined questions about your everyday life.
-
-__________________
-
-**Tools of Systems Thinkers | Albert Rutherford | Page 42 | Location 518–520**  
-> Our mental models are limited because our life experience is limited; we only know what we have been exposed to.
-
-__________________
-
-**Tools of Systems Thinkers | Albert Rutherford | Page 43 | Location 535–536**  
-> The most critical first step is that we need to leave our echo chamber.
-
-__________________
