@@ -1,5 +1,6 @@
 begin
   require 'feedjira'
+  require 'net/http'
 rescue LoadError => e
   Jekyll.logger.warn "Medium posts:", "Skipping (feedjira/nokogiri not available: #{e.message})"
 end
@@ -16,7 +17,16 @@ if defined?(Feedjira)
         site.collections['medium_posts'] = jekyll_coll
         username = (site.config["medium_username"] || "").to_s.strip
         return if username.empty?
-        Feedjira::Feed.fetch_and_parse("https://medium.com/feed/@" + username).entries.each do |e|
+        url = "https://medium.com/feed/@" + username
+        begin
+          xml = Net::HTTP.get(URI(url))
+          feed = Feedjira.parse(xml)
+        rescue => e
+          Jekyll.logger.warn "Medium posts:", "Fetch failed (#{e.message}), skipping"
+          return
+        end
+        return unless feed&.entries
+        feed.entries.each do |e|
           Jekyll.logger.debug "Medium:", "Title: #{e.title}, published on Medium #{e.url}"
           title = e[:title]
           content = e[:content]
