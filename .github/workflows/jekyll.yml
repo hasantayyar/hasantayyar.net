@@ -32,8 +32,6 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Build with Jekyll
-        env:
-          MEDIUM_USERNAME: ${{ vars.MEDIUM_USERNAME || 'htayyar' }}
         run: bundle exec jekyll build
 
       - name: Upload artifact

@@ -14,7 +14,7 @@ if defined?(Feedjira)
       def generate(site)
         jekyll_coll = Jekyll::Collection.new(site, 'medium_posts')
         site.collections['medium_posts'] = jekyll_coll
-        username = ENV["MEDIUM_USERNAME"].to_s
+        username = (site.config["medium_username"] || "").to_s.strip
         return if username.empty?
         Feedjira::Feed.fetch_and_parse("https://medium.com/feed/@" + username).entries.each do |e|
           Jekyll.logger.debug "Medium:", "Title: #{e.title}, published on Medium #{e.url}"

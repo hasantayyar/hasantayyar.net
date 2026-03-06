@@ -6,6 +6,7 @@ baseurl: ""
 url: "https://hasantayyar.net/"
 twitter_username: htayyar
 github_username:  hasantayyar
+medium_username: htayyar
 
 # Build settings
 highlighter: rouge
