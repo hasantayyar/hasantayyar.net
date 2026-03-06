@@ -8,10 +8,24 @@ twitter_username: htayyar
 github_username:  hasantayyar
 
 # Build settings
-highlighter: true
+highlighter: rouge
 markdown: redcarpet
 permalink: pretty
 
+# Exclude: vendor, archive folder with Turkish-char filenames (cause rb_sysopen errors)
+exclude:
+  - vendor
+  - "assets/www.turkiyedepunkveyeraltikaynaklarininkesintilitarihi.com-archive"
+
 collections:
   - medium_posts
+
+plugins:
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: "/feed/page/:num/"
+  title: ":title - page :num"
 
