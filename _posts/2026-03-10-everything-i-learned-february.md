@@ -17,27 +17,20 @@ Writing these posts is my way of testing that idea.
 
 While exploring alternatives to `libcluster`, I came across **Partisan**.
 
-Partisan is a distribution layer for BEAM applications that **bypasses standard Distributed Erlang** and manages connections manually over TCP. Instead of relying on Erlang’s built-in node discovery and full-mesh networking assumptions, it allows developers to choose different **network topologies** such as peer-to-peer, client-server, or publish-subscribe depending on the use case.
+[Partisan](https://hexdocs.pm/partisan/readme.html ) is a distribution layer for BEAM applications that **bypasses standard Distributed Erlang** and manages connections manually over TCP. Instead of relying on Erlang’s built-in node discovery and full-mesh networking, it allows developers to choose different **network topologies** such as peer-to-peer, client-server, or publish-subscribe depending on the use case. Although Erlang’s distribution protocol has been extremely stable for years and even the official documentation notes that the node communication protocol has remained largely unchanged for a long time, Partisan replaces this mature BEAM distribution layer. Stability is great but experimental new tools can create more flexibility and opportunities. Partisan is one of those experiments.
 
-This is interesting because Erlang’s distribution protocol has been extremely stable for years. Even the official documentation notes that the node communication protocol has remained largely unchanged for a long time.
-
-Sometimes stability is great. Sometimes it also means there is room for experimentation on top.
-
-Partisan is one of those experiments.
-
-- https://hexdocs.pm/partisan/readme.html  
-- https://www.erlang.org/docs/22/apps/erts/erl_dist_protocol.html
+Read more:
+- [hexdocs.pm/partisan](https://hexdocs.pm/partisan/readme.html)  
+- [https://www.erlang.org/docs/22/apps/erts/erl_dist_protocol.html](https://www.erlang.org/docs/22/apps/erts/erl_dist_protocol.html)
 
 
-### The Mystery of `zeb_def_ipc` Files on macOS
+### The Mystery of `zeb_def_ipc` Files on macOS and ZebOs in Corporte Services
 
-At some point I noticed strange files in `/tmp` called `zeb_def_ipc_*`. My first reaction was suspicion.
+At some point I saw strange files in `/tmp` called `zeb_def_ipc_*`.It seemed suspicion. Turns out they usually come from corporate security software like **Zscaler** or **FortiClient**. The name comes from **ZebOS**, a commercial routing engine derived from the open-source **GNU Zebra** project. 
 
-It turns out they usually come from corporate security software like **Zscaler** or **FortiClient**.
+> Zebra was created in 1996 and allowed Unix systems to operate as full routing platforms supporting protocols like BGP and OSPF.
 
-The name comes from **ZebOS**, a commercial routing engine derived from the open-source **GNU Zebra** project. Zebra was created in 1996 and allowed Unix systems to operate as full routing platforms supporting protocols like BGP and OSPF.
-
-Later the creators built **ZebOS**, a commercial version widely used inside networking and security products.
+Later the creators built **ZebOS**, a _commercial_ version widely used inside networking and security products.
 
 The `ipc` part of the filename stands for **Inter-Process Communication**. These files are actually **Unix domain sockets** used internally so different parts of the VPN client can communicate with each other.
 
@@ -49,22 +42,14 @@ sudo lsof /tmp/zeb_def_ipc*
 
 If you delete them while your VPN is active, your connection will likely break. Rebooting usually cleans them up.
 
-- https://en.wikipedia.org/wiki/GNU_Zebra
+- [https://en.wikipedia.org/wiki/GNU_Zebra](https://en.wikipedia.org/wiki/GNU_Zebra)
 
 
 ## Schmerzensgeld: A German Legal Curiosity
 
-Another concept I learned about recently is **Schmerzensgeld**.
+Another concept I learned about recently is **Schmerzensgeld**. It literally translates to **“pain money.”**
 
-It literally translates to **“pain money.”**
-
-In Germany, it refers to financial compensation for **non-material damages**, such as pain and suffering after an injury. The legal basis comes from §253 of the German Civil Code.
-
-If someone is injured because another party failed in their duty of care, compensation can be awarded depending on factors such as the severity of the injury and the long-term consequences.
-
-One practical example: slipping on an icy sidewalk where maintenance was neglected may lead to compensation claims if responsibility can be proven.
-
-German law tends to be quite structured, and even compensation for suffering has well-documented precedents.
+In Germany, it refers to financial compensation for **non-material damages**, such as pain and suffering after an injury. The legal basis comes from §253 of the German Civil Code. One example: slipping on an icy sidewalk where maintenance was neglected may lead to compensation claims if responsibility can be proven.
 
 ## Calendar Traditions I Relearn Every Year
 
@@ -72,11 +57,14 @@ Every year I forget the exact order of the German carnival days.
 
 And every year I learn them again.
 
-- **Rosenmontag**
-- **Faschingsdienstag**
-- **Aschermittwoch**
+- **Rosenmontag**: Carnival Monday. Huge in Cologne, Düsseldorf, and Mainz. There is a special civil comission that prepares the huge carnival there. During carnival there are huge street parades, exessive drinking, and candy throwing. Historically carnival allowed people to mock authorities and social hierarchy, which is why political satire is still common in the parade. 
+- **Faschingsdienstag**: Carnival Tuesday. The carnival party continues to this day. After midnight the celebrations stops.
+- **Aschermittwoch**: Ash Wednesday. This day is mostly about religion. The theme shifts from party to reflection.
 
-Some knowledge simply refuses to stay cached.
+Different terms are used for carnival around the region:
+- Karneval: Rhineland (Cologne, Düsseldorf)
+- Fasching: Bavaria, Austria
+- Fastnacht / Fasnet: Southwest Germany, Switzerland
 
 ### Berlinale Moments
 
@@ -104,4 +92,9 @@ I also visited the **[Göbekli Tepe - Building community - exhibition](https://w
 
 The most memorable part was the photographic gallery inside the exhibition. Instead of presenting the site as static archaeological information, the photographs pull you into the landscape and atmosphere of the excavation.
 
-Sometimes a well-curated visual experience explains an ancient site better than text panels.
+I learned again the importance of **Göbekli Tepe** on the human history again.
+
+<img width="1920" height="937" alt="image" src="https://github.com/user-attachments/assets/a39b6c89-2cff-47eb-8b22-76988874d083" />
+
+<img width="1920" height="937" alt="image" src="https://github.com/user-attachments/assets/4220ca1c-21fd-44ad-8958-aeda2d8c7cc9" />
+
