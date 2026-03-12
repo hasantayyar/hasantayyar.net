@@ -91,6 +91,8 @@ The most memorable part was the photographic gallery inside the exhibition. Inst
 
 I learned again the importance of **Göbekli Tepe** on the human history again.
 
+Shocking thing is this place was discovered entirely by coincidence and a farmer’s insistence. After the discovery the entire known history of humanity changed.
+
 <img width="1920" height="937" alt="image" src="https://github.com/user-attachments/assets/a39b6c89-2cff-47eb-8b22-76988874d083" />
 
 <img width="1920" height="937" alt="image" src="https://github.com/user-attachments/assets/4220ca1c-21fd-44ad-8958-aeda2d8c7cc9" />
