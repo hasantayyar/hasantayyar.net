@@ -10,9 +10,6 @@ Leslie Lamport once said:
 
 > “If you know something but you don’t write it down, you only think you know it.”
 
-Writing these posts is my way of testing that idea.
-
-
 ### Rethinking Erlang Distribution
 
 While exploring alternatives to `libcluster`, I came across **Partisan**.
