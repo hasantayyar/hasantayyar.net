@@ -51,7 +51,6 @@ If you delete them while your VPN is active, your connection will likely break. 
 
 - https://en.wikipedia.org/wiki/GNU_Zebra
 
----
 
 ## Schmerzensgeld: A German Legal Curiosity
 
@@ -67,8 +66,6 @@ One practical example: slipping on an icy sidewalk where maintenance was neglect
 
 German law tends to be quite structured, and even compensation for suffering has well-documented precedents.
 
----
-
 ## Calendar Traditions I Relearn Every Year
 
 Every year I forget the exact order of the German carnival days.
@@ -80,8 +77,6 @@ And every year I learn them again.
 - **Aschermittwoch**
 
 Some knowledge simply refuses to stay cached.
-
----
 
 ### Berlinale Moments
 
