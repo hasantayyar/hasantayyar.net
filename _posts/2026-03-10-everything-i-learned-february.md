@@ -33,7 +33,7 @@ The `ipc` part of the filename stands for **Inter-Process Communication**. These
 
 If you want to see which program is using them:
 
-```
+```bash
 sudo lsof /tmp/zeb_def_ipc*
 ```
 
