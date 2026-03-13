@@ -34,9 +34,9 @@ to{stroke-dashoffset:0}
 .page-home .signature path{stroke:#c9bfb5}
 .page-home .signature{filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
 
-/* Schema block – dense terminal output, no chrome */
-.schema-block{margin:1rem 0;font-size:.82em;line-height:1.38}
-.schema-block-code{font-family:'Ubuntu Mono',monospace;color:#d4d4d4;display:block;overflow-x:auto}
+/* Schema block – dense terminal output, mobile-friendly */
+.schema-block{margin:1rem 0;font-size:.82em;line-height:1.38;overflow:visible;max-width:100%}
+.schema-block-code{font-family:'Ubuntu Mono',monospace;color:#d4d4d4;display:block;white-space:pre-wrap;overflow-wrap:break-word;word-break:break-word;min-width:0}
 .schema-block .schema-cmd{color:#6a9955}
 .schema-block .schema-key{color:#9cdcfe}
 .schema-block .schema-string{color:#ce9178}
@@ -45,3 +45,4 @@ to{stroke-dashoffset:0}
 .schema-block .schema-link,.schema-block a{color:#d7ba7d;text-decoration:underline;text-underline-offset:1px}
 .schema-block .schema-link:hover,.schema-block a:hover{color:#f0d78c;opacity:1}
 .schema-block .schema-sameas{display:inline}
+@media (max-width:35em){.schema-block{font-size:.9em;margin:.75rem 0}.schema-block-code{padding-right:0;-webkit-overflow-scrolling:touch}.page-home .c{padding-left:.75em;padding-right:.75em}}
