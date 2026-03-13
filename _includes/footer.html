@@ -1,9 +1,11 @@
 <br /> 
 
 <footer>
+  {% if page.layout != 'home' %}
   <p><span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span></p>
   <br />
   <p class="text">{{ site.description }}</p>
+  {% endif %}
   <p>
     <svg class="signature" viewBox="0 0 220 80" role="img" aria-label="Animated Hasan signature">
     <path

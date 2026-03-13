@@ -27,3 +27,21 @@ to{stroke-dashoffset:0}
 @media (prefers-reduced-motion: reduce) {
 .signature path{animation:none;stroke-dashoffset:0}
 }
+
+/* Home page – full dark background */
+.page-home{background:#1e1e1e;color:#d4d4d4;min-height:100vh}
+.page-home .schema-block{background:transparent;border:none;padding:.5em 0}
+.page-home .signature path{stroke:#c9bfb5}
+.page-home .signature{filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+
+/* Schema block – dense terminal output, no chrome */
+.schema-block{margin:1rem 0;font-size:.82em;line-height:1.38}
+.schema-block-code{font-family:'Ubuntu Mono',monospace;color:#d4d4d4;display:block;overflow-x:auto}
+.schema-block .schema-cmd{color:#6a9955}
+.schema-block .schema-key{color:#9cdcfe}
+.schema-block .schema-string{color:#ce9178}
+.schema-block .schema-type{color:#4ec9b0}
+.schema-block .schema-punct{color:#6a6a6a}
+.schema-block .schema-link,.schema-block a{color:#d7ba7d;text-decoration:underline;text-underline-offset:1px}
+.schema-block .schema-link:hover,.schema-block a:hover{color:#f0d78c;opacity:1}
+.schema-block .schema-sameas{display:inline}
