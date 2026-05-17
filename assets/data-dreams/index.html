@@ -86,17 +86,69 @@
             color: rgba(180, 255, 200, 0.95);
             border-color: rgba(74, 222, 128, 0.45);
         }
+        #data-feed {
+            position: fixed;
+            right: 12px;
+            bottom: 0;
+            width: min(400px, 44vw);
+            height: min(50vh, 480px);
+            z-index: 150;
+            pointer-events: none;
+            overflow: hidden;
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 78%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 14%, #000 78%, transparent 100%);
+        }
+        #data-feed::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 80px;
+            z-index: 2;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.55) 45%, transparent 100%);
+            pointer-events: none;
+        }
+        #data-feed-track {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            gap: 1px;
+            overflow: hidden;
+        }
+        .feed-line {
+            flex-shrink: 0;
+            font-size: 11px;
+            line-height: 1.4;
+            padding: 2px 10px 2px 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            opacity: 0;
+            animation: feed-rise 0.45s ease-out forwards;
+        }
+        .feed-line.wiki { color: rgba(120, 210, 255, 0.9); }
+        .feed-line.btc-buy { color: rgba(255, 220, 120, 0.92); }
+        .feed-line.btc-sell { color: rgba(255, 150, 110, 0.92); }
+        @keyframes feed-rise {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 0.9; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-    <button type="button" id="sound-toggle" aria-label="Enable sound">Enable sound</button>
+    <button type="button" id="sound-toggle" aria-label="Enable event sounds">Event sounds</button>
 
     <div id="info">
         <div class="title">Data Dreams</div>
         <div class="muted">Inspired by Refik Anadol</div>
         <div class="stream">
             <div><span id="status-dot"></span><span id="source-label">Connecting streams…</span></div>
-            <div class="event" id="last-event">—</div>
             <div class="metrics">
                 <span class="m-wiki" id="metric-wiki">wiki 0/min</span>
                 <span class="m-btc" id="metric-trade">btc 0/s</span>
@@ -105,6 +157,10 @@
             </div>
             <div id="legend">Cyan rolling waves = Wikipedia batches · Gold/red particle sparks = BTC buy/sell</div>
         </div>
+    </div>
+
+    <div id="data-feed" aria-live="polite" aria-label="Live data stream">
+        <div id="data-feed-track"></div>
     </div>
 
     <div id="approach">
@@ -167,133 +223,68 @@
         const dataAudio = {
             ctx: null,
             master: null,
-            droneGain: null,
-            filter: null,
-            oscs: [],
-            delay: null,
             enabled: false,
             lastTradeAt: 0,
 
             async enable() {
                 if (this.enabled) return;
                 this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-                const t = this.ctx.currentTime;
-
                 this.master = this.ctx.createGain();
-                this.master.gain.setValueAtTime(0, t);
-                this.master.gain.linearRampToValueAtTime(0.2, t + 1.5);
-
-                this.filter = this.ctx.createBiquadFilter();
-                this.filter.type = 'lowpass';
-                this.filter.Q.value = 0.7;
-                this.filter.frequency.value = 320;
-
-                this.droneGain = this.ctx.createGain();
-                this.droneGain.gain.value = 0.35;
-
-                const types = ['sine', 'triangle', 'sine'];
-                const detunes = [0, 7, -7];
-                const gains = [0.5, 0.28, 0.15];
-                const bases = [1, 1.002, 2];
-
-                types.forEach((type, i) => {
-                    const osc = this.ctx.createOscillator();
-                    osc.type = type;
-                    osc.frequency.value = 82.41 * bases[i];
-                    osc.detune.value = detunes[i];
-                    const g = this.ctx.createGain();
-                    g.gain.value = gains[i];
-                    osc.connect(g);
-                    g.connect(this.filter);
-                    osc.start();
-                    this.oscs.push({ osc, partial: bases[i] });
-                });
-
-                this.delay = this.ctx.createDelay(2.5);
-                this.delay.delayTime.value = 0.55;
-                const feedback = this.ctx.createGain();
-                feedback.gain.value = 0.22;
-                const wet = this.ctx.createGain();
-                wet.gain.value = 0.35;
-
-                this.filter.connect(this.droneGain);
-                this.droneGain.connect(this.master);
-                this.droneGain.connect(this.delay);
-                this.delay.connect(feedback);
-                feedback.connect(this.delay);
-                this.delay.connect(wet);
-                wet.connect(this.master);
+                this.master.gain.value = 0.55;
                 this.master.connect(this.ctx.destination);
-
                 this.enabled = true;
             },
 
             disable() {
                 if (!this.ctx) return;
-                const t = this.ctx.currentTime;
-                this.master.gain.cancelScheduledValues(t);
-                this.master.gain.setValueAtTime(this.master.gain.value, t);
-                this.master.gain.linearRampToValueAtTime(0, t + 0.8);
-                setTimeout(() => {
-                    this.oscs.forEach(({ osc }) => osc.stop());
-                    this.oscs = [];
-                    this.ctx.close();
-                    this.ctx = null;
-                    this.enabled = false;
-                }, 900);
+                this.ctx.close();
+                this.ctx = null;
+                this.master = null;
+                this.enabled = false;
             },
 
             hueToFreq(hue) {
                 const step = PENTATONIC[Math.floor(hue * 5) % 5];
-                return 82.41 * Math.pow(2, step / 12);
+                return 110 * Math.pow(2, step / 12);
             },
 
-            tick(dt) {
+            playTone(freq, peakGain, attack, hold, release) {
                 if (!this.enabled || !this.ctx) return;
                 const t = this.ctx.currentTime;
-                const base = this.hueToFreq(visual.hue);
-                const brightness = 0.3 + visual.tide * 0.3 + visual.wikiMorph * 0.35 + visual.tradeMorph * 0.45;
-
-                this.oscs.forEach(({ osc, partial }, i) => {
-                    const targetFreq = base * partial;
-                    osc.frequency.setTargetAtTime(targetFreq, t, 0.25 + i * 0.05);
-                });
-
-                this.filter.frequency.setTargetAtTime(
-                    280 + visual.tide * 350 + visual.wikiMorph * 380 + visual.tradeMorph * 650,
-                    t, 0.12
-                );
-                this.droneGain.gain.setTargetAtTime(0.22 + brightness * 0.28, t, 0.15);
+                const osc = this.ctx.createOscillator();
+                const env = this.ctx.createGain();
+                const filter = this.ctx.createBiquadFilter();
+                osc.type = 'sine';
+                osc.frequency.value = freq;
+                filter.type = 'lowpass';
+                filter.frequency.value = Math.min(2400, freq * 4);
+                filter.Q.value = 0.5;
+                env.gain.setValueAtTime(0.0001, t);
+                env.gain.exponentialRampToValueAtTime(peakGain, t + attack);
+                env.gain.setValueAtTime(peakGain, t + attack + hold);
+                env.gain.exponentialRampToValueAtTime(0.0001, t + attack + hold + release);
+                osc.connect(filter);
+                filter.connect(env);
+                env.connect(this.master);
+                osc.start(t);
+                osc.stop(t + attack + hold + release + 0.05);
             },
 
+            tick() { /* no continuous bed — silence between events */ },
+
             onWikiPulse(activity) {
-                if (!this.enabled || !this.ctx || activity < 0.02) return;
-                const t = this.ctx.currentTime;
-                this.droneGain.gain.cancelScheduledValues(t);
-                const level = 0.28 + activity * 0.22;
-                this.droneGain.gain.setValueAtTime(this.droneGain.gain.value, t);
-                this.droneGain.gain.linearRampToValueAtTime(level, t + 0.6);
-                this.droneGain.gain.linearRampToValueAtTime(0.22 + visual.tide * 0.2 + visual.wikiMorph * 0.2, t + 2.2);
+                if (activity < 0.02) return;
+                const freq = this.hueToFreq(visual.hue) * 0.5;
+                this.playTone(freq, 0.022 + activity * 0.028, 0.25, 0.35, 0.5);
             },
 
             onTrade(isSell, intensity) {
                 if (!this.enabled || !this.ctx) return;
                 const t = this.ctx.currentTime;
-                if (t - this.lastTradeAt < 0.18) return;
+                if (t - this.lastTradeAt < 0.2) return;
                 this.lastTradeAt = t;
-
-                const osc = this.ctx.createOscillator();
-                const env = this.ctx.createGain();
-                osc.type = 'sine';
-                const base = this.hueToFreq(visual.hue);
-                osc.frequency.value = base * (isSell ? 1.5 : 2) * (1 + intensity * 0.5);
-                env.gain.setValueAtTime(0.0001, t);
-                env.gain.exponentialRampToValueAtTime(0.04 + intensity * 0.06, t + 0.02);
-                env.gain.exponentialRampToValueAtTime(0.0001, t + 0.35);
-                osc.connect(env);
-                env.connect(this.master);
-                osc.start(t);
-                osc.stop(t + 0.4);
+                const freq = this.hueToFreq(visual.hue) * (isSell ? 1.2 : 1.65);
+                this.playTone(freq, 0.012 + intensity * 0.035, 0.01, 0.04, 0.12);
             }
         };
 
@@ -301,11 +292,11 @@
             const soundBtn = document.getElementById('sound-toggle');
             if (dataAudio.enabled) {
                 dataAudio.disable();
-                soundBtn.textContent = 'Enable sound';
+                soundBtn.textContent = 'Event sounds';
                 soundBtn.classList.remove('on');
             } else {
                 await dataAudio.enable();
-                soundBtn.textContent = 'Sound on';
+                soundBtn.textContent = 'Sounds on';
                 soundBtn.classList.add('on');
             }
         });
@@ -327,12 +318,70 @@
             target.bloom = Math.min(CONFIG.caps.bloom, target.bloom);
         }
 
+        const dataFeed = {
+            MAX_LINES: 30,
+            POOL_SIZE: 32,
+            TRADE_GAP_MS: 300,
+            track: null,
+            pool: [],
+            active: [],
+            lastTradeAt: 0,
+
+            init() {
+                this.track = document.getElementById('data-feed-track');
+                for (let i = 0; i < this.POOL_SIZE; i++) {
+                    const row = document.createElement('div');
+                    row.className = 'feed-line';
+                    this.pool.push(row);
+                }
+            },
+
+            acquire() {
+                return this.pool.length ? this.pool.pop() : document.createElement('div');
+            },
+
+            release(node) {
+                node.className = 'feed-line';
+                node.textContent = '';
+                if (node.parentNode === this.track) {
+                    this.track.removeChild(node);
+                }
+                this.pool.push(node);
+            },
+
+            push(kind, text) {
+                if (!text || !this.track) return;
+
+                const row = this.acquire();
+                row.className = 'feed-line' + (kind ? ' ' + kind : '');
+                row.textContent = text;
+                row.style.animation = 'none';
+                row.offsetHeight;
+                row.style.animation = '';
+                this.track.insertBefore(row, this.track.firstChild);
+                this.active.unshift(row);
+
+                while (this.active.length > this.MAX_LINES) {
+                    this.release(this.active.pop());
+                }
+            },
+
+            pushTrade(kind, text) {
+                const now = Date.now();
+                if (now - this.lastTradeAt < this.TRADE_GAP_MS) return;
+                this.lastTradeAt = now;
+                this.push(kind, text);
+            }
+        };
+
         function setLastEvent(kind, label) {
             streamState.lastEventKind = kind;
             streamState.lastLabel = label;
-            const el = document.getElementById('last-event');
-            el.textContent = label;
-            el.className = 'event' + (kind ? ' ' + kind : '');
+            if (kind === 'btc-buy' || kind === 'btc-sell') {
+                dataFeed.pushTrade(kind, label);
+            } else if (kind) {
+                dataFeed.push(kind, label);
+            }
         }
 
         function ingestWikiEvent(ev) {
@@ -350,7 +399,7 @@
             const now = Date.now();
             if (now - lastHudWikiUpdate > 1200) {
                 lastHudWikiUpdate = now;
-                setLastEvent('wiki', `[${wiki}] ${title}${comment ? ' — ' + comment : ''}`);
+                streamState.lastLabel = `[${wiki}] ${title}${comment ? ' — ' + comment : ''}`;
             }
         }
 
@@ -368,9 +417,12 @@
             target.bloom = Math.min(CONFIG.caps.bloom, target.bloom + activity * 0.35);
             target.hue += (avgHue - target.hue) * 0.2;
 
+            const batchLabel = streamState.lastLabel ||
+                `Wiki · ${wikiBucket.count} edits (+${wikiBucket.bytes} bytes)`;
             wikiBucket = { count: 0, bytes: 0, hueSum: 0 };
             clampTarget();
-            setLastEvent('wiki', streamState.lastLabel || 'Wikipedia batch');
+            streamState.lastLabel = batchLabel;
+            dataFeed.push('wiki', batchLabel);
             if (dataAudio.enabled) dataAudio.onWikiPulse(activity);
         }
 
@@ -736,7 +788,7 @@
             lastFrame = t;
 
             tickSmoothing(dt);
-            dataAudio.tick(dt);
+            dataAudio.tick();
 
             const flow = 0.2 + Math.sin(t * 0.5) * 0.1 + Math.cos(t * 0.73) * 0.07;
             const wikiVis = Math.min(1, visual.wikiMorph + flow * 0.15);
@@ -787,6 +839,7 @@
             composer.setSize(window.innerWidth, window.innerHeight);
         });
 
+        dataFeed.init();
         init();
 
         connectWikipediaStream();
