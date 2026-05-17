@@ -5,6 +5,7 @@ date:   2026-05-17 09:30:00
 categories: EIL 
 ---
 
+Attention: rapid image transitions, and visual effects that may affect viewers who are sensitive to flashing imagery or have photosensitive epilepsy.
 
 - [data dreams](https://hasantayyar.net/assets/data-dreams/)
 - [data dreams v2](https://hasantayyar.net/assets/data-dreams/index-v2.html)
