@@ -15,7 +15,7 @@ categories: EIL
     <figcaption>Original</figcaption>
   </figure>
   <figure>
-    <a href="https://hasantayyar.net/assets/data-dreams/index-v2.html" title="Second version><img src="https://hasantayyar.net/assets/data-dreams/image-v2.png" alt="Data Dreams second image" /></a>
+    <a href="https://hasantayyar.net/assets/data-dreams/index-v2.html" title="Second version"><img src="https://hasantayyar.net/assets/data-dreams/image-v2.png" alt="Data Dreams second image" /></a>
     <figcaption>Version 2</figcaption>
   </figure>
 </div>
