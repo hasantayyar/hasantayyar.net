@@ -11,11 +11,11 @@ categories: EIL
 
 <div class="data-dreams-images">
   <figure>
-    <img src="https://hasantayyar.net/assets/data-dreams/image.png" alt="Data Dreams first image">
+    <a href="https://hasantayyar.net/assets/data-dreams/" title="Original work"><img src="https://hasantayyar.net/assets/data-dreams/image.png" alt="Data Dreams first image" /></a>
     <figcaption>Original</figcaption>
   </figure>
   <figure>
-    <img src="https://hasantayyar.net/assets/data-dreams/image-v2.png" alt="Data Dreams second image">
+    <a href="https://hasantayyar.net/assets/data-dreams/index-v2.html" title="Second version><img src="https://hasantayyar.net/assets/data-dreams/image-v2.png" alt="Data Dreams second image" /></a>
     <figcaption>Version 2</figcaption>
   </figure>
 </div>
