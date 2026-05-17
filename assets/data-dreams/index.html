@@ -51,19 +51,6 @@
         }
         #status-dot.live { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
         #status-dot.partial { background: #fbbf24; }
-        #approach {
-            position: absolute;
-            bottom: 24px;
-            left: 20px;
-            right: 20px;
-            max-width: 520px;
-            color: rgba(255, 255, 255, 0.38);
-            font-size: 11px;
-            line-height: 1.65;
-            z-index: 100;
-            pointer-events: none;
-        }
-        #approach strong { color: rgba(255, 255, 255, 0.55); font-weight: 500; }
         #sound-toggle {
             position: absolute;
             top: 20px;
@@ -161,10 +148,6 @@
 
     <div id="data-feed" aria-live="polite" aria-label="Live data stream">
         <div id="data-feed-track"></div>
-    </div>
-
-    <div id="approach">
-        <strong>Approach.</strong> Two streams, two morphisms: Wikipedia rolls the mesh in cyan horizontal waves (~1.5s batches); Bitcoin sparks particles in gold (buy) or red (sell). Same field, different motion grammars—so the eye can read the source, not just intensity.
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
