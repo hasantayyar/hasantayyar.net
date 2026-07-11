@@ -15,15 +15,12 @@ I discovered a *naturbelassener Park* around Tempelhof nearby my apartment. Berl
 
 ## Nazi drug experiments
 
-While I show a Nazi era concentration camp to my family during their visit I learned lots about the drug experiments in these camps.
+While I show a Nazi era concentration camp to my family during their visit to Berlin, I learned lots about the drug experiments in these camps.
 
-Nazi doctors conducted radical medical experiments on concentration camp prisoners without consent.
-The US Holocaust Memorial Museum groups these experiments into survival, drug-treatment, and ideological/racial categories. ([Holocaust Encyclopedia](https://encyclopedia.ushmm.org/content/en/article/nazi-medical-experiments))
+Nazi doctors conducted radical medical experiments on concentration camp prisoners without consent. I knew it already but I didn't know there were inhumane cocaine experiments and some psychedelics as well. The US Holocaust Memorial Museum groups these experiments into survival, drug-treatment, and ideological/racial categories. ([Holocaust Encyclopedia](https://encyclopedia.ushmm.org/content/en/article/nazi-medical-experiments))
 
 More specifically, SS doctor __Kurt Plötner__ is associated with **mescaline** experiments at Dachau, 
-apparently connected to interrogation and “truth serum” research. These expreiments later mentioned on LSD researches.
-
-This is the kind of topic where details matter, because it is easy for internet summaries to become sloppy or sensational. ([Cambridge University Press & Assessment](https://www.cambridge.org/core/journals/acta-neuropsychiatrica/article/psychotropic-drugs-research-in-nazi-germany-the-triumph-of-de-principle-of-malfeasance/72702C7C6B9607759A0CFB639BBA5599))
+apparently connected to interrogation and “truth serum” research. These expreiments later mentioned on LSD researches. ([Cambridge University Press & Assessment](https://www.cambridge.org/core/journals/acta-neuropsychiatrica/article/psychotropic-drugs-research-in-nazi-germany-the-triumph-of-de-principle-of-malfeasance/72702C7C6B9607759A0CFB639BBA5599))
 
 
 ## Eichenprozessionsspinner
@@ -34,8 +31,6 @@ the city was invaded, probabyl still is. Especially in the outer parts.
 The adult moth is not the main issue. The caterpillars are. Their tiny hairs contain an irritating toxin and can cause skin, eye, throat, and allergic reactions.
 
 Berlin is a good habitat for them because the city has many oaks in parks and along streets. ([Berlin.de](https://www.berlin.de/sen/gesundheit/gesundheitsschutz-und-umwelteinfluesse/tiere/eichenprozessionsspinner-1367028.php))
-
-So, no touching strange hairy caterpillars on oak trees. Seems like a very simple rule but they can land on you while chilling under a tree because they hang together in crowds in their **nests** and they tend to drop.
 
 ## Plants that keep appearing
 
@@ -51,15 +46,12 @@ Also learned that blackberry tea is great for eye pressure apperently. I am not 
 
 Barry’s gymb Berlin gave me a small anthropology moment :/
 
-Luxury gym, waiting list, strange people waiting outside, weird Google Maps energy, and a visible class signal around fitness.
-
-I do not have a deep conclusion. I only noticed again that gyms are not only about bodies. They are also about status, identity, aesthetics, and who feels invited into a space.
+Luxury gym, waiting list, strange people waiting outside, weird Google Maps energy, and a visible upper class snob culture fitness.
 
 ## NUMA finally clicked
 
 I learned more about **NUMA**, short for **Non-Uniform Memory Access**.
 
-Small mental model:
 
 ```text
 Small server:
@@ -91,7 +83,7 @@ Linux also has NUMA memory policy support, which controls from which NUMA node m
 
 I tried to configure Strudel and TidalCycles locally, then discovered that [Strudel](https://strudel.cc/) already works in the browser.
 
-Strudel is basically a browser-based live coding environment that ports the TidalCycles pattern language to JavaScript. Great way to start making patterns without turning the setup itself into the hobby. ([Strudel](https://strudel.cc/))
+Strudel is basically a browser-based live coding environment that ports the TidalCycles pattern language to JavaScript. ([Strudel](https://strudel.cc/))
 
 ## Music rabbit holes
 
@@ -99,14 +91,14 @@ A great house track from Saudi Arabia:
 
 [Shoft Alhala, Radio Edit, by Vinyl Mode and Moayad](https://www.youtube.com/watch?v=_rf-SuYnp0I)
 
-I also learned about Assa’d Khoury’s *Electronic Touches Belly Dance*, a 1978 Lebanese instrumental album built around funky electronic keyboards and Arabic melodies. It was reissued in 2026 after nearly 50 years. ([WEWANTSOUNDS](https://wewantsounds.bandcamp.com/album/electronic-touches-belly-dance))
+I also learned about **Assa’d Khoury**’s *Electronic Touches Belly Dance*, a 1978 Lebanese instrumental album built around funky electronic keyboards and Arabic melodies. It was reissued in 2026 after nearly 50 years. ([WEWANTSOUNDS](https://wewantsounds.bandcamp.com/album/electronic-touches-belly-dance))
 
-The most interesting part for me was the modified Farfisa-style keyboard world: electronic organs adapted for Oriental scales and quarter-tones. Arabic music needs pitches that standard Western keyboards do not naturally provide. Hardware had to bend toward the music.
+The most interesting part for me was the modified Farfisa-style keyboard world: electronic organs adapted for Oriental scales and quarter-tones. Arabic music needs pitches that standard Western keyboards do not naturally provide. This similar trend of tuning off the keyboards can also be observed other sub-cultures in North and central Africa.
 
 ## AWS “What is” pages
 
-I also appreciated AWS’s “What is” pages again.
+I appreciated AWS’s “What is” pages.
 
 The [computer chip explanation](https://aws.amazon.com/what-is/computer-chip/) is simple, direct, and mostly free of forced metaphors. It explains chips, silicon, etching, analog circuits, digital circuits, ASICs, SoCs, and AWS custom chips like Graviton, Inferentia, and Trainium in a clean way. ([Amazon Web Services, Inc.](https://aws.amazon.com/what-is/computer-chip))
 
-Good technical writing does not always need storytelling. Sometimes it just needs to explain the thing.
+Good technical writing does not always need storytelling.
