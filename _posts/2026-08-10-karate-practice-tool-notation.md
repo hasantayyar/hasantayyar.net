@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "Spatial Kata Notation: writing kata so you can see where you are facing" 
-date:   2026-06-01 09:30:00
+date:   2026-08-10 09:30:00
 categories: EIL 
 ---
 
-Karate kata is spatial. You turn, you step, you change facing, and the floor pattern ([embusen](https://en.wikipedia.org/wiki/Embusen)) is half the work of remembering a form. 
+[Karate kata](https://en.wikipedia.org/wiki/Karate_kata) is __spatial__. You turn, you step, you change facing, and the floor pattern ([embusen](https://en.wikipedia.org/wiki/Embusen)) is half the work of remembering a form. 
 Most of my notes after class were still paragraphs: 
-technique names stacked in order, with facing buried somewhere in the sentence if I remembered to write it down at all.
+technique names in order, with facing lost in the sentence if I remembered to write it down at all.
 
 I wanted something I could read on a phone between sets, paste into a chat, or print without opening an app. That became **Spatial Kata Notation (SKN)**: a plain-text tree for kata and bunkai. The site and generator live in an open repo here:
 
@@ -103,5 +103,3 @@ I care about a few boring properties:
 2. **Portable.** Works in email, chat, Markdown, paper.
 3. **Readable without software.** The website helps; it is not required to use the notation.
 4. **Honest about limits.** A tree will not carry kime, breathing, or the feel of a correction. It carries labels and order.
-
-If that sounds a bit like why people still like SQL dumps and config files: same instinct. Structure where structure helps; leave the rest to humans.
