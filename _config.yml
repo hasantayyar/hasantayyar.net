@@ -4,12 +4,13 @@ email: tayyar.besik@gmail.com
 description: "IPA: ˈHɑː-sɑːn Tɑːy-yɑːr Bɛˑ-ʃik"
 baseurl: ""
 url: "https://hasantayyar.net/"
+site_host: hasantayyar.net
 twitter_username: htayyar
 github_username:  hasantayyar
 medium_username: htayyar
 
 # Bump css_version and rename css/site-*.css when styles change (CDN cache bust).
-css_version: "20260823"
+css_version: "202608241"
 
 # Build settings
 highlighter: rouge
