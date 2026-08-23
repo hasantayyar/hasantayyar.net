@@ -2,7 +2,7 @@
 layout: post
 title:  "[software] Semantic diffs" 
 date:   2021-02-02 10:00:00
-categories: software
+categories: notes
 ---
 
 [diffsitter](https://github.com/afnanenayet/diffsitter) - A tree-sitter based AST difftool to get meaningful semantic diffs

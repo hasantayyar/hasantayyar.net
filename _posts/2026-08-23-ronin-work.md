@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Visual work - A ronin demo" 
-date:   2026-08-23 14:59:00
-categories: art 
+date:   2026-08-23 10:59:00
+categories: visual 
 ---
 
 Below is a [Ronin](https://100r.co/site/ronin.html) work.
-Ronin is an amateur open source procedural image processing tool.
+Ronin is an amateur open source procedural image processing tool by an [inspriational creator](https://wiki.xxiivv.com/site/home.html).
 > Ronin is a procedural graphics tool designed to automate simple graphical tasks, like resizing, cropping, coloring, and generating algorithmic images. It interprets a minimal dialect of LISP, look at the examples to better understand how this all works.
 
 The code below is evaluated via a Ronin js version [https://hundredrabbits.github.io/Ronin/](https://hundredrabbits.github.io/Ronin/).

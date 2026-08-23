@@ -2,7 +2,7 @@
 layout: post
 title: "2025 clippings from my Kindle"
 date: 2026-01-10 09:31:00
-categories: EIL
+categories: notes
 ---
 
 Below is a list of my 2025 clippings from my Kindle.

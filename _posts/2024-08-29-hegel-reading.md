@@ -2,7 +2,7 @@
 layout: post
 title:  "[book] Hegel readings" 
 date:   2024-08-29 10:00:00
-categories: book
+categories: [books, notes]
 ---
 
 I am surrounded by Hegel readers. I made a list for myself in this order:

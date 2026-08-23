@@ -2,7 +2,7 @@
 layout: post
 title:  "[books] SRE related books I recently read and liked" 
 date:   2021-05-10 10:00:00
-categories: books
+categories: [books, notes]
 ---
 
 ##### 1. Cloud Native Transformation, by P. Reznik, J. Dobson, M. Gienow 2019 - [via O'Reilly](https://www.oreilly.com/library/view/cloud-native-transformation/9781492048893/)

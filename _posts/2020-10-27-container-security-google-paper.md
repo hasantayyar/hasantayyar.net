@@ -2,7 +2,7 @@
 layout: post
 title:  "[paper] A paper by Google: Why container Security matters?" 
 date:   2020-10-27 10:00:00
-categories: paper
+categories: notes
 ---
 
 > Understanding the container security concepts that impact your organization

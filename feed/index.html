@@ -12,6 +12,8 @@ pagination:
 
 Quick snippets, quotes, links, unstructured posts, fast ideas or comments, things I like but probably won't revisit, plus security or cloud news I find important and other occasional topics.
 
+{% include category-list.html %}
+
 <div class="posts">
     {% for post in paginator.posts %}
       <h2 class="post-title">

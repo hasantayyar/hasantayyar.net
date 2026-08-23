@@ -2,7 +2,7 @@
 layout: post
 title:  "Foundational concepts of Karate" 
 date:   2025-08-28 10:00:00
-categories: EIL
+categories: notes
 ---
 
 Foundational concepts of Karate-Do, integrating technique and spirit. A summary from the books:
