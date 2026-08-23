@@ -1,0 +1,53 @@
+{% assign name_parts = site.title | split: ' ' %}
+{% assign given = name_parts | slice: 0, 2 | join: ' ' %}
+{% assign family = name_parts | last %}
+
+<section class="home-intro" aria-label="Introduction">
+  <p class="home-eyebrow">{{ site.data.person.jobTitle }} · {{ site.data.person.worksFor.name }}</p>
+
+  <div class="home-name-block">
+    <h1 class="home-name">
+      <span class="home-name-line">{{ given }}</span>
+      <span class="home-name-line home-name-accent">{{ family }}</span>
+    </h1>
+    <p class="home-ipa-marginalia" aria-label="Pronunciation">{{ site.description }}</p>
+  </div>
+
+  <div class="home-divider" aria-hidden="true">
+    <svg viewBox="0 0 320 12" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 6 C40 2, 80 10, 120 6 S200 2, 240 6 S300 10, 320 6" />
+    </svg>
+  </div>
+
+  <nav class="home-links" aria-label="Links">
+    {% for link in site.data.person.sameAs %}
+      <a href="{% if link.url contains 'http' %}{{ link.url }}{% else %}{{ link.url | prepend: site.baseurl }}{% endif %}">{{ link.label }}</a>
+    {% endfor %}
+  </nav>
+
+  <a class="home-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+</section>
+
+<footer class="home-footer dark-footer">
+  <svg class="signature signature-seal" viewBox="0 0 220 80" role="img" aria-label="Signature">
+    <path
+      pathLength="1"
+      d="M10 60
+         C16 40 22 24 28 16
+         C34 8 38 44 32 60
+         C29 72 46 36 54 40
+         C60 44 58 64 56 60
+         C60 52 70 36 78 38
+         C86 40 84 66 76 60
+         C66 59 80 54 84 58
+         C88 62 94 40 98 44
+         C104 52 88 72 94 60
+         C100 56 112 42 120 46
+         C128 50 126 72 118 62
+         C122 50 130 44 136 40
+         C140 36 148 52 144 60
+         C142 66 150 72 160 58
+         C170 46 186 44 192 52
+         C198 60 208 72 214 58" />
+  </svg>
+</footer>

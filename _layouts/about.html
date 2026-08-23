@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include dark-head.html %}
+  </head>
+  <body class="page-dark page-about">
+    {% include brush-bg.html %}
+    <div class="dark-shell">
+      <a class="dark-back" href="{{ site.baseurl }}/">← Home</a>
+      <article class="dark-content">
+        <h1 class="dark-title">{{ page.title }}</h1>
+        {{ content }}
+      </article>
+      {% include dark-footer.html %}
+    </div>
+    {% include dark-scripts.html %}
+  </body>
+</html>

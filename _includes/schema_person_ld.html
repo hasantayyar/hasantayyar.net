@@ -1,0 +1,21 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.title | jsonify }},
+  "email": {{ site.email | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "jobTitle": {{ site.data.person.jobTitle | jsonify }},
+  "worksFor": {
+    "@type": "Organization",
+    "name": {{ site.data.person.worksFor.name | jsonify }},
+    "url": {{ site.data.person.worksFor.url | jsonify }}
+  },
+  "knowsAbout": {{ site.data.person.knowsAbout | jsonify }},
+  "sameAs": [
+    {% for link in site.data.person.sameAs %}{% if link.url contains 'http' %}{{ link.url | jsonify }}{% else %}{{ link.url | prepend: site.url | replace: '.net//', '.net/' | jsonify }}{% endif %}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "url": {{ site.url | jsonify }}
+}
+</script>

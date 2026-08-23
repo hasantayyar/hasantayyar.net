@@ -1,0 +1,13 @@
+{% if site.categories.size > 0 %}
+{% capture category_names %}{% for category in site.categories %}{{ category[0] }}|{% endfor %}{% endcapture %}
+{% assign sorted_categories = category_names | split: '|' | sort %}
+<nav class="category-list" aria-label="Browse by category">
+  {% for name in sorted_categories %}
+    {% if name != "" %}
+      {% assign slug = name | slugify %}
+      {% assign count = site.categories[name].size %}
+      <a class="btn category-tag{% if page.category == name %} is-active{% endif %}" href="{{ site.baseurl }}/feed/category/{{ slug }}/">{{ name }} <span class="category-count">{{ count }}</span></a>
+    {% endif %}
+  {% endfor %}
+</nav>
+{% endif %}

@@ -1,0 +1,19 @@
+---
+layout: notes
+---
+{% include category-list.html %}
+
+<p class="category-summary">{{ page.posts.size }} post{% if page.posts.size != 1 %}s{% endif %} in <strong>{{ page.title }}</strong>.</p>
+
+<div class="posts">
+  {% for post in page.posts %}
+    <h2 class="post-title">
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    </h2>
+    <div class="post-excerpt">{{ post.content }}</div>
+    {% include notes-separator.html %}
+  {% endfor %}
+</div>
+
+<p class="notes-back"><a href="{{ site.baseurl }}/feed/">← All notes</a></p>

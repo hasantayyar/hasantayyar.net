@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: notes
 title: Notes
 permalink: /feed/
 pagination:
@@ -10,31 +10,32 @@ pagination:
   sort_reverse: true
 ---
 
-Quick snippets, quotes, links, unstructured posts, fast ideas or comments, things I like but probably won't revisit, plus security or cloud news I find important and other occasional topics.
+<p class="notes-lede">Quick snippets, quotes, links, unstructured posts, fast ideas or comments, things I like but probably won't revisit, plus security or cloud news I find important and other occasional topics.</p>
 
 <p class="feed-archive-note">Earlier writing (multilingual) is on <a href="https://medium.com/@htayyar">Medium</a>.</p>
 
 {% include category-list.html %}
 
 <div class="posts">
-    {% for post in paginator.posts %}
-      <h2 class="post-title">
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <time class="post-date">{{ post.date | date: "%b %-d, %Y" }}</time>
-      </h2>
-    <p>{{ post.content }}</p>
-    <div class="blog-separator"><span class="line"></span><span class="icon">✦</span><span class="line"></span></div>
-    {% endfor %}
+  {% for post in paginator.posts %}
+    <h2 class="post-title">
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    </h2>
+    <div class="post-excerpt">{{ post.content }}</div>
+    {% include notes-separator.html %}
+  {% endfor %}
 </div>
 
 {% if paginator.total_pages > 1 %}
-<nav class="pagination" aria-label="Feed pagination">
+<nav class="pagination" aria-label="Notes pagination">
   <p class="pagination-links">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="btn">Newer</a>
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="btn pagination-btn">Newer</a>
     {% endif %}
     <span class="pagination-info">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="btn">Older</a>
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="btn pagination-btn">Older</a>
     {% endif %}
   </p>
 </nav>

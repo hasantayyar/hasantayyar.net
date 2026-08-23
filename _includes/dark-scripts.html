@@ -1,0 +1,37 @@
+<script>
+(function () {
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".signature-seal").forEach(function (sig) {
+    var path = sig.querySelector("path");
+    if (!path) return;
+    if (reduced) {
+      sig.classList.add("is-drawing", "is-drawn");
+      path.style.strokeDashoffset = "0";
+      return;
+    }
+    var drawn = false;
+    function startDraw() {
+      if (drawn) return;
+      drawn = true;
+      setTimeout(function () {
+        sig.classList.add("is-drawing");
+        path.addEventListener("animationend", function () {
+          sig.classList.add("is-drawn");
+        }, { once: true });
+      }, 600);
+    }
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            startDraw();
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -5% 0px" }).observe(sig);
+    } else {
+      startDraw();
+    }
+  });
+})();
+</script>
