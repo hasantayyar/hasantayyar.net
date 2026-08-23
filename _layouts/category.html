@@ -16,6 +16,9 @@ layout: notes
       </header>
       <div class="post-excerpt">{{ post.content }}</div>
     </article>
+    {% unless forloop.last %}
+      {% include post-divider.html %}
+    {% endunless %}
   {% endfor %}
 </div>
 
