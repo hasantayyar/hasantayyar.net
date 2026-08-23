@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "music: Strudel works - Geography of Afterlight"
-date:   2026-08-23 09:30:00
+date:   2026-08-23 12:30:00
 categories: music 
 ---
 
