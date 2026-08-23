@@ -29,6 +29,7 @@ to{stroke-dashoffset:0}
 @media (prefers-reduced-motion: reduce) {
 .signature path{animation:none;stroke-dashoffset:0}
 .page-dark .brush-live,.page-dark .brush-live-slow,.page-dark .brush-shift,.page-dark .brush-bg svg{animation:none}
+.page-notes .post-divider-stroke{animation:none}
 .page-dark a:not(.dark-back):not(.btn)::before{transition:none}
 .page-dark .signature-seal{opacity:.35}
 }
