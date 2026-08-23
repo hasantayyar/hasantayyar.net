@@ -7,12 +7,18 @@ layout: notes
 
 <div class="posts">
   {% for post in page.posts %}
-    <h2 class="post-title">
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-    </h2>
-    <div class="post-excerpt">{{ post.content }}</div>
-    {% include notes-separator.html %}
+    <article class="post-item">
+      <header class="post-header">
+        <h2 class="post-title">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      </header>
+      <div class="post-excerpt">{{ post.content }}</div>
+    </article>
+    {% unless forloop.last %}
+      {% include post-divider.html %}
+    {% endunless %}
   {% endfor %}
 </div>
 
