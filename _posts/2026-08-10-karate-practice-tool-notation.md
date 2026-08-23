@@ -2,7 +2,7 @@
 layout: post
 title:  "Spatial Kata Notation: writing kata so you can see where you are facing" 
 date:   2026-08-10 09:30:00
-categories: EIL 
+categories: project 
 ---
 
 [Karate kata](https://en.wikipedia.org/wiki/Karate_kata) is __spatial__. You turn, you step, you change facing, and the floor pattern ([embusen](https://en.wikipedia.org/wiki/Embusen)) is half the work of remembering a form. 
