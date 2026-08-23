@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
-  {% include head.html %}
-  <body class="page-home">
-    <div class="c">
-      <div>
-        {{ content }}
-      </div>
-      {% include footer.html %}
+<html lang="en">
+  <head>
+    {% include dark-head.html %}
+    {% include schema_person_ld.html %}
+  </head>
+  <body class="page-dark page-home">
+    {% include brush-bg.html %}
+    <div class="dark-shell">
+      {% include home-hero.html %}
     </div>
   </body>
 </html>

@@ -9,12 +9,11 @@ knowsAbout:
   - information security
   - reliability
 sameAs:
-  - { label: Radar/Blog, url: "/feed/" }
+  - { label: Bandcamp, url: "https://tayyar.bandcamp.com/follow_me" }
+  - { label: Notes, url: "/feed/" }
+  - { label: About, url: "/about/" }
   - { label: LinkedIn, url: "https://www.linkedin.com/in/hasantayyar/" }
+  - { label: PGP, url: "https://keybase.io/hasantayyar/pgp_keys.asc" }
   - { label: Last.fm, url: "https://last.fm/user/hasantayyar" }
   - { label: Spotify, url: "https://open.spotify.com/user/hasantayyar" }
   - { label: Unsplash, url: "https://unsplash.com/@hasantayyar" }
-  - { label: Bandcamp, url: "https://tayyar.bandcamp.com/follow_me" }
-  - { label: Ex-Blog, url: "https://medium.com/@htayyar" }
-  - { label: More, url: "/about/" }
-  - { label: PGP, url: "https://keybase.io/hasantayyar/pgp_keys.asc" }
