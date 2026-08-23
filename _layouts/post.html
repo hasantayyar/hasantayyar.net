@@ -1,15 +1,30 @@
----
-layout: default
----
-<div class="c">
-
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-
-  <article class="post-content">
-  {{ content }}
-  </article>
-
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include dark-head.html %}
+  </head>
+  <body class="page-dark page-post">
+    {% include brush-bg.html %}
+    <div class="dark-shell dark-shell-wide">
+      <a class="dark-back" href="{{ site.baseurl }}/feed/">← Notes</a>
+      <article class="post-article">
+        <header class="post-detail-header">
+          <h1 class="post-detail-title">{{ page.title }}</h1>
+          <p class="post-detail-meta">
+            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+            {% if page.categories.size > 0 %}
+              {% for category in page.categories %}
+                · <a href="{{ site.baseurl }}/feed/category/{{ category | slugify }}/">{{ category }}</a>
+              {% endfor %}
+            {% endif %}
+          </p>
+        </header>
+        <div class="post-content dark-prose">
+          {{ content }}
+        </div>
+      </article>
+      {% include dark-footer.html %}
+    </div>
+    {% include dark-scripts.html %}
+  </body>
+</html>

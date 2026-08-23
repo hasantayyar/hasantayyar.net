@@ -25,7 +25,7 @@ pagination:
         </h2>
         <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %-d, %Y" }}</time>
       </header>
-      <div class="post-excerpt">{{ post.content }}</div>
+      <div class="post-excerpt dark-prose">{{ post.content }}</div>
     </article>
     {% unless forloop.last %}
       {% include post-divider.html %}
