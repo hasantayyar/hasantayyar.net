@@ -19,3 +19,6 @@ Paper [https://dl.acm.org/doi/epdf/10.1145/1357054.1357072](https://dl.acm.org/d
 > personality measures of openness toexperience and need for personal structure
 > predict disruption costs of interruptions.
 > We discuss implicationsfor how system design can support interrupted work
+
+
+Also kind of a related tool: [Interruptions impact on deep work simulator](https://justoffbyone.com/tools/interruptions/?lambda=1.0&delta=11&len=60&target=1&seed=12345)
