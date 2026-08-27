@@ -1,6 +1,7 @@
 ---
 layout: about
 title: About
+description: "DevOps Engineer at SumUp. Automation, cloud operations, and information security."
 permalink: /about/
 ---
 

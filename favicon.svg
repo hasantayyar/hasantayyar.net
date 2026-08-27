@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Hasan Tayyar Be_ik">
+  <rect width="32" height="32" fill="#080808"/>
+  <path
+    d="M4 21 C8 12, 14 26, 20 17 S27 10, 28 14"
+    fill="none"
+    stroke="#ececec"
+    stroke-width="2.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+</svg>

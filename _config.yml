@@ -2,8 +2,10 @@
 title: Hasan Tayyar Beşik 
 email: tayyar.besik@gmail.com
 description: "IPA: ˈHɑː-sɑːn Tɑːy-yɑːr Bɛˑ-ʃik"
+seo_description: "DevOps Engineer at SumUp. Notes on automation, cloud operations, security, reliability, and kubernetes."
+og_image: "/og-default.png"
 baseurl: ""
-url: "https://hasantayyar.net/"
+url: "https://hasantayyar.net"
 site_host: hasantayyar.net
 twitter_username: htayyar
 github_username:  hasantayyar

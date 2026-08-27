@@ -1,0 +1,33 @@
+{% if page.layout == 'post' %}
+{% assign article_url = page.url | replace: 'index.html', '' | absolute_url %}
+{% assign article_description = site.seo_description %}
+{% if page.description %}
+  {% assign article_description = page.description | strip_html | strip_newlines | truncate: 160 %}
+{% elsif page.excerpt and page.excerpt != empty %}
+  {% assign article_description = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
+{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": {{ site.title | jsonify }},
+    "url": {{ site.url | jsonify }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": {{ site.title | jsonify }}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ article_url | jsonify }}
+  },
+  "description": {{ article_description | jsonify }},
+  "url": {{ article_url | jsonify }}
+}
+</script>
+{% endif %}
