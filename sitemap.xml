@@ -9,19 +9,20 @@ layout: none
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>{{ site.url }}feed/</loc>
+    <loc>{{ "/feed/" | absolute_url }}</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>{{ site.url }}about/</loc>
+    <loc>{{ "/about/" | absolute_url }}</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   {% assign all_categories = site.posts | map: 'categories' | flatten | uniq | sort %}
   {% for category in all_categories %}
+  {% capture category_path %}/feed/category/{{ category | slugify }}/{% endcapture %}
   <url>
-    <loc>{{ site.url }}feed/category/{{ category | slugify }}/</loc>
+    <loc>{{ category_path | absolute_url }}</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
