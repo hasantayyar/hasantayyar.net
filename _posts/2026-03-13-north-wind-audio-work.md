@@ -2,7 +2,7 @@
 layout: post
 title:  "music: North Wind" 
 date:   2026-03-13 09:30:00
-categories: music 
+categories: [studio, music]
 ---
 
 

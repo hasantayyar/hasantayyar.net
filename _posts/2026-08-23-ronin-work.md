@@ -2,7 +2,7 @@
 layout: post
 title:  "Visual work - A ronin demo" 
 date:   2026-08-23 10:59:00
-categories: visual 
+categories: [studio, visual]
 ---
 
 Below is a [Ronin](https://100r.co/site/ronin.html) work.

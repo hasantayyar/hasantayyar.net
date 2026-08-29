@@ -2,7 +2,7 @@
 layout: post
 title:  "[music] Berlin -> Ankara roadtrip: Shazamed from the radio on the way" 
 date:   2025-05-21 10:00:00
-categories: music
+categories: [studio, music]
 ---
 
 Songs I loved from the radio and Shazamed along the way:  Berlin <-> Győr - Hungary <-> Niš - Serbia <-> Edirne, Çanakkale, İzmir, Denizli, Bolu, Ereğli, Ankara - Türkiye

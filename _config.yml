@@ -12,7 +12,7 @@ github_username:  hasantayyar
 medium_username: htayyar
 
 # Bump css_version and rename css/site-*.css when styles change (CDN cache bust).
-css_version: "202608241"
+css_version: "202608242"
 
 # Build settings
 highlighter: rouge

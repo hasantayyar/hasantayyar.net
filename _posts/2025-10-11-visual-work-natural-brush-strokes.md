@@ -2,7 +2,7 @@
 layout: post
 title:  "Chromatic Drift - P5.js visual work" 
 date:   2025-10-11 10:00:00
-categories: visual
+categories: [studio, visual]
 ---
 
 "[Chromatic Drift](https://hasantayyar.net/assets/chromatic-drift-p5-visual-work/)" is a visual work to to capture the gradual color transitions and the smooth, cloud-like movement of the organic natural pastel brush strokes.

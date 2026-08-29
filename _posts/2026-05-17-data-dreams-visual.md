@@ -2,7 +2,7 @@
 layout: post
 title:  "Audio and visual work from Wikipedia updates and BTC trades" 
 date:   2026-05-17 09:30:00
-categories: visual 
+categories: [studio, visual]
 ---
 
 Attention: rapid image transitions, and visual effects that may affect viewers who are sensitive to flashing imagery or have photosensitive epilepsy.

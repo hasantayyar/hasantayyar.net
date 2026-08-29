@@ -2,7 +2,7 @@
 layout: post
 title:  "[Music] The Routes of Slavery" 
 date:   2020-11-17 10:00:00
-categories: music
+categories: [studio, music]
 ---
 
 I recently discovered this album "The Routes of Slavery" by Jordi Saval. It is more like a project.

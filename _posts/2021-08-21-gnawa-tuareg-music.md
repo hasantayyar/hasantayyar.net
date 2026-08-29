@@ -2,7 +2,7 @@
 layout: post
 title:  "[music] Origins of Gnawa Music"
 date:   2021-08-21 10:00:00
-categories: music
+categories: [studio, music]
 ---
 
 

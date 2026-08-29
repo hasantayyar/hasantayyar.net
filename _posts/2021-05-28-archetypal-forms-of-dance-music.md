@@ -2,7 +2,7 @@
 layout: post
 title:  "[music] Eight of the archetypal forms of dance music" 
 date:   2021-05-28 10:00:00
-categories: music
+categories: [studio, music]
 ---
 
 > Bruce Aisher explores eight of the archetypal forms of dance music bassline, from old-school classics to contemporary techniques.

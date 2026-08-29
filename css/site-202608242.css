@@ -227,10 +227,21 @@ to{stroke-dashoffset:0}
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  max-width:42rem;
+  justify-content:flex-start;
+  max-width:48rem;
+  padding-top:clamp(3rem,10vh,5rem);
+  padding-bottom:3.5rem;
 }
-.page-home .home-intro{flex:1;display:flex;flex-direction:column;justify-content:center}
+.page-home .home-intro{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:2.25rem;
+  width:100%;
+}
+.page-home .home-plane{display:flex;flex-direction:column;width:100%}
+.page-home .home-plane-operator{gap:0}
+.page-home .home-plane-studio{margin-top:.25rem}
 .page-home .home-role{
   margin:0 0 .5rem;
   font-family:'Libre Baskerville',Georgia,serif;
@@ -476,6 +487,147 @@ to{stroke-dashoffset:0}
 @keyframes home-cursor-blink{
   0%,100%{opacity:1}
   50%{opacity:0}
+}
+
+/* Home studio plane */
+.page-home .home-studio{
+  margin:0;
+  border:1px solid #252525;
+  background:linear-gradient(180deg,rgba(255,255,255,.025) 0%,rgba(255,255,255,.008) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.page-home .home-studio-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.65rem 1rem;
+  border-bottom:1px solid #1f1f1f;
+  font-family:'Ubuntu Mono',monospace;
+  font-size:.78rem;
+  letter-spacing:.04em;
+  color:var(--muted);
+}
+.page-home .home-studio-path{color:var(--soft)}
+.page-home .home-studio-all{
+  font-family:'Ubuntu Mono',monospace;
+  font-size:.68rem;
+  letter-spacing:.04em;
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:none;
+  opacity:.75;
+  transition:opacity .25s,color .25s;
+}
+.page-home .home-studio-all:hover{
+  color:var(--soft);
+  opacity:1;
+}
+.page-home .home-studio-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+}
+.page-home .home-studio-tile{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  padding:1rem;
+  border-right:1px solid #161616;
+  text-decoration:none;
+  color:inherit;
+  transition:background .25s;
+}
+.page-home .home-studio-tile:last-child{border-right:none}
+.page-home .home-studio-tile::before{display:none}
+.page-home .home-studio-tile:hover{background:rgba(255,255,255,.035)}
+.page-home .home-studio-thumb{
+  position:relative;
+  aspect-ratio:4/3;
+  margin-bottom:.85rem;
+  overflow:hidden;
+  border:1px solid #222;
+  background:#101010;
+}
+.page-home .home-studio-thumb img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.88;
+  transition:opacity .25s,transform .35s ease;
+}
+.page-home .home-studio-tile:hover .home-studio-thumb img{
+  opacity:1;
+  transform:scale(1.03);
+}
+.page-home .home-studio-thumb[data-proto="media"]{
+  background:
+    radial-gradient(circle at 30% 20%,rgba(196,163,90,.12),transparent 55%),
+    linear-gradient(145deg,#121212,#0a0a0a);
+}
+.page-home .home-studio-thumb[data-proto="visual"]{
+  background:
+    radial-gradient(circle at 70% 80%,rgba(236,236,236,.08),transparent 50%),
+    linear-gradient(160deg,#141414,#090909);
+}
+.page-home .home-studio-thumb[data-proto="project"]{
+  background:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px),
+    #0c0c0c;
+  background-size:14px 14px;
+}
+.page-home .home-studio-meta{
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  margin-bottom:.45rem;
+}
+.page-home .home-studio-idx{
+  font-family:'Ubuntu Mono',monospace;
+  font-size:.68rem;
+  color:var(--muted);
+  opacity:.55;
+}
+.page-home .home-studio-proto{
+  font-family:'Ubuntu Mono',monospace;
+  font-size:.62rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.page-home .home-studio-proto[data-proto="media"]{color:#a89472}
+.page-home .home-studio-proto[data-proto="visual"]{color:#9a9a9a}
+.page-home .home-studio-proto[data-proto="project"]{color:#7f8f9a}
+.page-home .home-studio-title{
+  margin:0 0 .4rem;
+  font-family:'Libre Baskerville',Georgia,serif;
+  font-size:.92rem;
+  font-weight:400;
+  line-height:1.35;
+  color:var(--paper);
+  transition:color .25s;
+}
+.page-home .home-studio-tile:hover .home-studio-title{color:var(--soft)}
+.page-home .home-studio-excerpt{
+  margin:0 0 .65rem;
+  font-family:'Libre Baskerville',Georgia,serif;
+  font-size:.72rem;
+  line-height:1.45;
+  color:var(--muted);
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}
+.page-home .home-studio-date{
+  margin-top:auto;
+  font-family:'Ubuntu Mono',monospace;
+  font-size:.62rem;
+  letter-spacing:.04em;
+  color:var(--muted);
+  opacity:.7;
 }
 
 /* About */
@@ -882,6 +1034,13 @@ to{stroke-dashoffset:0}
   .page-home .home-route-target{font-size:.9rem}
   .page-home .home-route-name{display:none}
   .page-home .home-route-open{display:none}
+  .page-home .home-studio-grid{grid-template-columns:1fr}
+  .page-home .home-studio-tile{
+    border-right:none;
+    border-bottom:1px solid #161616;
+  }
+  .page-home .home-studio-tile:last-child{border-bottom:none}
+  .page-home .dark-shell{padding-top:3rem;padding-bottom:2.5rem}
   .page-dark .brush-stroke{stroke-width:48}
   .page-dark .brush-stroke.brush-1{stroke-width:72}
   .page-about .dark-back{margin-bottom:2.5rem}
