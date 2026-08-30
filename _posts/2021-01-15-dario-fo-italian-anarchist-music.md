@@ -2,7 +2,7 @@
 layout: post
 title:  "[music] Dario Fo, Italian popular songs and 1966" 
 date:   2021-01-15 10:00:00
-categories: [studio, music]
+categories: [music]
 ---
 
 One of Dario's early work  "Canzonissima" is featured satirical songs and sketches depicting the lives of the working classes under the pressure of politics, industrialisation and economics.
