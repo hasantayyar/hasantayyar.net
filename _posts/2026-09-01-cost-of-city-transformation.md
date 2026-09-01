@@ -5,12 +5,12 @@ date:   2026-09-01 10:00:00
 categories: [notes, visual]
 ---
 
-I was born and raised in Imrahor, a valley neighborhood in Ankara that lived inside strange conflicted feelings. This entire neighborhood was abandoned, self built small houses, green, autonomous, forgotten yet so close to the historic bureaucratic and aristocratic center of the capital. A patch of wild area where wild birds stop by when I was a child. The neglection within walking distance of power.
+I was born and raised in Imrahor, a valley neighborhood in Ankara that lived inside strange conflicted feelings. This entire neighborhood was abandoned, self built small houses, green, autonomous, forgotten yet so close to the historically bureaucratic and aristocratic center of the capital. A patch of wild area where wild birds stop by when I was a child. The neglect within walking distance of power.
 
-For decades it existed in that liminal state: half-inhabited, half-erased from official memory. Also for decades this area considered to be the lungs of the city and had great potential.
+For decades it existed in that liminal state: half-inhabited, half-erased from official memory. Also for decades this area was considered to be the lungs of the city and had great potential.
 Then one day it was demolished to be replaced by tall buildings. Not gradually gentrified, but cleared entirely. The valley opened for whatever the city's next transformation demands.
 
-Back in 2023 when the razoring of the neighborhood happening, I went back with a camera to freeze what remained: an entire neighborhood giving away its last breath, surrendering the last traces of memory still held in crumbling walls and scattered rubble. These photographs are not documentation of progress. They are a record of what urban transformation costs when the people who carry a place's memory are not the ones who decide its fate.
+Back in 2023 when the razoring of the neighborhood happening, I went back with a camera to freeze what remained: an entire neighborhood giving away its last breath, surrendering the last traces of memory still held in crumbling weak walls and scattered rubble. These photographs are not documentation of progress. They are a record of what urban transformation costs when the people who carry a place's memory are not the ones who decide its fate. A record of the power of the state razoring what people build with their own hands.
 
 I have the new photos as well. But that is too ugly to show. Simply tall buildings, typical Turkish urbanization.
 
