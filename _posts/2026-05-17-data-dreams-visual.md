@@ -10,7 +10,7 @@ Attention: rapid image transitions, and visual effects that may affect viewers w
 - [data dreams](https://hasantayyar.net/assets/data-dreams/)
 - [data dreams v2](https://hasantayyar.net/assets/data-dreams/index-v2.html)
 
-<div class="data-dreams-images">
+<div class="figure-grid">
   <figure>
     <a href="https://hasantayyar.net/assets/data-dreams/" title="Original work"><img src="https://hasantayyar.net/assets/data-dreams/image.png" alt="Data Dreams first image" /></a>
     <figcaption>Original</figcaption>
