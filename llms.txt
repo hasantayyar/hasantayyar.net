@@ -1,0 +1,42 @@
+# Hasan Tayyar Beşik
+
+> Personal site of a DevOps Engineer at SumUp. Notes on automation, cloud operations, security, reliability, and Kubernetes plus music, visual work, and occasional papers.
+
+The homepage is a personal landing page; longer writing lives under `/feed/`. Posts are short notes, monthly learning logs, audio and visual works, and paper summaries,  not formal documentation. Earlier multilingual writing is on Medium and being moved to here.
+
+Contact email is shared at the main page.
+PGP: https://keybase.io/hasantayyar/pgp_keys.asc
+
+## Core pages
+
+- [Home](https://hasantayyar.net/): Landing page with role, focus areas, and links
+- [About](https://hasantayyar.net/about/): Short bio and professional context
+- [Notes feed](https://hasantayyar.net/feed/): Paginated blog; snippets, links, ideas, and longer posts
+- [RSS](https://hasantayyar.net/feed.xml): Latest posts
+- [Sitemap](https://hasantayyar.net/sitemap.xml): Full URL index
+
+## Topics by category
+
+- [EIL / Everything I Learned](https://hasantayyar.net/feed/category/eil/): Monthly learning logs (tech, books, misc)
+- [Studio](https://hasantayyar.net/feed/category/studio/): Creative work; music and visual projects
+- [Notes](https://hasantayyar.net/feed/category/notes/): Short posts on security, cloud, tools, and links
+- [Papers worth sharing](https://hasantayyar.net/feed/category/paper/): Summaries and quotes from academic papers
+- [Music Works](https://hasantayyar.net/feed/category/music/): Listening notes, albums, and audio work
+- [Visual Works](https://hasantayyar.net/feed/category/visual/): Generative art, animations, and image work
+- [Books](https://hasantayyar.net/feed/category/books/): Reading notes and recommendations
+- [Programming](https://hasantayyar.net/feed/category/programming/): Language and tooling notes (e.g. Elixir)
+- [Project](https://hasantayyar.net/feed/category/project/): Small tools and side projects
+
+## Elsewhere
+
+- [Medium](https://medium.com/@htayyar): Earlier writing, often multilingual
+- [LinkedIn](https://www.linkedin.com/in/hasantayyar/): Professional profile
+- [Bandcamp](https://tayyar.bandcamp.com/follow_me): Music
+- [Unsplash](https://unsplash.com/@hasantayyar): Photography
+- [Spotify](https://open.spotify.com/user/hasantayyar): Playlists
+- [Last.fm](https://last.fm/user/hasantayyar): Listening history
+
+## Optional
+
+- [robots.txt](https://hasantayyar.net/robots.txt): Crawler policy (allows all)
+- [Keybase proof](https://hasantayyar.net/keybase.txt): Domain ownership verification
