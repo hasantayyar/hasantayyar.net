@@ -15,21 +15,21 @@ Back in 2023 when the razoring of the neighborhood happening, I went back with a
 I have the new photos as well. But that is too ugly to show. Simply tall buildings, typical Turkish urbanization.
 
 
-![Imrahor valley — new towers rising above the cleared hillside](/assets/cost-of-city/Imrahor%20Mar%2029%202023%20-%203.jpeg)
+[![Imrahor valley — new towers rising above the cleared hillside](/assets/cost-of-city/Imrahor%20Mar%2029%202023%20-%203_thumb.jpeg)](/assets/cost-of-city/Imrahor%20Mar%2029%202023%20-%203.jpeg)
 
 The new city already waits on the edge of the hill, creeping in to greens. Below it, the valley floor is stripped back to earth, stone, and whatever could not be carried away.
 
-![Rubble and remnants along the demolished slope](/assets/cost-of-city/Imrahor%20Mar%2029%202023.jpeg)
+[![Rubble and remnants along the demolished slope](/assets/cost-of-city/Imrahor%20Mar%2029%202023_thumb.jpeg)](/assets/cost-of-city/Imrahor%20Mar%2029%202023.jpeg)
 
 Houses that once held generations reduced to weight and volume, waiting to be removed.
 
 <div class="figure-grid">
   <figure>
-    <img src="/assets/cost-of-city/Imrahor%20Mar%2029%202023%20-%202.jpeg" alt="Concrete stairs climbing between crumbling walls in Imrahor" />
+    <a href="/assets/cost-of-city/Imrahor%20Mar%2029%202023%20-%202.jpeg"><img src="/assets/cost-of-city/Imrahor%20Mar%2029%202023%20-%202_thumb.jpeg" alt="Concrete stairs climbing between crumbling walls in Imrahor" /></a>
     <figcaption>Stairs still climb. The houses at the top are already gone.</figcaption>
   </figure>
   <figure>
-    <img src="/assets/cost-of-city/Imrahor%20Mar%2029%202023%20%20-%204.jpeg" alt="A suitcase left on broken tiles beside a peeling wall" />
+    <a href="/assets/cost-of-city/Imrahor%20Mar%2029%202023%20%20-%204.jpeg"><img src="/assets/cost-of-city/Imrahor%20Mar%2029%202023%20%20-%204_thumb.jpeg" alt="A suitcase left on broken tiles beside a peeling wall" /></a>
     <figcaption>A suitcase on broken tiles, departure, or simply too heavy to take. A leftover, a sign of sudden escape or a sudden forced decision.</figcaption>
   </figure>
 </div>
