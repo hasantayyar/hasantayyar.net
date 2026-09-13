@@ -1,0 +1,12 @@
+<header class="site-header">
+  {% if include.back %}
+    <a class="site-back" href="{{ include.back }}">{{ include.label | default: '← Home' }}</a>
+  {% else %}
+    <span class="site-back site-back--empty" aria-hidden="true"></span>
+  {% endif %}
+  <button type="button" class="theme-toggle" aria-label="Toggle light and dark mode" title="Toggle theme">
+    <span class="theme-toggle-track" aria-hidden="true">
+      <span class="theme-toggle-thumb"></span>
+    </span>
+  </button>
+</header>

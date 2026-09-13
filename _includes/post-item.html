@@ -1,0 +1,13 @@
+<article class="post-item" data-proto="{{ feed_proto }}">
+  <header class="post-header">
+    <p class="post-byline">
+      <span class="post-proto">{{ feed_proto }}</span>
+      <span class="post-byline-sep" aria-hidden="true">·</span>
+      <time class="post-date" datetime="{{ include.post.date | date: '%Y-%m-%d' }}">{{ include.post.date | date: '%Y-%m-%d' }}</time>
+    </p>
+    <h2 class="post-title">
+      <a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
+    </h2>
+  </header>
+  <div class="post-excerpt prose">{{ include.post.content }}</div>
+</article>

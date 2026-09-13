@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% include theme-init.html %}
     {% include dark-head.html %}
   </head>
-  <body class="page-dark page-about">
-    {% include brush-bg.html %}
-    <div class="dark-shell">
-      <a class="dark-back" href="{{ site.baseurl }}/">← Home</a>
-      <article class="dark-content">
-        <h1 class="dark-title">{{ page.title }}</h1>
-        {{ content }}
+  <body class="site page-about">
+    {% assign home_href = site.baseurl | append: '/' %}
+    {% include site-header.html back=home_href label='← Home' %}
+    <main class="site-main">
+      <article class="site-article">
+        <h1 class="page-title">{{ page.title }}</h1>
+        <div class="prose">{{ content }}</div>
       </article>
-      {% include dark-footer.html %}
-    </div>
-    {% include dark-scripts.html %}
+    </main>
+    {% include site-scripts.html %}
   </body>
 </html>

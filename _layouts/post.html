@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% include theme-init.html %}
     {% include dark-head.html %}
     {% include schema_article_ld.html %}
   </head>
-  <body class="page-dark page-post">
-    {% include brush-bg.html %}
-    <div class="dark-shell dark-shell-wide">
-      <a class="dark-back" href="{{ site.baseurl }}/feed/">← Notes</a>
-      <article class="post-article">
-        <header class="post-detail-header">
-          <h1 class="post-detail-title">{{ page.title }}</h1>
-          <p class="post-detail-meta">
-            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-            {% if page.categories.size > 0 %}
-              {% for category in page.categories %}
-                · <a href="{{ site.baseurl }}/feed/category/{{ category | slugify }}/">{{ category }}</a>
-              {% endfor %}
-            {% endif %}
+  <body class="site page-post">
+    {% assign notes_back = site.baseurl | append: '/feed/' %}
+    {% include site-header.html back=notes_back label='← Notes' %}
+    <main class="site-main site-main--wide">
+      <article class="site-article">
+        {% include feed-proto.html post=page %}
+        <header class="post-header">
+          <p class="post-byline">
+            <span class="post-proto">{{ feed_proto }}</span>
+            <span class="post-byline-sep" aria-hidden="true">·</span>
+            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y-%m-%d' }}</time>
           </p>
+          <h1 class="page-title page-title--post">{{ page.title }}</h1>
         </header>
-        <div class="post-content dark-prose">
-          {{ content }}
-        </div>
+        <div class="prose">{{ content }}</div>
       </article>
-      {% include dark-footer.html %}
-    </div>
-    {% include dark-scripts.html %}
+    </main>
+    {% include site-scripts.html %}
   </body>
 </html>

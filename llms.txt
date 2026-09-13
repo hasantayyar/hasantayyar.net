@@ -31,7 +31,7 @@ PGP: https://keybase.io/hasantayyar/pgp_keys.asc
 
 - [Medium](https://medium.com/@htayyar): Earlier writing, often multilingual
 - [LinkedIn](https://www.linkedin.com/in/hasantayyar/): Professional profile
-- [Bandcamp](https://tayyar.bandcamp.com/follow_me): Music
+- [Bandcamp](https://tayyar.bandcamp.com/): Music
 - [Unsplash](https://unsplash.com/@hasantayyar): Photography
 - [Spotify](https://open.spotify.com/user/hasantayyar): Playlists
 - [Last.fm](https://last.fm/user/hasantayyar): Listening history

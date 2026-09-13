@@ -1,99 +1,70 @@
 {% assign name_parts = site.title | split: ' ' %}
 {% assign given = name_parts | slice: 0, 2 | join: ' ' %}
 {% assign family = name_parts | last %}
-{% assign host = site.site_host | default: site.url %}
-{% assign route_count = site.data.person.sameAs.size | plus: 1 %}
+{% assign host = site.site_host | default: site.url | replace: 'https://', '' | replace: 'http://', '' | replace: '/', '' %}
 
 <section class="home-intro" aria-label="Introduction">
-  <div class="home-plane home-plane-operator">
-    <p class="home-role">{{ site.data.person.jobTitle }} at {{ site.data.person.worksFor.name }}</p>
+  <p class="home-role">{{ site.data.person.jobTitle }} at {{ site.data.person.worksFor.name }}</p>
 
-    <div class="home-capabilities" aria-label="Focus areas">
-      <span class="home-cap-path">capabilities/</span>
-      <ul class="home-cap-list">
-        {% for item in site.data.person.knowsAbout %}
-          <li class="home-cap-item">
-            <span class="home-cap-tag">{% if item == 'cloud operations' %}cloud{% elsif item == 'information security' %}security{% else %}{{ item }}{% endif %}</span>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+  <h1 class="home-name">
+    <span class="home-name-line">{{ given }}</span>
+    <span class="home-name-line home-name-accent">{{ family }}</span>
+  </h1>
+  <p class="home-meta">{{ site.description }} · {{ host }}</p>
 
-    <div class="home-name-block">
-      <h1 class="home-name">
-        <span class="home-name-line">{{ given }}</span>
-        <span class="home-name-line home-name-accent">{{ family }}</span>
-      </h1>
-      <p class="home-marginalia" aria-hidden="true">
-        <span class="home-marginalia-line">{{ site.description }}</span>
-        <span class="home-marginalia-line">{{ host }}</span>
-      </p>
-    </div>
+  <p class="home-skills" aria-label="Focus areas">
+    {% for item in site.data.person.knowsAbout %}
+      {% if item == 'cloud operations' %}cloud{% elsif item == 'information security' %}security{% else %}{{ item }}{% endif %}{% unless forloop.last %} · {% endunless %}
+    {% endfor %}
+  </p>
 
-    <div class="home-signature-bridge">
-      <span class="home-bridge-rule" aria-hidden="true"></span>
-      <svg class="signature signature-seal home-bridge-signature" viewBox="0 0 220 80" role="img" aria-label="Signature">
-        <path
-          pathLength="1"
-          d="M10 60
-             C16 40 22 24 28 16
-             C34 8 38 44 32 60
-             C29 72 46 36 54 40
-             C60 44 58 64 56 60
-             C60 52 70 36 78 38
-             C86 40 84 66 76 60
-             C66 59 80 54 84 58
-             C88 62 94 40 98 44
-             C104 52 88 72 94 60
-             C100 56 112 42 120 46
-             C128 50 126 72 118 62
-             C122 50 130 44 136 40
-             C140 36 148 52 144 60
-             C142 66 150 72 160 58
-             C170 46 186 44 192 52
-             C198 60 208 72 214 58" />
-      </svg>
-    </div>
+  <section class="home-notes" aria-labelledby="home-notes-title">
+    <header class="home-notes-header">
+      <div>
+        <p class="section-label">the core</p>
+        <h2 id="home-notes-title">
+          <a href="{{ site.baseurl }}/feed/">Notes <span aria-hidden="true">↗</span></a>
+        </h2>
+      </div>
+      <p>Working notes on systems, security, software, art, music, and whatever I am learning.</p>
+    </header>
 
-    <nav class="home-registry" aria-label="Links">
-      <header class="home-registry-head">
-        <span class="home-registry-path">~/interface/routes</span>
-        <span class="home-registry-meta">{{ route_count }} mounted</span>
-      </header>
-
-      <ol class="home-route-list">
-        {% for link in site.data.person.sameAs %}
-          {% if link.url contains 'http' %}
-            {% assign route_target = link.url | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' %}
-            {% if link.label == 'PGP' %}
-              {% assign route_proto = 'key' %}
-            {% else %}
-              {% assign route_proto = 'tls' %}
-            {% endif %}
-          {% else %}
-            {% assign route_target = link.url %}
-            {% assign route_proto = 'local' %}
-          {% endif %}
-          <li class="home-route">
-            <a href="{% if link.url contains 'http' %}{{ link.url }}{% else %}{{ link.url | prepend: site.baseurl }}{% endif %}">
-              <span class="home-route-idx">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-              <span class="home-route-proto" data-proto="{{ route_proto }}">{{ route_proto }}</span>
-              <span class="home-route-target">{{ route_target }}</span>
-              <span class="home-route-name">{{ link.label }}</span>
-              <span class="home-route-open" aria-hidden="true">↗</span>
-            </a>
-          </li>
-        {% endfor %}
-        <li class="home-route home-route-mail">
-          <a href="mailto:{{ site.email }}">
-            <span class="home-route-idx">{{ route_count | prepend: '0' | slice: -2, 2 }}</span>
-            <span class="home-route-proto" data-proto="mail">mail</span>
-            <span class="home-route-target">{{ site.email }}<span class="home-cursor" aria-hidden="true"></span></span>
-            <span class="home-route-name">contact</span>
-            <span class="home-route-open" aria-hidden="true">↗</span>
+    <ol class="home-latest">
+      {% for post in site.posts limit:3 %}
+        <li>
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+            <span>{{ post.title }}</span>
           </a>
         </li>
-      </ol>
-    </nav>
-  </div>
+      {% endfor %}
+    </ol>
+
+    <a class="home-notes-all" href="{{ site.baseurl }}/feed/">
+      Browse all {{ site.posts.size }} notes <span aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  <nav class="home-elsewhere" aria-label="About and external links">
+    <p class="section-label">about &amp; elsewhere</p>
+    <ul class="elsewhere-links">
+      {% for link in site.data.person.sameAs %}
+        {% unless link.label == 'Notes' %}
+          {% assign link_target = link.url | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' %}
+          <li>
+            <a href="{% if link.url contains 'http' %}{{ link.url }}{% else %}{{ link.url | prepend: site.baseurl }}{% endif %}">
+              <span>{{ link.label }}</span>
+              <small>{{ link_target }}</small>
+            </a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+      <li>
+        <a href="mailto:{{ site.email }}">
+          <span>Contact</span>
+          <small>{{ site.email }}</small>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </section>

@@ -1,0 +1,24 @@
+priority:
+  - visual
+  - music
+  - project
+  - EIL
+  - paper
+  - notes
+  - books
+  - software
+  - programming
+  - movie
+map:
+  music: media
+  visual: visual
+  project: project
+  EIL: eil
+  paper: paper
+  notes: note
+  books: books
+  software: soft
+  programming: code
+  movie: film
+skip_in_filters:
+  - studio

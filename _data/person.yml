@@ -12,7 +12,7 @@ knowsAbout:
 sameAs:
   - { label: Notes, url: "/feed/" }
   - { label: About, url: "/about/" }
-  - { label: Bandcamp, url: "https://tayyar.bandcamp.com/follow_me" }
+  - { label: Bandcamp, url: "https://tayyar.bandcamp.com/" }
   - { label: LinkedIn, url: "https://www.linkedin.com/in/hasantayyar/" }
   - { label: Unsplash, url: "https://unsplash.com/@hasantayyar" }
   - { label: Spotify, url: "https://open.spotify.com/user/hasantayyar" }

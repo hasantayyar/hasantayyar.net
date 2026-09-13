@@ -1,0 +1,8 @@
+{% assign post = include.post %}
+{% assign feed_proto = 'note' %}
+{% for priority_cat in site.data.feed_protos.priority %}
+  {% if post.categories contains priority_cat %}
+    {% assign feed_proto = site.data.feed_protos.map[priority_cat] | default: priority_cat | downcase %}
+    {% break %}
+  {% endif %}
+{% endfor %}

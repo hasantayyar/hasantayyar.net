@@ -1,12 +1,16 @@
 {% if site.categories.size > 0 %}
 {% capture category_names %}{% for category in site.categories %}{{ category[0] }}|{% endfor %}{% endcapture %}
 {% assign sorted_categories = category_names | split: '|' | sort %}
-<nav class="category-list" aria-label="Browse by category">
+<nav class="feed-filter" aria-label="Browse by category">
+  <span class="feed-filter-label">filter/</span>
+  <a class="feed-filter-link{% unless page.category %} is-active{% endunless %}" href="{{ site.baseurl }}/feed/">all</a>
   {% for name in sorted_categories %}
     {% if name != "" %}
-      {% assign slug = name | slugify %}
-      {% assign count = site.categories[name].size %}
-      <a class="btn category-tag{% if page.category == name %} is-active{% endif %}" href="{{ site.baseurl }}/feed/category/{{ slug }}/">{{ name }} <span class="category-count">{{ count }}</span></a>
+      {% unless site.data.feed_protos.skip_in_filters contains name %}
+        {% assign slug = name | slugify %}
+        {% assign filter_proto = site.data.feed_protos.map[name] | default: name | downcase %}
+        <a class="feed-filter-link{% if page.category == name %} is-active{% endif %}" href="{{ site.baseurl }}/feed/category/{{ slug }}/">{{ filter_proto }}</a>
+      {% endunless %}
     {% endif %}
   {% endfor %}
 </nav>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% include theme-init.html %}
     {% include dark-head.html %}
     {% include schema_person_ld.html %}
   </head>
-  <body class="page-dark page-home">
-    {% include brush-bg.html %}
-    <div class="dark-shell">
+  <body class="site page-home">
+    {% include site-header.html %}
+    <main class="site-main site-main--home">
       {% include home-hero.html %}
-    </div>
-    {% include dark-scripts.html %}
+    </main>
+    {% include site-scripts.html %}
   </body>
 </html>
