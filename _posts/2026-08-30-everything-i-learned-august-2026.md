@@ -16,7 +16,7 @@ August became an unexpectedly least physically active month. I broke my leg and 
 
 During a karate camp in Croatia (end of September), between trainings, I visited the home of **Ivan Rabuzin**, the internationally known painter from a village near Novi Marof. I love it there around Novi Marof.
 
-[![Rabuzin's house and garden near Novi Marof](/assets/post-august/rabuzin_4.png)](/assets/post-august/rabuzin_4.png)
+[![Rabuzin's house and garden near Novi Marof](/assets/post-august/rabuzin_4.png)](/assets/post-august/rabuzin_4_large.jpg)
 
 Ivan Rabuzin is long gone and his son-in-law is working to preserve his house as a museum.
 
@@ -39,7 +39,7 @@ Rabuzin began as a dishwasher, learned carpentry, then turned to painting. A qui
 
 The house is as interesting as the paintings. Rabuzin helped design it and made its furniture himself: chairs, cradles, benches, too many plates and ceramicware, and a huge dining table. It reminded me of the distinctive private architectural projects of old Ankara. The house also has spectacular but humble details to show the craftsmanship.
 
-[![A magazine spread about Ivan Rabuzin on a vintage sofa inside the house](/assets/post-august/rabuzin_1.png)](/assets/post-august/rabuzin_1_large.JPG)
+[![A magazine spread about Ivan Rabuzin on a vintage sofa inside the house](/assets/post-august/rabuzin_1.png)](/assets/post-august/rabuzin_1_large.jpg)
 
 I started loving his unique style. Check out his work [https://marilyncvitanic.substack.com/p/the-art-and-inspiration-of-ivan-rabuzin](https://marilyncvitanic.substack.com/p/the-art-and-inspiration-of-ivan-rabuzin)
 
