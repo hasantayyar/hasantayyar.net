@@ -19,7 +19,7 @@ Previously:
 
 Salman Rushdie reads from Edward Said’s *After the Last Sky*, a book about how Palestinian identity is lived through repetition and shared codes.
 One striking example is a letter from a self-proclaimed Palestinian karate champion, using karate as proof of belonging.
-Said notes that such repetition—being a “Palestinian karate expert” becomes a way of insisting on existence.
+Said notes that such repetition-being a “Palestinian karate expert” becomes a way of insisting on existence.
 At the same time, he shows how this identity is invaded by outside definitions and how women’s voices are often left out.
 
 https://www.youtube.com/watch?v=Sf0J9KlHank

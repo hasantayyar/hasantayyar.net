@@ -44,7 +44,7 @@ I had to repeat the treatment a few times to eliminate newly hatched greenflies 
 
 #### Lavender Oil vs. Mosquitos
 
-Lavender oil seems to repel mosquitos—at least the European kind—and smells pleasant during hot summer days.
+Lavender oil seems to repel mosquitos-at least the European kind-and smells pleasant during hot summer days.
 It also gives a refreshing feeling. I’m unsure about its safety on facial skin, so apply cautiously.
 
 #### 116116 – Emergency Blocking Hotline in Germany

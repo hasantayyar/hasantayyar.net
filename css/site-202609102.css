@@ -120,7 +120,7 @@ html[data-theme="light"] .theme-toggle-thumb{transform:translateX(1.15rem)}
 .prose p:last-child{margin-bottom:0}
 .prose h2,.prose h3{
   font-family:'Fraunces',Georgia,serif;
-  font-size:1.1rem;
+  font-size:1.3rem;
   font-weight:400;
   color:var(--fg);
   margin:1.75rem 0 .65rem;

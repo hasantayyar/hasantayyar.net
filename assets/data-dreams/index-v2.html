@@ -138,8 +138,8 @@
             <div class="metrics">
                 <span class="m-wiki" id="metric-wiki">wiki 0/min</span>
                 <span class="m-btc" id="metric-trade">btc 0/s</span>
-                <span class="m-wiki" id="metric-wiki-morph">roll —</span>
-                <span class="m-btc" id="metric-trade-morph">spark —</span>
+                <span class="m-wiki" id="metric-wiki-morph">roll -</span>
+                <span class="m-btc" id="metric-trade-morph">spark -</span>
             </div>
             <div id="legend">Cyan roll = Wikipedia · Magenta/red spark = BTC · Sound = data-driven tones</div>
         </div>
@@ -199,7 +199,7 @@
 
         let wikiBucket = { count: 0, bytes: 0, hueSum: 0 };
 
-        // ─── Sonification — quiet data bed + soft generated event tones ───────
+        // ─── Sonification - quiet data bed + soft generated event tones ───────
         const TECHNO_BPM = 128;
         const PAD_NOTES = [55, 65.41, 73.42, 82.41, 98];
         const AUDIO_GAIN = 1.85;
@@ -428,7 +428,7 @@
             const now = Date.now();
             if (now - lastHudWikiUpdate > 1200) {
                 lastHudWikiUpdate = now;
-                streamState.lastLabel = `[${wiki}] ${title}${comment ? ' — ' + comment : ''}`;
+                streamState.lastLabel = `[${wiki}] ${title}${comment ? ' - ' + comment : ''}`;
             }
         }
 

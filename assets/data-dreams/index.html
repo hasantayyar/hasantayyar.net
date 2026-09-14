@@ -139,8 +139,8 @@
             <div class="metrics">
                 <span class="m-wiki" id="metric-wiki">wiki 0/min</span>
                 <span class="m-btc" id="metric-trade">btc 0/s</span>
-                <span class="m-wiki" id="metric-wiki-morph">roll —</span>
-                <span class="m-btc" id="metric-trade-morph">spark —</span>
+                <span class="m-wiki" id="metric-wiki-morph">roll -</span>
+                <span class="m-btc" id="metric-trade-morph">spark -</span>
             </div>
             <div id="legend">Cyan rolling waves = Wikipedia batches · Gold/red particle sparks = BTC buy/sell</div>
         </div>
@@ -253,7 +253,7 @@
                 osc.stop(t + attack + hold + release + 0.05);
             },
 
-            tick() { /* no continuous bed — silence between events */ },
+            tick() { /* no continuous bed - silence between events */ },
 
             onWikiPulse(activity) {
                 if (activity < 0.02) return;
@@ -382,7 +382,7 @@
             const now = Date.now();
             if (now - lastHudWikiUpdate > 1200) {
                 lastHudWikiUpdate = now;
-                streamState.lastLabel = `[${wiki}] ${title}${comment ? ' — ' + comment : ''}`;
+                streamState.lastLabel = `[${wiki}] ${title}${comment ? ' - ' + comment : ''}`;
             }
         }
 

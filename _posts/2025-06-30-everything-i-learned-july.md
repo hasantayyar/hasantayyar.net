@@ -34,7 +34,7 @@ These are just parts of the recovery process. The first step should always be an
 
 #### Luxembourg has its own language – Luxembourgish
 
-I didn’t know Luxembourgish is classified as a language. It’s indeed all about political borders. Some say “Limburgisch” is a German dialect, which is what I thought too. It sounds exactly like what you’d expect from its location—a mix of German and French.  
+I didn’t know Luxembourgish is classified as a language. It’s indeed all about political borders. Some say “Limburgisch” is a German dialect, which is what I thought too. It sounds exactly like what you’d expect from its location-a mix of German and French.  
 
 I also learned that, unlike many European languages that have a direct word for “please” (like *bitte* in German), Luxembourgish doesn’t have a single standalone word for it. Instead, they use formal sentences and tones, with the phrase **“wann ech gelift.”** This literally means “If I may” or “if you please.” In a way, this is their version of “please.”  
 

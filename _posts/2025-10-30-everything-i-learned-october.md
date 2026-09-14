@@ -21,5 +21,5 @@ A nice website dedicated to “An Interrupted History of Punk and Underground Re
 
 #### A nice album discovery "Folk tunes of pakistan on the latin american beat 1965"
 
-The 1965 EP titled [Folk Tunes of Pakistan on the Latin American Beat](https://www.youtube.com/watch?v=W8UjgzLaFOY) by Pakistani composer [Sohail Rana](https://en.wikipedia.org/wiki/Sohail_Rana) takes folk melodies from regions like Sindh and the Punjab and re-imagines them in Latin and surf-inspired styles—tracks like “The Khyber Twist” mix electric guitar, organ and regional rhythm patterns.
+The 1965 EP titled [Folk Tunes of Pakistan on the Latin American Beat](https://www.youtube.com/watch?v=W8UjgzLaFOY) by Pakistani composer [Sohail Rana](https://en.wikipedia.org/wiki/Sohail_Rana) takes folk melodies from regions like Sindh and the Punjab and re-imagines them in Latin and surf-inspired styles-tracks like “The Khyber Twist” mix electric guitar, organ and regional rhythm patterns.
 Rana is primarily known for his film-music work in Pakistan.

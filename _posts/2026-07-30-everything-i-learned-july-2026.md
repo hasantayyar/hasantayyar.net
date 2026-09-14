@@ -8,7 +8,7 @@ categories: EIL
 Previously:
 - [EIL June '26](https://hasantayyar.net/eil/2026/07/01/everything-i-learned-june/)
 
-#### AWS Cert Manager updates
+## AWS Cert Manager updates
 
 AWS Cert Manager (ACM) supports ACME protocol now. I will be fine with Lets Encrypt but good to know.
 
@@ -24,7 +24,7 @@ The new AWS cert manager ACME support includes:
 
 Basically what ACME provides.
 
-#### Money sellers
+## Money sellers
 
 My two-year-old nephew called the people at the bank “money sellers.” Technically, he was right. Too obviously right?
 
@@ -39,7 +39,7 @@ Suppose a bank lends you €10,000:
 | New money in your account, available to spend | €10,000 |
 | Your debt to the bank                         | €10,000 |
 
-The bank creates the deposit **alongside your promise to repay**. It doesn’t need to transfer €10,000 from another customer’s savings account first. Money has been created, but you haven’t gained €10,000 in net wealth—you also owe €10,000. Repaying the principal reverses that creation. Banks remain constrained by capital, liquidity, regulation and lending risks. [Bank of England](https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy)
+The bank creates the deposit **alongside your promise to repay**. It doesn’t need to transfer €10,000 from another customer’s savings account first. Money has been created, but you haven’t gained €10,000 in net wealth-you also owe €10,000. Repaying the principal reverses that creation. Banks remain constrained by capital, liquidity, regulation and lending risks. [Bank of England](https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy)
 
 **MMT makes a broader argument about governments that issue their own currency:** their spending capacity is fundamentally constrained by real resources and inflation, rather than by needing to collect money first like a household. It incorporates bank money creation, but its policy conclusions go much further and are disputed.
 

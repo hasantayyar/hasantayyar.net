@@ -5,7 +5,7 @@ date:   2026-06-01 09:30:00
 categories: EIL 
 ---
 
-### Zirkus Mond
+## Zirkus Mond
 
 I went of the [Zirkus Mond](https://www.zirkusmond.de/) shows called "What is Zirkus". It was fantastic.
 
@@ -31,7 +31,7 @@ One of those stories that sounds fictional until you realize it actually happene
 
 The Smithsonian has [published](https://unsplash.com/@smithsonian) around 1,000 images on [Unsplash](https://unsplash.com/@smithsonian).
 
-What surprised me is the scale of the institution itself. The Smithsonian isn't just a museum—it's 21 museums, libraries, research centers, and even a zoo.
+What surprised me is the scale of the institution itself. The Smithsonian isn't just a museum-it's 21 museums, libraries, research centers, and even a zoo.
 
 Hundreds of years of art, science, culture, and history are now much easier to access and reuse.
 

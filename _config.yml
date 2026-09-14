@@ -12,11 +12,14 @@ github_username:  hasantayyar
 medium_username: htayyar
 
 # Bump css_version and rename css/site-*.css when styles change (CDN cache bust).
-css_version: "202609101"
+css_version: "202609106"
 
 # Build settings
 highlighter: rouge
-markdown: redcarpet
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 permalink: pretty
 
 # Exclude: vendor, archive folder with Turkish-char filenames (cause rb_sysopen errors)
