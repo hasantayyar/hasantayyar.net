@@ -79,6 +79,8 @@ The practical lesson: big servers are not just “more CPU and more RAM”. Plac
 
 Linux also has NUMA memory policy support, which controls from which NUMA node memory gets allocated. ([Kernel Documentation](https://docs.kernel.org/admin-guide/mm/numa_memory_policy.html))
 
+Also read [Jaana's post on Numa](https://rakyll.org/numa/).
+
 ## Strudel and TidalCycles
 
 I tried to configure Strudel and TidalCycles locally, then discovered that [Strudel](https://strudel.cc/) already works in the browser.
