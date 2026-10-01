@@ -3,11 +3,83 @@
   var key = "theme";
   var root = document.documentElement;
   var btn = document.querySelector(".theme-toggle");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem(key, next);
-  });
+  if (btn) {
+    btn.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem(key, next);
+    });
+  }
+
+  /* Ornamented illuminated initial for post bodies */
+  var p = document.querySelector(".page-post .prose > p:first-of-type");
+  if (!p || p.querySelector(".illuminated-initial")) return;
+
+  var ornament =
+    '<svg class="illuminated-initial__ornament" viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none">' +
+    '<rect class="ii-field" x="12" y="12" width="76" height="76"/>' +
+    '<rect class="ii-frame" x="3.5" y="3.5" width="93" height="93" stroke-width="1.4"/>' +
+    '<rect class="ii-frame" x="7.5" y="7.5" width="85" height="85" stroke-width="0.7"/>' +
+    '<rect class="ii-frame" x="18" y="18" width="64" height="64" stroke-width="0.55"/>' +
+    '<g class="ii-flourish" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">' +
+    '<path d="M4 26C4 12 12 4 26 4"/>' +
+    '<path d="M12 20c4-8 12-6 14-1-5 3-11 5-14 1z"/>' +
+    '<path d="M8 32c6-6 14-4 16 2"/>' +
+    '<path d="M20 10c6 2 8 8 4 12"/>' +
+    '<circle class="ii-dot" cx="14" cy="14" r="1.3"/>' +
+    '<path d="M74 4c14 0 22 8 22 22"/>' +
+    '<path d="M80 20c-4-8-12-6-14-1 5 3 11 5 14 1z"/>' +
+    '<path d="M92 32c-6-6-14-4-16 2"/>' +
+    '<path d="M80 10c-6 2-8 8-4 12"/>' +
+    '<circle class="ii-dot" cx="86" cy="14" r="1.3"/>' +
+    '<path d="M4 74c0 14 8 22 22 22"/>' +
+    '<path d="M12 80c4 8 12 6 14 1-5-3-11-5-14-1z"/>' +
+    '<path d="M8 68c6 6 14 4 16-2"/>' +
+    '<path d="M20 90c6-2 8-8 4-12"/>' +
+    '<circle class="ii-dot" cx="14" cy="86" r="1.3"/>' +
+    '<path d="M96 74c0 14-8 22-22 22"/>' +
+    '<path d="M88 80c-4 8-12 6-14 1 5-3 11-5 14-1z"/>' +
+    '<path d="M92 68c-6 6-14 4-16-2"/>' +
+    '<path d="M80 90c-6-2-8-8-4-12"/>' +
+    '<circle class="ii-dot" cx="86" cy="86" r="1.3"/>' +
+    "</g>" +
+    '<g class="ii-accent" stroke-width="1" stroke-linecap="round">' +
+    '<path d="M50 3.5v6M47 7.5h6"/>' +
+    '<path d="M50 90.5v6M47 92.5h6"/>' +
+    '<path d="M3.5 50h6M7.5 47v6"/>' +
+    '<path d="M90.5 50h6M92.5 47v6"/>' +
+    '<path d="M50 14l2.2 2.2L50 18.4l-2.2-2.2z"/>' +
+    '<path d="M50 81.6l2.2 2.2L50 86l-2.2-2.2z"/>' +
+    '<path d="M14 50l2.2 2.2L14 54.4l-2.2-2.2z"/>' +
+    '<path d="M86 50l2.2 2.2L86 54.4l-2.2-2.2z"/>' +
+    "</g></svg>";
+
+  function wrapFirstLetter(el) {
+    for (var i = 0; i < el.childNodes.length; i++) {
+      var node = el.childNodes[i];
+      if (node.nodeType === 3) {
+        var text = node.nodeValue;
+        var m = text.match(/^(\s*)(\S)/);
+        if (!m) continue;
+        if (!/[A-Za-z\u00C0-\u024F]/.test(m[2])) return false;
+        var after = text.slice(m[0].length);
+        var span = document.createElement("span");
+        span.className = "illuminated-initial";
+        span.innerHTML = ornament + '<span class="illuminated-initial__glyph">' + m[2] + "</span>";
+        var frag = document.createDocumentFragment();
+        if (m[1]) frag.appendChild(document.createTextNode(m[1]));
+        frag.appendChild(span);
+        if (after) frag.appendChild(document.createTextNode(after));
+        node.parentNode.replaceChild(frag, node);
+        return true;
+      }
+      if (node.nodeType === 1 && !/^(SCRIPT|STYLE|SVG|IMG|PRE|CODE)$/i.test(node.tagName)) {
+        if (wrapFirstLetter(node)) return true;
+      }
+    }
+    return false;
+  }
+
+  wrapFirstLetter(p);
 })();
 </script>
