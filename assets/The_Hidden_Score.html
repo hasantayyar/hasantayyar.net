@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081315">
+  <meta name="description" content="The Hidden Score: an audiovisual Rule 30 exhibit. Unfold the periodic edge of a deterministic universe, listen to its centre, and change one bit.">
+  <title>The Hidden Score — Rule 30</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23081315'/%3E%3Cpath d='M14 5h4v4h-4zM10 10h4v4h-4zM14 10h4v4h-4zM18 10h4v4h-4zM6 15h4v4H6zM10 15h4v4h-4zM22 15h4v4h-4zM2 20h4v4H2zM6 20h4v4H6zM14 20h4v4h-4zM18 20h4v4h-4zM22 20h4v4h-4zM26 20h4v4h-4z' fill='%23e9b575'/%3E%3C/svg%3E">
+  <style>
+@charset "UTF-8";
+:root{color-scheme:dark;--bg:#081315;--panel:#0c1a1d;--ink:#e7ebdf;--muted:#9aaca9;--line:#26373a;--gold:#e9b575;--cyan:#74d9d0;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;--serif:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default}button{color:inherit}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:5px}a{color:inherit}button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:fixed;top:-60px;left:20px;background:var(--gold);color:var(--bg);padding:10px;z-index:100}.skip-link:focus{top:12px}
+.masthead{height:82px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 38px;gap:20px}.brand{display:flex;gap:14px;align-items:center;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.12em;line-height:1.4;white-space:nowrap}.brand-mark{font-family:var(--serif);font-size:28px;letter-spacing:-.08em;border:1px solid #ad8c61;border-radius:50%;width:43px;height:43px;display:grid;place-items:center;font-weight:normal;color:var(--gold)}.brand-sub{display:block;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.08em;margin-top:3px}.edition{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted)}.header-actions{display:flex;align-items:center;gap:27px}.text-button{background:none;border:0;padding:8px 0;font-size:14px;white-space:nowrap}.text-button:hover{color:var(--gold)}.text-button span{margin-left:8px;color:var(--gold)}.icon-button{border:1px solid var(--line);background:none;width:38px;height:38px;display:grid;place-items:center;border-radius:50%}.icon-button:hover{border-color:var(--gold);color:var(--gold)}
+.exhibit{position:relative;height:calc(100svh - 354px);min-height:485px;max-height:980px;overflow:hidden}.scene{position:absolute;inset:0}.scene canvas{display:block;width:100%;height:100%;touch-action:pan-y}.scene-top{position:absolute;top:24px;left:36%;right:38px;display:flex;justify-content:space-between;pointer-events:none;font:11px var(--mono);letter-spacing:.14em;color:#7b9290}.scene-top span:last-child{color:#a8ad95}.axis-time{position:absolute;right:17px;top:45%;writing-mode:vertical-rl;font:11px var(--mono);letter-spacing:.14em;color:#698280;pointer-events:none}.axis-time span{margin-top:12px}.scene-caption{position:absolute;bottom:85px;left:36%;right:44px;display:flex;justify-content:space-between;gap:16px;font:12px var(--mono);color:var(--muted);pointer-events:none;letter-spacing:.01em}.scene-number{color:var(--gold);white-space:nowrap}.intro{position:absolute;z-index:2;left:38px;top:47px;width:32%;max-width:380px;pointer-events:none}.intro button{pointer-events:auto}.eyebrow{font:11px var(--mono);letter-spacing:.16em;color:var(--gold);margin:0 0 23px}h1{font-family:var(--serif);font-size:clamp(3rem,5.4vw,6rem);font-weight:400;line-height:1.03;letter-spacing:-.06em;margin:0 0 26px}h1 em,h2 em{font-weight:400;color:var(--gold);letter-spacing:-.07em}.chapter-copy{color:#b9c9c4;font-size:16px;line-height:1.65;max-width:290px;margin:0 0 27px}.intro-actions{display:flex;align-items:flex-start;flex-direction:column;gap:16px}.primary-button{display:flex;align-items:center;justify-content:space-between;gap:28px;background:var(--gold);border:1px solid var(--gold);color:#102021;font-size:14px;padding:12px 17px;border-radius:3px;transition:background .2s;min-width:206px}.primary-button:hover{background:#f6d4a4}.listen-button{background:none;border:0;display:flex;align-items:center;gap:11px;font-size:14px;padding:5px 0;color:#cbd4c8}.listen-button svg{color:var(--gold)}.listen-button[aria-pressed=true]{color:var(--gold)}.chapter-note{display:flex;gap:10px;margin-top:28px;max-width:285px;color:#849c99;font-size:12px;line-height:1.6}.chapter-note p{margin:0}.note-mark{font-family:var(--serif);color:var(--gold);font-size:24px;line-height:1.1}.mode-navigation{position:absolute;bottom:14px;left:36%;right:38px;display:flex;gap:0;border-top:1px solid var(--line);z-index:3}.mode-navigation button{flex:1;text-align:left;padding:16px 10px 7px 0;border:0;border-top:1px solid transparent;margin-top:-1px;background:transparent;font-size:14px;color:#a3b5b0;white-space:nowrap}.mode-navigation button span{font:11px var(--mono);margin-right:11px;opacity:.6}.mode-navigation button[aria-selected=true]{border-top-color:var(--gold);color:var(--gold)}.mode-navigation button:hover{color:var(--ink)}
+.instrument{margin:0 38px;border:1px solid var(--line);border-radius:5px;background:#0c1a1d;position:relative;z-index:4}.transport{display:flex;align-items:center;gap:20px;padding:17px 24px 11px;border-bottom:1px solid var(--line)}.play-button{background:#17282b;border:1px solid #344447;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--gold);flex-shrink:0}.play-button:hover{border-color:var(--gold)}.play-button svg{width:18px;height:18px;stroke-width:2.3}.time-readout{min-width:96px}.control-label{font:10px var(--mono);letter-spacing:.1em;color:var(--muted);display:block}.time-readout output{font:24px var(--mono);color:var(--ink);letter-spacing:-.04em}.scrubber{flex:1;min-width:60px;padding-top:12px}.range-labels{display:flex;justify-content:space-between;font:10px var(--mono);color:#7d9995;line-height:1;margin-top:7px}.small-control{display:flex;flex-direction:column;gap:3px}.small-control label{font:10px var(--mono);letter-spacing:.08em;color:var(--muted)}select{padding:3px 22px 3px 0;color:#d2ded3;background-color:transparent;border:0;font-size:14px;max-width:100%;cursor:pointer}option{background:var(--bg);color:var(--ink)}input[type=range]{width:100%;height:20px;margin:0;accent-color:var(--gold);cursor:pointer;background:transparent;-webkit-appearance:none;appearance:none}input[type=range]::-webkit-slider-runnable-track{height:2px;background:#425c5a}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;height:11px;width:11px;border-radius:50%;background:var(--gold);margin-top:-4.5px}input[type=range]::-moz-range-track{height:2px;background:#425c5a}input[type=range]::-moz-range-thumb{height:11px;width:11px;border:0;border-radius:50%;background:var(--gold)}
+.readings{display:grid;grid-template-columns:1fr 1fr 215px;gap:32px;padding:16px 24px 12px}.signal{min-width:0}.signal-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font:10px var(--mono);letter-spacing:.03em;white-space:nowrap;color:var(--muted)}.signal-heading>span:first-child{color:var(--ink)}.coordinate{color:var(--muted);font-size:10px;margin-left:10px}.swatch{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px;vertical-align:1px}.cyan{background:var(--cyan)}.gold{background:var(--gold)}.signal canvas{display:block;width:100%;height:31px;margin-top:8px}.lens-control{display:flex;flex-direction:column;gap:3px}.lens-control label{font:10px var(--mono);letter-spacing:.05em;color:#bdc8bd;display:flex;justify-content:space-between}.lens-control label output{color:var(--gold)}.hint{font:10px var(--mono);color:#87a09c;line-height:1.3}.mode-detail{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:10px 24px;border-top:1px solid var(--line);min-height:49px}.mode-detail p{font-size:12px;color:#9fb4af;line-height:1.5;margin:0;max-width:780px}.audio-mix{display:flex;align-items:center;gap:22px;flex-shrink:0}.audio-mix select,.audio-mix button{font-size:12px}.footer{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:11px 38px 12px;min-height:48px;color:#829994;font:11px var(--mono)}.footer span:first-child{font-size:12px;white-space:nowrap}.footer>span:nth-child(2){font-size:10px;letter-spacing:.08em}.footer .text-button{font:11px var(--mono);padding:3px 0}.footer .text-button[aria-pressed=true]{color:var(--gold)}
+.cell-tooltip{position:absolute;pointer-events:none;background:#081315ed;border:1px solid #47605b;padding:8px 11px;border-radius:4px;font:12px/1.6 var(--mono);color:var(--ink);z-index:5;box-shadow:0 3px 18px #0005;white-space:nowrap}.toast{position:fixed;left:50%;bottom:36px;transform:translateX(-50%);z-index:40;border:1px solid var(--gold);background:#0a191bee;padding:12px 20px;border-radius:4px;color:var(--ink);font-size:14px;max-width:calc(100vw - 40px);text-align:center;box-shadow:0 8px 40px #0006}
+dialog{color:var(--ink);background:#0b1b1e;border:1px solid #47605b;border-radius:8px;width:1000px;max-width:calc(100vw - 40px);max-height:90svh;padding:30px 42px 24px;overscroll-behavior:contain}dialog::backdrop{background:#030b0dd4;backdrop-filter:blur(10px)}.notes-header{display:flex;align-items:center;justify-content:space-between;gap:20px}.notes-header .eyebrow{margin:0}.notes-header .icon-button{flex-shrink:0}h2{font:400 48px/1.08 var(--serif);letter-spacing:-.04em;margin:26px 0 22px}.notes-lead{font-size:16px;color:#b7c8c1;margin:0 0 25px}.truth-table{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-top:22px}.truth-neighbourhood{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:58px;margin:auto}.truth-cell{aspect-ratio:1;background:#1e3436;border:1px solid #3b5250;border-radius:1px}.truth-cell.on{background:var(--gold);border-color:var(--gold)}.truth-result{width:16px;margin:7px auto 0}.truth-item>span{display:block;font:11px var(--mono);text-align:center;color:var(--muted);margin-top:6px}.equation{font:12px/1.9 var(--mono);color:#b4c3b5;margin:15px 0 30px}.notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 38px}.notes-grid .eyebrow{font-size:10px;margin-bottom:8px}.notes-grid h3{font:400 25px/1.2 var(--serif);letter-spacing:-.025em;margin:0 0 12px}.notes-grid p{font-size:14px;line-height:1.7;color:#adbfba;margin:0 0 12px}.notes-grid a{font-size:13px;color:var(--gold);text-underline-offset:4px}.notes-grid code{color:#dbe0cf;font-size:12px}.notes-bottom{font:11px/1.7 var(--mono);color:#91a5a0;border-top:1px solid var(--line);padding-top:20px;margin:30px 0 0}.noscript{padding:30px;color:var(--gold)}
+@media(min-width:1600px){.masthead{padding:0 56px}.intro{left:56px;top:65px}.instrument{margin:0 56px}.footer{padding-left:56px;padding-right:56px}.chapter-copy{font-size:18px}.intro-actions{margin-top:35px}.chapter-note{margin-top:42px}.scene-caption{bottom:95px}}
+@media(max-width:1100px){.edition{display:none}.intro{width:31%;top:48px}.chapter-copy{font-size:15px}.chapter-note{max-width:225px;font-size:11px}.readings{gap:22px;grid-template-columns:1fr 1fr 170px}.signal-heading{font-size:9px;gap:4px}.coordinate{margin-left:5px;font-size:9px}.mode-detail{gap:15px}.mode-detail p{max-width:60%;font-size:11px}.mode-navigation button{font-size:13px}.mode-navigation button span{margin-right:7px}.scene-caption{font-size:10px}.footer>span:nth-child(2){display:none}}
+@media(max-width:800px){.masthead{height:72px;padding:0 20px}.brand{font-size:12px;gap:10px}.brand-mark{width:37px;height:37px;font-size:25px}.brand-sub{font-size:9px}.header-actions{gap:18px}.header-actions .text-button{font-size:12px}.header-actions .icon-button{width:33px;height:33px}.exhibit{height:730px;min-height:0;max-height:none}.intro{top:25px;left:24px;width:calc(100% - 48px);max-width:none;display:grid;grid-template-columns:1fr auto;column-gap:20px}.intro .eyebrow{grid-column:1/-1;margin-bottom:17px;font-size:10px}h1{font-size:48px;line-height:1;grid-column:1;grid-row:2;margin-bottom:12px;letter-spacing:-.055em}h1 br{display:none}h1 em{margin-left:8px}.chapter-copy{grid-column:1;grid-row:3;font-size:14px;margin:0;max-width:350px;line-height:1.5}.chapter-copy br{display:none}.intro-actions{grid-column:2;grid-row:2/4;justify-content:center;gap:10px}.primary-button{min-width:170px;font-size:12px;padding:10px 12px;gap:16px}.listen-button{font-size:12px;gap:8px}.listen-button svg{width:17px}.chapter-note{display:none}.scene-top{left:24px;right:24px;top:220px;font-size:10px}.scene-caption{left:24px;right:24px;bottom:80px;font-size:10px}.mode-navigation{left:24px;right:24px;bottom:14px}.mode-navigation button{font-size:13px}.axis-time{right:8px;top:55%}.instrument{margin:0 20px}.transport{gap:14px;padding:16px 16px 10px;flex-wrap:wrap}.time-readout{min-width:75px}.small-control{flex:0 0 auto}.small-control:last-child{margin-left:auto}.scrubber{flex-basis:calc(100% - 170px)}.small-control label{font-size:9px}.small-control select{font-size:12px}.time-readout output{font-size:22px}.readings{grid-template-columns:1fr 1fr;gap:17px;padding:17px 16px}.lens-control{grid-column:1/-1;display:grid;grid-template-columns:140px 1fr;align-items:center;gap:10px}.lens-control .hint{grid-column:2;font-size:9px}.lens-control label{font-size:10px}.signal-heading{flex-wrap:wrap;row-gap:4px;font-size:10px}.signal-heading>span:last-child{font-size:9px}.signal canvas{height:28px}.mode-detail{padding:10px 16px;flex-wrap:wrap;gap:8px}.mode-detail p{max-width:none;font-size:12px}.audio-mix{width:100%;justify-content:space-between}.audio-mix select,.audio-mix button{font-size:12px}.footer{padding:16px 24px;flex-wrap:wrap}.footer span:first-child{font-size:10px}.footer .text-button{font-size:10px}.mode-navigation button span{font-size:10px}.scene-top span:last-child{font-size:9px}dialog{padding:22px;max-width:calc(100vw - 24px)}h2{font-size:38px}.notes-grid{gap:28px}.notes-header .eyebrow{font-size:10px}.truth-table{gap:5px}.truth-neighbourhood{gap:2px}.truth-result{width:13px}.equation{font-size:10px}}
+@media(max-width:540px){.header-actions{gap:12px}.masthead{padding:0 16px}.brand{letter-spacing:.06em}.brand-sub{letter-spacing:.05em}.intro{display:block;left:20px;width:calc(100% - 40px);top:22px}.intro .eyebrow{margin-bottom:13px}h1{font-size:48px;margin-bottom:14px}.chapter-copy{max-width:300px;font-size:14px}.intro-actions{flex-direction:row;align-items:center;margin-top:20px;gap:19px}.primary-button{min-width:163px}.listen-button{font-size:0;min-height:40px}.listen-button span{font-size:12px;max-width:90px;text-align:left;line-height:1.4}.exhibit{height:680px}.scene-top{top:250px;left:20px;right:20px}.scene-caption{bottom:79px;left:20px;right:20px;font-size:9px}.scene-caption>span:first-child{max-width:230px}.mode-navigation{left:20px;right:20px}.mode-navigation button{font-size:12px;white-space:normal;line-height:1.4}.mode-navigation button span{display:block;margin-bottom:6px;font-size:10px}.axis-time{font-size:9px}.instrument{margin:0 12px}.transport{gap:10px;padding:13px 12px 11px}.play-button{width:35px;height:35px}.time-readout{min-width:64px}.control-label{font-size:9px}.scrubber{flex-basis:calc(100% - 130px)}.readings{padding:13px 12px;gap:14px}.coordinate{font-size:9px}.lens-control{grid-template-columns:125px 1fr;gap:4px 12px}.footer{padding:13px 16px;justify-content:center}.notes-grid{grid-template-columns:1fr}.truth-table{gap:3px}.notes-lead{font-size:15px}.truth-item>span{font-size:9px}.toast{font-size:12px;bottom:22px}.header-actions .text-button span{display:none}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media(min-width:801px) and (max-height:800px){.exhibit{min-height:465px}.intro{top:30px}h1{font-size:62px}.chapter-note{margin-top:20px}.chapter-copy{margin-bottom:22px}.intro-actions{gap:12px}}
+@media print{.scene,.instrument,.footer,.intro,.masthead,.mode-navigation{display:none}dialog{display:block;position:static;max-height:none;width:100%;color:#111;background:white;border:0}dialog *{color:#111!important}.notes-header button{display:none}.notes-grid{display:block}.notes-grid article{break-inside:avoid;margin-bottom:24px}}
+/* Small type is reserved for metadata, with a readable 12px floor. */
+.brand-sub,.edition,.eyebrow,.scene-top,.scene-top span:last-child,.axis-time,.scene-caption,.mode-navigation button span,.chapter-note,.control-label,.range-labels,.small-control label,.signal-heading,.signal-heading>span:last-child,.coordinate,.lens-control label,.hint,.lens-control .hint,.mode-detail p,.audio-mix select,.audio-mix button,.footer,.footer span:first-child,.footer>span:nth-child(2),.footer .text-button,.notes-grid .eyebrow,.truth-item>span,.equation,.notes-bottom{font-size:12px}
+.signal-heading{flex-wrap:wrap;row-gap:4px}.mode-detail p{font-size:14px}.notes-grid p{font-size:16px}.notes-grid a{font-size:14px}.notes-grid code{font-size:14px}
+@media(max-width:800px){.readings{align-items:start}.mode-detail p{font-size:14px}.footer{justify-content:center;flex-wrap:wrap}.lens-control{grid-template-columns:150px 1fr}.lens-control .hint{grid-column:1/-1}.scene-caption{gap:8px}.scene-caption>span:first-child{max-width:60%}.scene-number{font-size:11px}}
+@media(max-width:540px){.intro h1{font-size:43px}.scene-caption{font-size:12px}.mode-navigation button{font-size:14px}.primary-button,.listen-button span{font-size:14px}.intro-actions{gap:14px}.primary-button{min-width:172px}.listen-button span{max-width:80px}.lens-control{grid-template-columns:144px 1fr}.footer .text-button{font-size:12px}.header-actions .text-button{font-size:14px}.brand-sub{font-size:10px}.notes-header .eyebrow{font-size:12px}}
+.audio-mix{flex-wrap:wrap;justify-content:flex-end;max-width:390px;column-gap:20px;row-gap:3px}#intervene{color:var(--cyan)}
+@media(max-width:800px){.audio-mix{max-width:none;justify-content:space-between}#intervene{width:100%;text-align:left}}
+
+</style>
+  
+</head>
+<body>
+  <a class="skip-link" href="#instrument">Skip to the instrument</a>
+  <header class="masthead">
+    <a class="brand" href="#" aria-label="The Hidden Score, home"><span class="brand-mark" aria-hidden="true">30</span><span>THE HIDDEN SCORE<span class="brand-sub">A RULE 30 OBSERVATORY</span></span></a>
+    <span class="edition">ONE RULE / THREE WAYS OF SEEING</span>
+    <nav class="header-actions" aria-label="Exhibit actions">
+      <button id="notes-open" class="text-button">Field notes <span aria-hidden="true">＋</span></button>
+      <button id="fullscreen" class="icon-button" aria-label="Enter fullscreen" title="Fullscreen (F)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="exhibit" aria-label="Interactive Rule 30 artwork">
+      <div class="scene" id="scene">
+        <canvas id="universe" aria-label="Rule 30 space-time tapestry. Gold marks cells in state one. Use the controls below for an accessible numerical reading."></canvas>
+        <canvas id="fallback" hidden aria-label="Rule 30 space-time tapestry, two-dimensional renderer"></canvas>
+        <div class="scene-top"><span id="view-label">SPACE × TIME</span><span id="renderer-label">DETERMINISTIC / LIVE</span></div>
+        <div class="axis axis-time">TIME <span aria-hidden="true">↓</span></div>
+        <div class="scene-caption"><span id="scene-caption">A single illuminated cell. Every consequence, computed.</span><span class="scene-number" id="generation-caption">512 GENERATIONS</span></div>
+        <div id="cell-tooltip" class="cell-tooltip" hidden></div>
+      </div>
+      <aside class="intro">
+        <p class="eyebrow" id="chapter-label">01 / THE TAPESTRY</p>
+        <h1 id="chapter-title">The hidden<br><em>score.</em></h1>
+        <p class="chapter-copy" id="chapter-copy">A universe from one bit.<br>Order at its edge. Mystery at its heart.</p>
+        <div class="intro-actions">
+          <button id="reveal" class="primary-button">Unfold the edge <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4h12v12H4zM8 4v12m4-12v12"/></svg></button>
+          <button id="listen" class="listen-button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4H4zm13-2a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg><span id="listen-label">Listen to the rule</span></button>
+        </div>
+        <div class="chapter-note"><span class="note-mark" aria-hidden="true">*</span><p id="chapter-note">Nothing is random here.<br>The complexity comes from the rule.</p></div>
+      </aside>
+      <div class="mode-navigation" role="tablist" aria-label="Ways of seeing">
+        <button id="tab-tapestry" role="tab" aria-selected="true" aria-controls="mode-detail" data-mode="tapestry"><span>01</span>Tapestry</button>
+        <button id="tab-edge" role="tab" aria-selected="false" aria-controls="mode-detail" data-mode="edge" tabindex="-1"><span>02</span>Hidden order</button>
+        <button id="tab-echo" role="tab" aria-selected="false" aria-controls="mode-detail" data-mode="echo" tabindex="-1"><span>03</span>One-bit echo</button>
+      </div>
+    </section>
+
+    <section class="instrument" id="instrument" aria-label="Time and sound controls">
+      <div class="transport">
+        <button id="play" class="play-button" aria-label="Pause time" aria-pressed="true" title="Play or pause (Space)"><svg id="pause-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4v12m8-12v12"/></svg><svg id="play-icon" viewBox="0 0 20 20" aria-hidden="true" hidden><path d="m6 4 10 6-10 6z"/></svg></button>
+        <div class="time-readout"><span class="control-label">GENERATION</span><output id="time-value" for="time">128</output></div>
+        <div class="scrubber"><label class="sr-only" for="time">Selected generation</label><input id="time" type="range" min="0" max="512" value="128" step="1"><div class="range-labels"><span>0 / ORIGIN</span><span id="time-max">512</span></div></div>
+        <div class="small-control"><label for="speed">PACE</label><select id="speed"><option value="4">4 rows/s</option><option value="8" selected>8 rows/s</option><option value="16">16 rows/s</option><option value="24">24 rows/s</option></select></div>
+        <div class="small-control"><label for="generations">DEPTH</label><select id="generations"><option value="128">128 steps</option><option value="256">256 steps</option><option value="512" selected>512 steps</option><option value="1024">1,024 steps</option></select></div>
+      </div>
+
+      <div class="readings">
+        <div class="signal signal-centre">
+          <div class="signal-heading"><span><i class="swatch cyan"></i>CENTRE <span class="coordinate">x = 0</span></span><span id="centre-density">FINITE SAMPLE</span></div>
+          <canvas id="centre-signal" aria-label="Last 64 centre-column bits, with the selected generation at the right"></canvas>
+        </div>
+        <div class="signal signal-edge">
+          <div class="signal-heading"><span><i class="swatch gold"></i>EDGE <span class="coordinate" id="edge-coordinate">x = t − 4</span></span><span id="edge-period">OBSERVED PERIOD 8</span></div>
+          <canvas id="edge-signal" aria-label="Last 64 bits of the selected right diagonal"></canvas>
+        </div>
+        <div class="lens-control"><label for="diagonal">EDGE DIAGONAL <output id="diagonal-value" for="diagonal">4</output></label><input id="diagonal" type="range" min="0" max="15" step="1" value="4"><span class="hint">0 is the advancing right boundary</span></div>
+      </div>
+
+      <div class="mode-detail" id="mode-detail" role="tabpanel" aria-labelledby="tab-tapestry">
+        <p id="detail-copy">Read the same universe along two paths. The cyan voice stays in the centre; the gold voice follows the right edge.</p>
+        <div class="audio-mix"><button id="intervene" class="text-button" hidden>Flip the selected centre cell</button><label class="sr-only" for="voice">Sound voices</label><select id="voice"><option value="duet">Sound: duet</option><option value="edge">Sound: edge only</option><option value="centre">Sound: centre only</option></select><button id="restart" class="text-button">Return to origin</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><span>c<sub>t+1</sub>(x) = c<sub>t</sub>(x−1) ⊕ [c<sub>t</sub>(x) ∨ c<sub>t</sub>(x+1)]</span><span>NO RANDOM INPUT. NO REPEATING VIDEO.</span><button id="tour" class="text-button" aria-pressed="false">Play the 60-second tour</button></footer>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <dialog id="notes" aria-labelledby="notes-title">
+    <div class="notes-header"><span class="eyebrow">THE MATHEMATICS UNDER THE LIGHT</span><button id="notes-close" class="icon-button" aria-label="Close field notes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+    <h2 id="notes-title">Simple does not mean<br><em>predictable.</em></h2>
+    <p class="notes-lead">A one-dimensional cellular automaton. Two states. Three neighbours. Eight instructions.</p>
+    <div class="truth-table" id="truth-table" aria-label="Rule 30 truth table, neighbourhoods 111 to 000"></div>
+    <p class="equation">111 → 0 · 110 → 0 · 101 → 0 · 100 → 1<br>011 → 1 · 010 → 1 · 001 → 1 · 000 → 0</p>
+    <div class="notes-grid">
+      <article><span class="eyebrow">01 / THE MODEL</span><h3>One bit, no dice.</h3><p>At generation zero, only x = 0 is on. All other cells are zero. Every row updates simultaneously using <code>L XOR (C OR R)</code>. Reading the eight outputs as binary gives 00011110₂ = 30.</p><p>The display computes through generation 1,024. Its zero padding extends beyond every displayed causal cone; there is no wraparound.</p><a href="https://atlas.wolfram.com/01/01/30/" target="_blank" rel="noopener noreferrer">Wolfram’s Atlas of Simple Programs</a></article>
+      <article><span class="eyebrow">02 / A PROVEN STRUCTURE</span><h3>Move with the edge.</h3><p>Set d = t − x. Keeping d fixed follows a right diagonal. Rowland proved that these diagonals are periodic, with periods that are powers of two, for the single-cell initial condition.</p><p>Hidden order aligns the moving right boundary and enlarges its first 33 diagonals. The period label reports a match across this finite sample, requiring at least four repeats. It is not a new proof.</p><a href="https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf" target="_blank" rel="noopener noreferrer">Eric Rowland · Local Nested Structure in Rule 30 (2006)</a></article>
+      <article><span class="eyebrow">03 / AN OPEN QUESTION</span><h3>The centre keeps its secret.</h3><p>The official Rule 30 prize asks whether the single-seed centre column is nonperiodic, whether its limiting fraction of ones is ½, and whether its nth bit can be computed in sublinear time.</p><p>A finite sample, a balanced count, or an irregular melody settles none of these questions. This exhibit makes no claim to prove randomness or computational irreducibility.</p><a href="https://www.rule30prize.org/" target="_blank" rel="noopener noreferrer">The Wolfram Rule 30 Prize Problems</a></article>
+      <article><span class="eyebrow">04 / THE COUNTERFACTUAL</span><h3>Change one fact.</h3><p>One-bit echo copies the original evolution, flips exactly one cell at the chosen generation, then applies the same rule. Gold shows unchanged on-cells. Cyan marks cells where the two futures disagree: A XOR B.</p><p>The initial intervention is at (t, x) = (32, 0). Click the tapestry to move it, or scrub time and choose Flip the selected centre cell. An influence can travel at most one cell per generation.</p></article>
+      <article><span class="eyebrow">05 / THE COMPOSITION</span><h3>The rule becomes a score.</h3><p>Each one-bit triggers a quiet pluck. A three-bit window selects a pitch from a D-minor pentatonic palette: centre in the upper register, edge in the lower register. Zero is silence. Sound begins only when you choose Listen.</p><p>The tuning and light are artistic choices. The cell values, coordinates, comparisons and measurements are computed data. No random generator supplies the artwork.</p></article>
+      <article><span class="eyebrow">06 / USE THE INSTRUMENT</span><h3>Look. Unfold. Intervene.</h3><p>Space pauses time. 1, 2 and 3 switch views. M toggles sound. F opens fullscreen. Escape closes these notes or fullscreen. Scrub any generation; choose a diagonal to hear its rhythm.</p><p>The tour spends 20 seconds in each view. It respects reduced motion and starts with your current sound setting. For a lab demonstration, unfold the edge and select diagonal 4.</p><a href="https://www.youtube.com/watch?v=HcGjCcLEgN4" target="_blank" rel="noopener noreferrer">Inspiration · Eric Rowland’s The Hidden Structure of Rule 30</a></article>
+    </div>
+    <p class="notes-bottom">Built as an artistic mathematical instrument by Hasan Tayyar Besik. Mathematical results belong to their cited authors. All visuals are generated in your browser.</p>
+  </dialog>
+  <noscript><p class="noscript">Enable JavaScript to compute and explore Rule 30.</p></noscript>
+<script>
+/* THE HIDDEN SCORE
+ * Plain browser JavaScript. No libraries, network requests, or random input.
+ * The automaton and the artistic mapping deliberately live in separate layers.
+ */
+'use strict';
+(() => {
+  const MAX = 1024;
+  const WIDTH = 2 * MAX + 5;
+  const CENTRE = MAX + 2;
+  const EDGE_WIDTH = 33;
+  const $ = (id) => document.getElementById(id);
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  class Rule30 {
+    constructor() {
+      this.rows = Array.from({ length: MAX + 1 }, () => new Uint8Array(WIDTH));
+      this.rows[0][CENTRE] = 1;
+      for (let t = 1; t <= MAX; t++) this.evolve(this.rows[t - 1], this.rows[t]);
+      this.branch = this.rows;
+      this.intervention = { t: 32, x: 0 };
+      this.prefix = new Uint32Array(MAX + 2);
+      for (let t = 0; t <= MAX; t++) this.prefix[t + 1] = this.prefix[t] + this.get(t, 0);
+      this.change(32, 0);
+    }
+    evolve(previous, next) {
+      for (let x = 1; x < WIDTH - 1; x++) next[x] = previous[x - 1] ^ (previous[x] | previous[x + 1]);
+    }
+    get(t, x, branch = false) {
+      if (t < 0 || t > MAX || x + CENTRE < 0 || x + CENTRE >= WIDTH) return 0;
+      return (branch ? this.branch : this.rows)[t][x + CENTRE];
+    }
+    diagonal(t, d) { return this.get(t, t - d); }
+    change(t, x) {
+      t = clamp(Math.round(t), 0, MAX - 1);
+      x = clamp(Math.round(x), -t, t);
+      this.intervention = { t, x };
+      this.branch = this.rows.slice(0, t);
+      this.branch[t] = this.rows[t].slice();
+      this.branch[t][CENTRE + x] ^= 1;
+      for (let k = t + 1; k <= MAX; k++) {
+        this.branch[k] = new Uint8Array(WIDTH);
+        this.evolve(this.branch[k - 1], this.branch[k]);
+      }
+      return this.intervention;
+    }
+    observedPeriod(d, count) {
+      // At least four complete repetitions. Finite evidence, not a theorem prover.
+      for (let p = 1; p * 4 <= count; p *= 2) {
+        let matches = true;
+        for (let t = p; t < count; t++) {
+          if (this.diagonal(t, d) !== this.diagonal(t - p, d)) { matches = false; break; }
+        }
+        if (matches) return p;
+      }
+      return null;
+    }
+    changedAt(t) {
+      let n = 0;
+      for (let x = 0; x < WIDTH; x++) n += this.rows[t][x] ^ this.branch[t][x];
+      return n;
+    }
+  }
+
+  const model = new Rule30();
+  const state = { mode: 'tapestry', rows: 512, time: 128, pace: 8, diagonal: 4,
+    running: !reducedMotion, sound: false, voice: 'duet', unfold: 0, tourStart: null };
+  const chapters = {
+    tapestry: { label: '01 / THE TAPESTRY', title: 'The hidden<br><em>score.</em>',
+      copy: 'A universe from one bit.<br>Order at its edge. Mystery at its heart.',
+      note: 'Nothing is random here.<br>The complexity comes from the rule.',
+      view: 'SPACE × TIME', caption: 'A single illuminated cell. Every consequence, computed.',
+      detail: 'Read the same universe along two paths. The cyan voice stays in the centre; the gold voice follows the right edge.' },
+    edge: { label: '02 / THE HIDDEN ORDER', title: 'Chaos has<br><em>a rhythm.</em>',
+      copy: 'Move with the right boundary.<br>The diagonals become repeating voices.',
+      note: 'The cells are unchanged.<br>Only your point of view has moved.',
+      view: 'RIGHT EDGE / d = t − x', caption: '33 diagonals, aligned with the moving boundary.',
+      detail: 'The moving frame exposes periodic right diagonals. Select a diagonal below: gold repeats while the centre voice wanders.' },
+    echo: { label: '03 / THE ONE-BIT ECHO', title: 'One bit.<br><em>Another future.</em>',
+      copy: 'Two evolutions. One intervention.<br>Touch a cell to change what follows.',
+      note: 'Gold: unchanged on-cells.<br>Cyan: the two futures disagree.',
+      view: 'A XOR B / CONSEQUENCES', caption: 'Click a cell to move the one-bit intervention.',
+      detail: '' }
+  };
+
+  // Rendering: a scalar field of exact cell values, lit as an abstract textile.
+  // The fragment shader never evolves the rule; it samples CPU-computed bytes.
+  const vertexSource = `attribute vec2 position;
+    void main(){gl_Position=vec4(position,0.,1.);}`;
+  const fragmentSource = `
+    precision highp float;
+    uniform sampler2D cells;
+    uniform vec2 resolution;
+    uniform vec4 rect;
+    uniform float rows,unfold,scan,diagonal,echo,clock,textureWidth,textureHeight,centre;
+    uniform vec2 intervention;
+    vec2 address(float x,float t){return vec2((x+centre+.5)/textureWidth,(t+.5)/textureHeight);}
+    vec4 cell(float x,float t){return texture2D(cells,address(x,t));}
+    void main(){
+      vec2 screen=vec2(gl_FragCoord.x,resolution.y-gl_FragCoord.y);
+      vec2 p=(screen-rect.xy)/rect.zw;
+      vec3 background=vec3(.030,.073,.081);
+      float halo=exp(-3.5*length((p-vec2(.6,.5))*vec2(1.,.7)));
+      background+=vec3(.012,.020,.017)*halo;
+      vec3 colour=background;
+      if(p.x>=0.&&p.x<=1.&&p.y>=0.&&p.y<=1.){
+        float bend=.032*sin(p.y*4.8+clock*.08)*sin(p.y*3.1415926);
+        float u=p.x-bend*(1.-unfold);
+        float t=floor(p.y*rows+.0001);
+        float edgeX=t-clamp(floor(u*33.),0.,32.);
+        float x=floor(mix((u-.5)*2.*rows,edgeX,unfold)+.5);
+        float d=t-x;
+        vec4 bits=cell(x,t);
+        float valid=step(abs(x),t+.5);
+        float b=bits.r*valid;
+        float difference=bits.b*echo;
+        float goldLight=.54+.48*pow(clamp(u,0.,1.),.65);
+        goldLight*=.80+.20*sin(p.y*3.2+.5);
+        float ridge=.78+.22*sin(u*14.+p.y*5.);
+        vec3 gold=vec3(.94,.68,.37)*goldLight*ridge;
+        vec3 cyan=vec3(.27,.84,.79);
+        float gx=mix(u*rows*2.,u*33.,unfold);
+        float gy=p.y*rows;
+        float weave=mix(1.,.76+.24*step(.10,fract(gx)),unfold);
+        float rowWeave=.78+.22*step(.13,fract(gy));
+        vec3 lit=gold*b*weave*rowWeave;
+        lit=mix(lit,cyan*(.50+.35*bits.r)*rowWeave,difference);
+        float pathEdge=1.-smoothstep(.2,mix(1.8,.75,unfold),abs(d-diagonal));
+        float pathCentre=(1.-smoothstep(.2,1.6,abs(x)))*(1.-unfold)*(1.-echo);
+        lit+=gold*pathEdge*(.14+.25*b);
+        lit+=cyan*pathCentre*(.16+.55*b);
+        float scanLine=exp(-abs(t-scan)*mix(.8,.55,unfold));
+        lit+=vec3(.42,.33,.20)*scanLine*(.3+.9*b)*valid;
+        lit+=cyan*scanLine*pathCentre*.8;
+        float paper=.045*valid;
+        colour=background+vec3(.055,.071,.058)*paper+lit;
+        float pin=exp(-.36*(pow(t-intervention.x,2.)+pow(x-intervention.y,2.)))*echo;
+        colour+=vec3(.85,.99,.80)*pin;
+        float boundary=exp(-abs(abs(x)-t)*.7)*(1.-unfold);
+        colour+=vec3(.53,.39,.19)*boundary*.30;
+        float fold=1.-smoothstep(.47,.5,abs(fract(gx)-.5));
+        colour+=vec3(.035,.04,.03)*fold*unfold;
+        float endFade=1.-smoothstep(.94,1.,p.y);
+        colour=mix(background,colour,endFade);
+      }
+      float vignette=1.-.14*pow(length((screen/resolution-.5)*1.2),2.);
+      gl_FragColor=vec4(colour*vignette,1.);
+    }`;
+
+  class Scene {
+    constructor() {
+      this.canvas = $('universe');
+      this.gl = this.canvas.getContext('webgl', { alpha: false, antialias: false, preserveDrawingBuffer: false });
+      this.width = 1; this.height = 1; this.dpr = 1; this.dirty = true;
+      // The wave has its own playback clock. Pausing never resets its phase.
+      this.waveTime = 0; this.visibleWaveTime = 0;
+      this.rect = { x: 0, y: 0, w: 1, h: 1 };
+      try {
+        if (!this.gl) throw new Error('WebGL unavailable');
+        const gl = this.gl;
+        const makeShader = (type, source) => {
+          const shader = gl.createShader(type); gl.shaderSource(shader, source); gl.compileShader(shader);
+          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(shader));
+          return shader;
+        };
+        this.program = gl.createProgram();
+        gl.attachShader(this.program, makeShader(gl.VERTEX_SHADER, vertexSource));
+        gl.attachShader(this.program, makeShader(gl.FRAGMENT_SHADER, fragmentSource));
+        gl.linkProgram(this.program);
+        if (!gl.getProgramParameter(this.program, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(this.program));
+        gl.useProgram(this.program);
+        const buffer = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]), gl.STATIC_DRAW);
+        const attribute = gl.getAttribLocation(this.program, 'position');
+        gl.enableVertexAttribArray(attribute); gl.vertexAttribPointer(attribute, 2, gl.FLOAT, false, 0, 0);
+        this.uniforms = {};
+        ['cells','resolution','rect','rows','unfold','scan','diagonal','echo','clock','textureWidth','textureHeight','centre','intervention'].forEach((k) => this.uniforms[k] = gl.getUniformLocation(this.program, k));
+        this.texture = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, this.texture);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        if (WIDTH > gl.getParameter(gl.MAX_TEXTURE_SIZE)) throw new Error('Texture size unsupported');
+        this.upload();
+        this.canvas.addEventListener('webglcontextlost', (event) => { event.preventDefault(); this.useFallback(); });
+      } catch (error) { this.useFallback(); }
+      this.resize();
+      new ResizeObserver(() => this.resize()).observe($('scene'));
+    }
+    useFallback() {
+      this.gl = null; this.canvas.hidden = true;
+      this.canvas = $('fallback'); this.canvas.hidden = false;
+      this.ctx = this.canvas.getContext('2d', { alpha: false });
+      $('renderer-label').textContent = 'DETERMINISTIC / LIVE';
+      this.buildFallback();
+      this.resize();
+    }
+    upload() {
+      if (!this.gl) { this.buildFallback(); this.dirty = true; return; }
+      const data = new Uint8Array(WIDTH * (MAX + 1) * 4);
+      for (let t = 0; t <= MAX; t++) {
+        const a = model.rows[t], b = model.branch[t];
+        for (let x = 0; x < WIDTH; x++) {
+          const i = (t * WIDTH + x) * 4;
+          data[i] = a[x] * 255; data[i + 1] = b[x] * 255;
+          data[i + 2] = (a[x] ^ b[x]) * 255; data[i + 3] = 255;
+        }
+      }
+      const gl = this.gl; gl.bindTexture(gl.TEXTURE_2D, this.texture);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, WIDTH, MAX + 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, data);
+      this.dirty = true;
+    }
+    buildFallback() {
+      this.maps = {};
+      for (const kind of ['tapestry', 'echo', 'edge']) {
+        const c = document.createElement('canvas');
+        c.width = kind === 'edge' ? EDGE_WIDTH : WIDTH; c.height = MAX + 1;
+        const context = c.getContext('2d'); const img = context.createImageData(c.width, c.height);
+        for (let t = 0; t <= MAX; t++) for (let u = 0; u < c.width; u++) {
+          const x = kind === 'edge' ? t - u : u - CENTRE;
+          const a = model.get(t, x), difference = model.get(t, x, true) ^ a;
+          const i = (t * c.width + u) * 4;
+          const colour = kind === 'echo' && difference ? [85,208,197] : a ? [205,146,77] : [8,19,21];
+          img.data[i] = colour[0]; img.data[i + 1] = colour[1]; img.data[i + 2] = colour[2]; img.data[i + 3] = 255;
+        }
+        context.putImageData(img, 0, 0); this.maps[kind] = c;
+      }
+    }
+    resize() {
+      const box = $('scene').getBoundingClientRect();
+      this.width = Math.max(1, box.width); this.height = Math.max(1, box.height);
+      this.dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+      this.canvas.width = Math.round(this.width * this.dpr); this.canvas.height = Math.round(this.height * this.dpr);
+      if (this.width <= 800) {
+        const introBottom = document.querySelector('.intro').getBoundingClientRect().bottom - box.top;
+        const y = Math.max(this.width <= 540 ? 276 : 242, introBottom + 38);
+        this.rect = { x: 23, y, w: this.width - 46, h: this.height - y - 99 };
+        document.querySelector('.scene-top').style.top = (y - 25) + 'px';
+      } else {
+        this.rect = { x: this.width * .36, y: 50, w: this.width * .64 - 48, h: this.height - 150 };
+        document.querySelector('.scene-top').style.top = '';
+      }
+      if (this.gl) this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+      this.dirty = true;
+    }
+    cellAt(event) {
+      const bounds = this.canvas.getBoundingClientRect();
+      const y = event.clientY - bounds.top, xScreen = event.clientX - bounds.left;
+      const pY = (y - this.rect.y) / this.rect.h, pX = (xScreen - this.rect.x) / this.rect.w;
+      if (pY < 0 || pY > 1 || pX < 0 || pX > 1) return null;
+      if (!this.gl) {
+        const t = clamp(Math.floor(pY * (state.rows + 1)), 0, state.rows);
+        const x = state.mode === 'edge'
+          ? t - clamp(Math.floor(pX * EDGE_WIDTH), 0, EDGE_WIDTH - 1)
+          : clamp(Math.floor(pX * (state.rows * 2 + 1)) - state.rows, -state.rows, state.rows);
+        if (Math.abs(x) > t) return null;
+        return { t, x, px: xScreen, py: y };
+      }
+      const t = Math.min(state.rows, Math.floor(pY * state.rows));
+      const bend = .032 * Math.sin(pY * 4.8 + this.visibleWaveTime * .08) * Math.sin(pY * Math.PI);
+      const u = pX - bend * (1 - state.unfold);
+      const edgeX = t - clamp(Math.floor(u * EDGE_WIDTH), 0, EDGE_WIDTH - 1);
+      const x = Math.floor(((u - .5) * 2 * state.rows) * (1 - state.unfold) + edgeX * state.unfold + .5);
+      if (Math.abs(x) > t || t > state.rows) return null;
+      return { t, x, px: xScreen, py: y };
+    }
+    draw(now) {
+      if (!this.gl) { this.drawFallback(); return; }
+      const gl = this.gl, u = this.uniforms, r = this.rect;
+      gl.useProgram(this.program);
+      gl.uniform1i(u.cells, 0);
+      gl.uniform2f(u.resolution, this.canvas.width, this.canvas.height);
+      gl.uniform4f(u.rect, r.x * this.dpr, r.y * this.dpr, r.w * this.dpr, r.h * this.dpr);
+      gl.uniform1f(u.rows, state.rows); gl.uniform1f(u.unfold, state.unfold);
+      gl.uniform1f(u.scan, Math.floor(state.time)); gl.uniform1f(u.diagonal, state.diagonal);
+      gl.uniform1f(u.echo, state.mode === 'echo' ? 1 : 0); gl.uniform1f(u.clock, this.waveTime);
+      gl.uniform1f(u.textureWidth, WIDTH); gl.uniform1f(u.textureHeight, MAX + 1); gl.uniform1f(u.centre, CENTRE);
+      gl.uniform2f(u.intervention, model.intervention.t, model.intervention.x);
+      gl.drawArrays(gl.TRIANGLES, 0, 6); this.visibleWaveTime = this.waveTime; this.dirty = false;
+    }
+    drawFallback() {
+      const ctx = this.ctx, r = this.rect;
+      ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+      ctx.fillStyle = '#081315'; ctx.fillRect(0, 0, this.width, this.height);
+      const map = this.maps[state.mode]; ctx.imageSmoothingEnabled = false;
+      if (state.mode === 'edge') ctx.drawImage(map, 0, 0, EDGE_WIDTH, state.rows + 1, r.x, r.y, r.w, r.h);
+      else ctx.drawImage(map, CENTRE - state.rows, 0, state.rows * 2 + 1, state.rows + 1, r.x, r.y, r.w, r.h);
+      ctx.strokeStyle = '#dcc794'; ctx.globalAlpha = .65; ctx.lineWidth = .6;
+      const scanY = r.y + (Math.floor(state.time) + .5) / (state.rows + 1) * r.h;
+      ctx.beginPath(); ctx.moveTo(r.x, scanY); ctx.lineTo(r.x + r.w, scanY); ctx.stroke(); ctx.globalAlpha = 1;
+      this.dirty = false;
+    }
+  }
+  const scene = new Scene();
+
+  class Score {
+    constructor() { this.context = null; this.master = null; }
+    async enable() {
+      if (!this.context) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) throw new Error('Audio unavailable in this browser');
+        this.context = new AudioContextClass();
+        this.master = this.context.createGain(); this.master.gain.value = 0;
+        const compressor = this.context.createDynamicsCompressor();
+        compressor.threshold.value = -18; compressor.ratio.value = 4;
+        this.master.connect(compressor); compressor.connect(this.context.destination);
+        this.delay = this.context.createDelay(1); this.delay.delayTime.value = .31;
+        const feedback = this.context.createGain(); feedback.gain.value = .17;
+        const wet = this.context.createGain(); wet.gain.value = .12;
+        this.delay.connect(feedback); feedback.connect(this.delay); this.delay.connect(wet); wet.connect(this.master);
+      }
+      await this.context.resume();
+      this.master.gain.cancelScheduledValues(this.context.currentTime);
+      this.master.gain.setTargetAtTime(.25, this.context.currentTime, .045);
+    }
+    mute() {
+      if (!this.context) return;
+      this.master.gain.cancelScheduledValues(this.context.currentTime);
+      this.master.gain.setTargetAtTime(0, this.context.currentTime, .03);
+    }
+    pluck(midi, pan, amplitude, delay = 0) {
+      if (!this.context || this.context.state !== 'running') return;
+      const ctx = this.context, start = ctx.currentTime + .012 + delay;
+      const osc = ctx.createOscillator(), gain = ctx.createGain(), filter = ctx.createBiquadFilter();
+      osc.type = 'triangle'; osc.frequency.value = 440 * 2 ** ((midi - 69) / 12);
+      filter.type = 'lowpass'; filter.frequency.setValueAtTime(2000, start); filter.frequency.exponentialRampToValueAtTime(350, start + .65);
+      gain.gain.setValueAtTime(0, start); gain.gain.linearRampToValueAtTime(amplitude, start + .008); gain.gain.exponentialRampToValueAtTime(.0001, start + .85);
+      osc.connect(filter); filter.connect(gain);
+      if (ctx.createStereoPanner) { const panner = ctx.createStereoPanner(); panner.pan.value = pan; gain.connect(panner); panner.connect(this.master); }
+      else gain.connect(this.master);
+      gain.connect(this.delay); osc.start(start); osc.stop(start + .9);
+      osc.onended = () => { osc.disconnect(); filter.disconnect(); gain.disconnect(); };
+    }
+    row(t, delay = 0) {
+      if (!state.sound || !state.running) return;
+      const palette = [0,3,5,7,10,12,15,17];
+      if (state.voice !== 'edge' && model.get(t, 0, state.mode === 'echo')) {
+        const branch = state.mode === 'echo';
+        const n = model.get(t - 2, 0, branch) * 4 + model.get(t - 1, 0, branch) * 2 + model.get(t, 0, branch);
+        this.pluck(62 + palette[n], .45, .33, delay);
+      }
+      if (state.voice !== 'centre' && model.diagonal(t, state.diagonal)) {
+        const n = model.diagonal(t - 2, state.diagonal) * 4 + model.diagonal(t - 1, state.diagonal) * 2 + model.diagonal(t, state.diagonal);
+        this.pluck(38 + palette[n], -.45, .38, delay);
+      }
+    }
+  }
+  const score = new Score();
+  let lastRow = -1, lastFrame = performance.now(), nextVisual = 0, toastTimer;
+
+  function announce(text) { $('announcement').textContent = text; }
+  function toast(text) { $('toast').textContent = text; $('toast').hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').hidden = true, 4000); }
+  function stopTour() { state.tourStart = null; $('tour').setAttribute('aria-pressed', 'false'); $('tour').textContent = 'Play the 60-second tour'; }
+  function updatePlay() {
+    $('pause-icon').hidden = !state.running; $('play-icon').hidden = state.running;
+    $('play').setAttribute('aria-label', state.running ? 'Pause time' : 'Play time');
+    $('play').setAttribute('aria-pressed', String(state.running));
+    scene.dirty = true;
+  }
+  function setRunning(value) {
+    if (!value) scene.waveTime = scene.visibleWaveTime;
+    state.running = value; updatePlay(); lastFrame = performance.now();
+  }
+  function setMode(mode, fromTour = false) {
+    if (!chapters[mode]) throw new Error('Unknown view');
+    if (!fromTour) stopTour();
+    state.mode = mode;
+    const chapter = chapters[mode];
+    $('chapter-label').textContent = chapter.label; $('chapter-title').innerHTML = chapter.title;
+    $('chapter-copy').innerHTML = chapter.copy; $('chapter-note').innerHTML = chapter.note;
+    $('view-label').textContent = chapter.view; $('scene-caption').textContent = chapter.caption;
+    $('intervene').hidden = mode !== 'echo';
+    $('mode-detail').setAttribute('aria-labelledby', 'tab-' + mode);
+    document.querySelectorAll('[data-mode]').forEach((button) => {
+      const active = button.dataset.mode === mode;
+      button.setAttribute('aria-selected', String(active)); button.tabIndex = active ? 0 : -1;
+    });
+    $('reveal').firstChild.textContent = mode === 'edge' ? 'Return to tapestry ' : mode === 'echo' ? 'Reset the intervention ' : 'Unfold the edge ';
+    if (reducedMotion || !scene.gl) state.unfold = mode === 'edge' ? 1 : 0;
+    lastRow = -1; scene.resize(); scene.dirty = true; updateReadings();
+    announce(chapter.label + '. ' + chapter.copy.replace(/<br>/g, ' '));
+  }
+  function setTime(value, pause = true) {
+    state.time = clamp(Number(value), 0, state.rows);
+    if (pause) { setRunning(false); stopTour(); }
+    lastRow = -1; scene.dirty = true; updateReadings();
+  }
+  function setDiagonal(value) {
+    if (!Number.isInteger(value) || value < 0 || value > 15) throw new Error('Diagonal must be an integer from 0 through 15');
+    state.diagonal = value; $('diagonal').value = String(value); $('diagonal-value').value = String(value);
+    scene.dirty = true; updateReadings();
+  }
+  function drawSignal(id, edge) {
+    const canvas = $(id), rect = canvas.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const width = Math.max(1, Math.round(rect.width * dpr)), height = Math.max(1, Math.round(rect.height * dpr));
+    if (canvas.width !== width || canvas.height !== height) { canvas.width = width; canvas.height = height; }
+    const ctx = canvas.getContext('2d'); ctx.clearRect(0, 0, width, height);
+    const row = Math.floor(state.time), count = Math.min(64, Math.max(16, Math.floor(rect.width / 4)));
+    for (let i = 0; i < count; i++) {
+      const t = row - count + 1 + i;
+      const bit = edge ? model.diagonal(t, state.diagonal) : model.get(t, 0, state.mode === 'echo');
+      const cw = width / count;
+      ctx.fillStyle = t < 0 ? '#102225' : bit ? edge ? '#e9b575' : '#74d9d0' : '#243b3d';
+      const h = bit ? height * .90 : height * .21;
+      ctx.fillRect(i * cw, height - h, Math.max(1, cw - 1.2 * dpr), h);
+    }
+    ctx.fillStyle = '#e9eadd'; ctx.fillRect(width - 1.5 * dpr, 0, 1.5 * dpr, height);
+  }
+  function updateReadings() {
+    const t = Math.floor(state.time);
+    $('time').value = String(t); $('time-value').value = String(t).padStart(3, '0');
+    const ones = state.mode === 'echo' ? Array.from({ length: t + 1 }, (_, k) => model.get(k, 0, true)).reduce((a,b) => a+b, 0) : model.prefix[t + 1];
+    $('centre-density').textContent = (ones / (t + 1) * 100).toFixed(1) + '% ON / SAMPLE';
+    $('edge-coordinate').textContent = 'x = t − ' + state.diagonal;
+    const period = model.observedPeriod(state.diagonal, state.rows + 1);
+    $('edge-period').textContent = period ? 'OBSERVED PERIOD ' + period : 'NEEDS A LONGER SAMPLE';
+    $('detail-copy').textContent = state.mode === 'echo'
+      ? `Intervention: row ${model.intervention.t}, x = ${model.intervention.x}. At row ${t}, ${model.changedAt(t)} cells differ. Click the tapestry to move the intervention.`
+      : chapters[state.mode].detail;
+    drawSignal('centre-signal', false); drawSignal('edge-signal', true);
+  }
+  async function toggleSound() {
+    try {
+      if (state.sound) { state.sound = false; score.mute(); }
+      else { await score.enable(); state.sound = true; if (!state.running) setRunning(true); score.row(Math.floor(state.time)); }
+      $('listen').setAttribute('aria-pressed', String(state.sound));
+      $('listen-label').textContent = state.sound ? 'Mute the score' : 'Listen to the rule';
+    } catch (error) { toast('Sound is unavailable here. The visual instrument still works.'); }
+  }
+
+  $('reveal').addEventListener('click', () => {
+    if (state.mode === 'echo') { model.change(32, 0); scene.upload(); updateReadings(); toast('One cell at row 32, x = 0 has been flipped.'); }
+    else setMode(state.mode === 'edge' ? 'tapestry' : 'edge');
+  });
+  $('listen').addEventListener('click', toggleSound);
+  $('play').addEventListener('click', () => { stopTour(); setRunning(!state.running); });
+  $('time').addEventListener('input', (event) => setTime(event.target.value));
+  $('diagonal').addEventListener('input', (event) => { stopTour(); setDiagonal(Number(event.target.value)); });
+  $('speed').addEventListener('change', (event) => state.pace = Number(event.target.value));
+  $('voice').addEventListener('change', (event) => state.voice = event.target.value);
+  $('generations').addEventListener('change', (event) => {
+    state.rows = Number(event.target.value); state.time = Math.min(state.time, state.rows);
+    $('time').max = String(state.rows); $('time-max').textContent = String(state.rows);
+    $('generation-caption').textContent = state.rows.toLocaleString('en-US') + ' GENERATIONS';
+    if (model.intervention.t >= state.rows) { model.change(Math.min(32, state.rows - 1), 0); scene.upload(); }
+    stopTour(); scene.dirty = true; updateReadings();
+  });
+  $('restart').addEventListener('click', () => { stopTour(); setTime(0, false); });
+  $('intervene').addEventListener('click', () => {
+    stopTour(); model.change(Math.min(Math.floor(state.time), state.rows - 1), 0); scene.upload(); updateReadings();
+    announce(`One centre cell changed at row ${model.intervention.t}.`);
+    toast(`One centre cell changed at row ${model.intervention.t}.`);
+  });
+  document.querySelectorAll('[data-mode]').forEach((button) => {
+    button.addEventListener('click', () => setMode(button.dataset.mode));
+    button.addEventListener('keydown', (event) => {
+      const tabs = [...document.querySelectorAll('[data-mode]')];
+      if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const i = tabs.indexOf(button);
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? 2 : (i + (event.key === 'ArrowRight' ? 1 : 2)) % 3;
+      setMode(tabs[next].dataset.mode); tabs[next].focus();
+    });
+  });
+  function handlePoint(event, commit) {
+    const point = scene.cellAt(event);
+    if (!point) { $('cell-tooltip').hidden = true; return; }
+    if (commit && state.mode === 'echo') {
+      stopTour(); model.change(Math.min(point.t, state.rows - 1), point.x); scene.upload(); updateReadings();
+      toast(`One cell changed at row ${model.intervention.t}, x = ${model.intervention.x}.`);
+      announce(`Intervention moved to row ${model.intervention.t}, position ${model.intervention.x}.`);
+    }
+    const bit = model.get(point.t, point.x), other = model.get(point.t, point.x, true);
+    const tip = $('cell-tooltip'); tip.textContent = `t ${point.t} · x ${point.x} · ${state.mode === 'echo' ? 'A ' + bit + ' / B ' + other : 'state ' + bit}`;
+    tip.style.left = clamp(point.px + 14, 10, scene.width - 230) + 'px'; tip.style.top = Math.max(12, point.py - 45) + 'px'; tip.hidden = false;
+  }
+  for (const id of ['universe','fallback']) {
+    $(id).addEventListener('pointermove', (event) => { if (event.pointerType !== 'touch') handlePoint(event, false); });
+    $(id).addEventListener('pointerleave', () => $('cell-tooltip').hidden = true);
+    $(id).addEventListener('click', (event) => handlePoint(event, true));
+  }
+  $('notes-open').addEventListener('click', () => { $('notes').showModal(); $('notes-close').focus(); });
+  $('notes-close').addEventListener('click', () => { $('notes').close(); $('notes-open').focus(); });
+  $('notes').addEventListener('click', (event) => { if (event.target === $('notes')) { const r = $('notes').getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) $('notes').close(); } });
+  async function toggleFullscreen() {
+    try { if (document.fullscreenElement) await document.exitFullscreen(); else if (document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen(); else toast('Use your browser’s fullscreen command.'); }
+    catch (error) { toast('Use your browser’s fullscreen command.'); }
+  }
+  $('fullscreen').addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', () => $('fullscreen').setAttribute('aria-label', document.fullscreenElement ? 'Exit fullscreen' : 'Enter fullscreen'));
+  $('tour').addEventListener('click', () => {
+    if (state.tourStart !== null) { stopTour(); return; }
+    setMode('tapestry', true); setTime(0, false); setDiagonal(4); setRunning(true);
+    model.change(32, 0); scene.upload();
+    state.tourStart = performance.now(); $('tour').setAttribute('aria-pressed','true'); $('tour').textContent = 'Stop the tour';
+    toast('First, a universe. Then, its hidden rhythm. Finally, one changed bit.');
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey || event.altKey || event.metaKey || $('notes').open || /INPUT|SELECT|TEXTAREA|BUTTON/.test(event.target.tagName)) return;
+    if (event.code === 'Space') { event.preventDefault(); stopTour(); setRunning(!state.running); }
+    else if (['1','2','3'].includes(event.key)) setMode(['tapestry','edge','echo'][Number(event.key) - 1]);
+    else if (event.key.toLowerCase() === 'm') toggleSound();
+    else if (event.key.toLowerCase() === 'f') toggleFullscreen();
+  });
+  document.addEventListener('visibilitychange', () => {
+    lastFrame = performance.now();
+    if (document.hidden && state.sound) score.mute();
+    else if (!document.hidden && state.sound && score.context) score.master.gain.setTargetAtTime(.25, score.context.currentTime, .045);
+  });
+
+  for (let neighbourhood = 7; neighbourhood >= 0; neighbourhood--) {
+    const item = document.createElement('div'); item.className = 'truth-item';
+    const bits = [neighbourhood >> 2 & 1, neighbourhood >> 1 & 1, neighbourhood & 1];
+    const result = bits[0] ^ (bits[1] | bits[2]);
+    item.innerHTML = '<div class="truth-neighbourhood">' + bits.map((bit) => `<i class="truth-cell ${bit ? 'on' : ''}"></i>`).join('') + '</div>' + `<div class="truth-cell truth-result ${result ? 'on' : ''}"></div><span>${bits.join('')} → ${result}</span>`;
+    item.setAttribute('aria-label', bits.join('') + ' becomes ' + result); $('truth-table').appendChild(item);
+  }
+
+  function frame(now) {
+    const dt = Math.min((now - lastFrame) / 1000, .15); lastFrame = now;
+    if (!document.hidden) {
+      if (state.running && !$('notes').open) {
+        state.time = (state.time + dt * state.pace) % (state.rows + 1);
+        if (scene.gl && !reducedMotion) scene.waveTime += dt;
+      }
+      const target = state.mode === 'edge' ? 1 : 0;
+      if (!reducedMotion && scene.gl && Math.abs(state.unfold - target) > .0002) {
+        state.unfold += (target - state.unfold) * Math.min(1, dt * 3.8); scene.dirty = true;
+      } else state.unfold = target;
+      const row = Math.floor(state.time);
+      if (row !== lastRow) {
+        if (!$('notes').open) score.row(row);
+        updateReadings(); lastRow = row; scene.dirty = true;
+      }
+      if (state.tourStart !== null) {
+        const seconds = (now - state.tourStart) / 1000;
+        if (seconds >= 60) { stopTour(); setRunning(false); toast('The rule is simple. The questions remain open.'); }
+        else { const mode = seconds < 20 ? 'tapestry' : seconds < 40 ? 'edge' : 'echo'; if (mode !== state.mode) setMode(mode, true); }
+      }
+      if (now >= nextVisual && (scene.dirty || (state.running && !reducedMotion))) {
+        scene.draw(now); nextVisual = now + 1000 / 30;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // Optional proposed WebMCP API. Uses the same actions as the visible controls.
+  // Unsupported browsers take no action; this is not needed to run the exhibit.
+  const context = document.modelContext;
+  if (context && typeof context.registerTool === 'function') {
+    const lifecycle = new AbortController();
+    const register = (tool) => { try { Promise.resolve(context.registerTool(tool, { signal: lifecycle.signal })).catch(() => {}); } catch (error) {} };
+    register({ name: 'configure_rule30_view', title: 'Configure Rule 30 view',
+      description: 'Select a view, generation and right-edge diagonal in the visible Rule 30 exhibit; this pauses time and stops the tour.',
+      inputSchema: { type:'object', properties:{ view:{type:'string',enum:['tapestry','edge','echo']}, generation:{type:'integer',minimum:0,maximum:MAX}, diagonal:{type:'integer',minimum:0,maximum:15} }, additionalProperties:false },
+      annotations:{readOnlyHint:false,untrustedContentHint:false},
+      execute(input) {
+        if (!input || typeof input !== 'object' || Array.isArray(input) || Object.keys(input).some(k => !['view','generation','diagonal'].includes(k))) throw new Error('Invalid input');
+        if (input.view !== undefined && !Object.hasOwn(chapters, input.view)) throw new Error('Unknown view');
+        if (input.generation !== undefined && (!Number.isInteger(input.generation) || input.generation < 0 || input.generation > state.rows)) throw new Error('Generation must be within displayed depth');
+        if (input.diagonal !== undefined && (!Number.isInteger(input.diagonal) || input.diagonal < 0 || input.diagonal > 15)) throw new Error('Invalid diagonal');
+        if (input.view !== undefined) setMode(input.view);
+        if (input.diagonal !== undefined) setDiagonal(input.diagonal);
+        setTime(input.generation ?? Math.floor(state.time));
+        scene.draw(performance.now());
+        return { view:state.mode,generation:Math.floor(state.time),diagonal:state.diagonal,running:state.running };
+      } });
+    register({ name:'read_rule30_cell', title:'Read Rule 30 cell', description:'Read an exact cell value in the original and one-bit counterfactual evolution.',
+      inputSchema:{type:'object',properties:{generation:{type:'integer',minimum:0,maximum:MAX},position:{type:'integer',minimum:-MAX,maximum:MAX}},required:['generation','position'],additionalProperties:false},
+      annotations:{readOnlyHint:true,untrustedContentHint:false},
+      execute(input) {
+        if (!input || Object.keys(input).some(k => !['generation','position'].includes(k)) || !Number.isInteger(input.generation) || input.generation < 0 || input.generation > MAX || !Number.isInteger(input.position) || Math.abs(input.position) > MAX) throw new Error('Invalid cell coordinates');
+        const a=model.get(input.generation,input.position),b=model.get(input.generation,input.position,true);
+        return {generation:input.generation,position:input.position,original:a,counterfactual:b,difference:a^b};
+      } });
+    window.addEventListener('pagehide', () => lifecycle.abort(), {once:true});
+  }
+
+  // Read-only diagnostics for reproducibility and lab verification.
+  window.Rule30Exhibit = Object.freeze({
+    readCell: (t,x) => ({ original:model.get(t,x),counterfactual:model.get(t,x,true) }),
+    inspect: () => ({...state,intervention:{...model.intervention},renderer:scene.gl?'webgl':'canvas2d'}),
+    observedPeriod: (d,count=state.rows+1) => model.observedPeriod(d,count)
+  });
+  updatePlay(); updateReadings(); requestAnimationFrame(frame);
+})();
+
+</script>
+</body>
+</html>
