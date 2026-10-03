@@ -16,11 +16,11 @@ I was reading [“Scrambling T-R-U-T-H Rotating Letters as a Material Form of Th
 <div class="figure-grid">
   <figure>
     <img alt="image" src="https://github.com/user-attachments/assets/fb13ee36-ba46-4d65-a1d6-3bf6efb309ba" />
-    <figcaption>[Zā’irja front from a Turkish manuscript [~1415] of the Muqaddima.](https://web.archive.org/web/20200125104105/http://www.alpha60.de/research/scrambling_truth/DavidLink_ScramblingTruth2010_100dpi.pdf)</figcaption>
+    <figcaption><a href="https://web.archive.org/web/20200125104105/http://www.alpha60.de/research/scrambling_truth/DavidLink_ScramblingTruth2010_100dpi.pdf">[Zā’irja front from a Turkish manuscript [~1415] of the Muqaddima.</a></figcaption>
   </figure>
   <figure>
     <img alt="image" src="https://github.com/user-attachments/assets/1779d286-7a3a-4e31-97d4-479ee86f44f4" />
-    <figcaption>A Llull's machine [Ars generalis ultima](https://de.wikipedia.org/wiki/Ars_generalis_ultima)</figcaption>
+    <figcaption>A Llull's machine <a href="https://de.wikipedia.org/wiki/Ars_generalis_ultima">Ars generalis ultima</a></figcaption>
   </figure>
 </div>
 
