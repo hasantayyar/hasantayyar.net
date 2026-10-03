@@ -1,6 +1,6 @@
 # The Hidden Score
 
-An interactive audiovisual artwork exploring Rule 30, built with plain HTML, CSS and JavaScript. No installation or external dependencies.
+An interactive audio visual artwork exploring Rule 30, built with plain HTML, CSS and JavaScript. No installation or external dependencies.
 
 I recently watched this amazing video about rule 30 showing the beauty of this. https://www.youtube.com/watch?v=HcGjCcLEgN4
 
