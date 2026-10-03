@@ -11,6 +11,8 @@ I vibe coded a small web app from this idea. The following app combines a proble
 
 **Explore the project: [https://hasantayyar.net/assets/possibility-engine/](https://hasantayyar.net/assets/possibility-engine/)**
 
+----
+
 I was reading [“Scrambling T-R-U-T-H Rotating Letters as a Material Form of Thought” by David Link](https://web.archive.org/web/20200125104105/http://www.alpha60.de/research/scrambling_truth/DavidLink_ScramblingTruth2010_100dpi.pdf).
 
 <div class="figure-grid">
