@@ -13,14 +13,23 @@ I vibe coded a small web app from this idea. The following app combines a proble
 
 I was reading [“Scrambling T-R-U-T-H Rotating Letters as a Material Form of Thought” by David Link](https://web.archive.org/web/20200125104105/http://www.alpha60.de/research/scrambling_truth/DavidLink_ScramblingTruth2010_100dpi.pdf).
 
-
-<a href="(https://hasantayyar.net/assets/rule30/"><img width="1392" height="1446" alt="image" src="https://github.com/user-attachments/assets/fb13ee36-ba46-4d65-a1d6-3bf6efb309ba" /></a>
+<div class="figure-grid">
+  <figure>
+    <img alt="image" src="https://github.com/user-attachments/assets/fb13ee36-ba46-4d65-a1d6-3bf6efb309ba" />
+    <figcaption>[Zā’irja front from a Turkish manuscript [~1415] of the Muqaddima.](https://web.archive.org/web/20200125104105/http://www.alpha60.de/research/scrambling_truth/DavidLink_ScramblingTruth2010_100dpi.pdf)</figcaption>
+  </figure>
+  <figure>
+    <img alt="image" src="https://github.com/user-attachments/assets/1779d286-7a3a-4e31-97d4-479ee86f44f4" />
+    <figcaption>A Llull's machine [Ars generalis ultima](https://de.wikipedia.org/wiki/Ars_generalis_ultima)</figcaption>
+  </figure>
+</div>
 
 I stumbled upon that article while reading about Ramon Llull’s combinatorial machines.
 
 From there jumped to the __Zā’irja__, another paper device/machine.
 Historians accept that __Llull__ was heavily and directly **inspired** by the Ibn Khaldun's Zā’irja**.
 Ramon Llull was living in Majorca and learned Arabic. He was exposed to Islamic science, astrology, and mechanics.
+
 
 Zā’irja is also a paper machine, a **paper computational machine**, like Llull's machine. It's widely analyzed and demystified by Ibn Khaldun. The device originated in the Islamic West (Maghreb / Al-Andalus) around the late 12th century—roughly 200 years before Ibn Khaldun wrote about it. The Zā’irja  was many years, like nowadays numerology, used by magic charlatans and misunderstood. Ibn Khaldun completed the first draft of his work/book ***Muqaddimah*** (*The Introduction*) in **1377 CE**. And he mentioned about Zā’irja  in his work widely. Although it's mostly very poetic and not to the point. He wrote it while he he was in self-imposed isolation at the castle of __Qal'at Ibn Salama__, nowadays Algeria. [https://en.wikipedia.org/wiki/Muqaddimah](https://en.wikipedia.org/wiki/Muqaddimah)
 
