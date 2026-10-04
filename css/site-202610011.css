@@ -124,9 +124,9 @@ html[data-theme="light"] .theme-toggle-thumb{transform:translateX(1.15rem)}
   position:relative;
   display:grid;
   place-items:center;
-  width:4.6rem;
-  height:4.6rem;
-  margin:.1rem .85rem .35rem 0;
+  width:5.35rem;
+  height:5.35rem;
+  margin:.05rem .9rem .4rem 0;
   color:var(--fg);
   -webkit-user-select:none;
   user-select:none;
@@ -138,34 +138,32 @@ html[data-theme="light"] .theme-toggle-thumb{transform:translateX(1.15rem)}
   height:100%;
   overflow:visible;
   pointer-events:none;
+  transform-origin:50% 50%;
 }
-.illuminated-initial__ornament .ii-field{
-  fill:var(--fill);
-}
-.illuminated-initial__ornament .ii-frame{
-  stroke:var(--fg-muted);
-}
-.illuminated-initial__ornament .ii-flourish{
+.illuminated-initial__ornament .ii-field{fill:var(--fill)}
+.illuminated-initial__ornament .ii-frame{stroke:var(--fg-muted)}
+.illuminated-initial__ornament .ii-vine{
   stroke:var(--fg);
+  fill:none;
 }
-.illuminated-initial__ornament .ii-flourish .ii-dot{
+.illuminated-initial__ornament .ii-leaf{
   fill:var(--fg);
   stroke:none;
 }
-.illuminated-initial__ornament .ii-accent{
-  stroke:var(--fg-muted);
-  fill:var(--fg-muted);
+.illuminated-initial__ornament .ii-berry{
+  fill:var(--fg);
+  stroke:none;
 }
 .illuminated-initial__glyph{
   position:relative;
   z-index:1;
   font-family:'Cinzel Decorative','Fraunces',Georgia,serif;
-  font-size:2.55rem;
+  font-size:3.5rem;
   font-weight:700;
   font-style:normal;
   line-height:1;
   color:var(--fg);
-  transform:translateY(.02em);
+  transform:translateY(.03em);
 }
 .prose h2,.prose h3{
   font-family:'Fraunces',Georgia,serif;
