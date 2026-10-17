@@ -20,7 +20,7 @@ The authors defines the AI eras:
 **3. Era of Experience (their prediction)**: AI interacts continuously with the real world, tests hypotheses, receives feedback, and learns strategies that humans may never have imagined.
 
 A sketch chronology of dominant AI paradigms. The y-axis suggests the proportion of the field’s total effort and computation that is focused on RL.: 
-<img width="1471" height="818" alt="image" src="/assets/post-october/era-of-experiance.png" alt="A sketch chronology of dominant AI paradigms. The y-axis suggests the proportion of the field’s total effort and computation that is focused on RL." />
+<img width="1471" height="818" alt="image" src="/assets/post-october/era-of-experience.png" alt="A sketch chronology of dominant AI paradigms. The y-axis suggests the proportion of the field’s total effort and computation that is focused on RL." />
 
 In the era of experience (direct quote from the paper)
 > - Agents will inhabit streams of experience, rather than short snippets of interaction.
