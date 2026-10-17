@@ -10,7 +10,7 @@ categories: [paper]
 
 Imagine an AI learning to grow cherries. Today, it might read thousands of gardening books and tell you how much water and sunlight cherries need. It will take the human knowledge of the physical world as the base fact. In the Era of Experience, the AI could grow cherries itself, try different conditions, observe the results, and discover better methods that nobody has written about. It's a feedback mechanism involves real world experience.
 
-<img width="1471" height="818" alt="image" src="/assets/post-october/era-of-experience2.svg" alt="" />
+<img style="background-color:#aaa" height="818" alt="image" src="/assets/post-october/era-of-experience2.svg" alt="" />
 
 Today's RL often optimizes models using predefined tasks, reward models, preferences of human, or automatically verified answers. In the paper, for the proposed “era of experience”, AI learns continuously from the consequences of its own actions in an environment, potentially over months or years.
 
