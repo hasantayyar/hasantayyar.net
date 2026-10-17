@@ -1,38 +1,26 @@
 ---
 layout: post
-title:  'Paper: Welcome to era of experiments: David Silver, Richard S. Sutton' 
+title:  'Paper: Welcome to the Era of Experience: David Silver, Richard S. Sutton' 
 date:   2026-10-17 10:00:00
 categories: [paper]
 ---
 <a href="https://web.archive.org/web/20261007175907/https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf">https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf</a>
 
-[This paper](https://web.archive.org/web/20261007175907/https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf) says that the next big leap in AI won’t come from feeding models more human-written data, 
-but from letting them learn through their own experiences. 
-We already use reinforcement learning, of course AlphaGo learned by playing millions of games, 
-and coding agents can learn from whether tests pass. But imagine an AI that manages a Kubernetes cluster, 
-experiments with configurations, observes latency and failures, 
-and gets better over time without humans constantly teaching it. 
+[This paper](https://web.archive.org/web/20261007175907/https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf) claims that the next big leap in AI won't happen by giving models more human generated data. AI agents must learn through their own real world experiences instead of relying on human data. We already use RL (reinforcement learning). For example AlphaGo learned by playing millions of games, and coding agents can learn from whether tests pass. The idea isn’t new to reinforcement learning,  but moving from AI that learns what humans know to AI that discovers what actually works. It also mentions that the big challenge is making that continuous experimentation safe in the real world.
 
-The idea isn’t new reinforcement learning, 
-but moving from AI that learns what humans know to AI that discovers what actually works. 
-The big challenge is making that continuous experimentation safe in the real world.
+Imagine an AI learning to grow cherries. Today, it might read thousands of gardening books and tell you how much water and sunlight cherries need. It will take the human knowledge of the physical world as the base fact. In the Era of Experience, the AI could grow cherries itself, try different conditions, observe the results, and discover better methods that nobody has written about. It's a feedback mechanism involves real world experience.
 
+<img width="1471" height="818" alt="image" src="/assets/post-october/era-of-experience2.svg" alt="" />
 
-The paper's central argument is that the next major breakthrough in AI 
-will come not from learning more about what humans already know, 
-but from AI systems learning through their own experiences.
+Today's RL often optimizes models using predefined tasks, reward models, preferences of human, or automatically verified answers. In the paper, for the proposed “era of experience”, AI learns continuously from the consequences of its own actions in an environment, potentially over months or years.
 
-There is RL (reinforcement learning) already but the paper argues for a fundamental shift in how reinforcement learning is used and where its feedback comes from. Today's RL often optimizes models using predefined tasks, reward models, human preferences, or automatically verified answers. In the paper, for the proposed “era of experience”, AI learns continuously from the consequences of its own actions in an environment, potentially over months or years. So much of the technology and methods and frameworks described in the paper already exists. The missing piece isn't reinforcement learning itself. As the authors say in the paper “Learning from experience is not new”.  Their argument is about combining four capabilities, namely generality,  continuity, grounding and discovery.
-
-The authors defines the AI eras
-
+The authors defines the AI eras:
 **1. Era of Simulation**: AI learns by trial and error in simulated environments. Examples: AlphaGo, AlphaZero, Atari. Very powerful, but mostly in narrowly defined problems with clear rewards.
 **2. Era of Human Data**: AI learns from human-written text, code, demonstrations, and preferences. Examples: GPT-style language models. Broadly capable, but constrained by the information and assumptions available in human data.
-**3. Era of Experience (the prediction)**: AI interacts continuously with the real world, tests hypotheses, receives feedback, and learns strategies that humans may never have imagined.
+**3. Era of Experience (their prediction)**: AI interacts continuously with the real world, tests hypotheses, receives feedback, and learns strategies that humans may never have imagined.
 
 A sketch chronology of dominant AI paradigms. The y-axis suggests the proportion of the field’s total effort and computation that is focused on RL.: 
-
-<img width="1471" height="818" alt="image" src="/assets/post-october/era-of-experiments.png" alt="A sketch chronology of dominant AI paradigms. The y-axis suggests the proportion of the field’s total effort and computation that is focused on RL." />
+<img width="1471" height="818" alt="image" src="/assets/post-october/era-of-experiance.png" alt="A sketch chronology of dominant AI paradigms. The y-axis suggests the proportion of the field’s total effort and computation that is focused on RL." />
 
 In the era of experience (direct quote from the paper)
 > - Agents will inhabit streams of experience, rather than short snippets of interaction.
@@ -47,4 +35,3 @@ I saw this paper from a Youtube video by WelchLabs. There in the video, an inter
 
 > This is my favorite LLM thought experiment. If you trained an LLM using a really old cutoff date for your training data, like 1000 AD, what would happen? If you asked your 1000 AD cutoff model what made metal shiny, it would probably reason in theistic terms (answer: The LORD made that way). If you went further back to some of humanity's oldest texts, it would probably answer in terms of animism (answer: animal spirits inside metal). If your cutoff was around 1700, this LLM would likely explain metal shyness using Newtonian physics (answer: light reflecting on smooth surface), and a more modern model would answer in terms of quantum physics (answer: free electrons absorbing and re-emiting photons).  
 
-Imagine an AI learning to grow tomatoes. Today, it might read thousands of gardening books and tell you how much water and sunlight tomatoes need. But what if those books were wrong? In the Era of Experience, the AI could grow tomatoes itself, try different conditions, observe the results, and discover better methods that nobody has written about.
