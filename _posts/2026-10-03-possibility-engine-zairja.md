@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'A medieval paper computer to possibility engine for ' 
+title:  '[project] A medieval paper computer to possibility engine' 
 date:   2026-10-02 17:10:00
 categories: project
 ---

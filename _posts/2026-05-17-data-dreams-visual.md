@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Audio and visual work from Wikipedia updates and BTC trades" 
+title:  "[project] [media] Audio and visual work from Wikipedia updates and BTC trades" 
 date:   2026-05-17 09:30:00
 categories: [studio, visual]
 ---

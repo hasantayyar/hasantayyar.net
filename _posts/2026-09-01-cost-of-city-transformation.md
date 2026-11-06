@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Cost of City Transformation"
+title:  "Notes: The Cost of City Transformation"
 date:   2026-09-01 10:00:00
 categories: [notes, visual]
 ---

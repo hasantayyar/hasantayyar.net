@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Spatial Kata Notation: writing kata so you can see where you are facing" 
+title:  "[project] Spatial Kata Notation: writing kata so you can see where you are facing" 
 date:   2026-08-10 09:30:00
 categories: project 
 ---
