@@ -1,13 +1,13 @@
 ---
 layout: about
 title: About
-description: "DevOps Engineer at SumUp. Automation, cloud operations, and information security."
+description: "Staff Engineer at SumUp. Automation, cloud operations, and information security."
 permalink: /about/
 ---
 
 [tayyar.besik@gmail.com](mailto:tayyar.besik@gmail.com)
 
-[DevOps Engineer](https://en.wikipedia.org/wiki/DevOps) at [SumUp](https://sumup.com/). I focus on automation, cloud operations, and information security. [LinkedIn](https://www.linkedin.com/in/hasantayyar/) has the professional version.
+[Staff Engineer](https://lethain.com/what-do-staff-engineers-actually-do/) at [SumUp](https://sumup.com/). I focus on automation, cloud operations, and information security. [LinkedIn](https://www.linkedin.com/in/hasantayyar/) has the professional version.
 
 ---
 

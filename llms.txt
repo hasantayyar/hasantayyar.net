@@ -1,6 +1,6 @@
 # Hasan Tayyar Beşik
 
-> Personal site of a DevOps Engineer at SumUp. Notes on automation, cloud operations, security, reliability, and Kubernetes plus music, visual work, and occasional papers.
+> Personal site of a Staff Engineer at SumUp. Notes on automation, cloud operations, security, reliability, and Kubernetes plus music, visual work, and occasional papers.
 
 The homepage is a personal landing page; longer writing lives under `/feed/`. Posts are short notes, monthly learning logs, audio and visual works, and paper summaries,  not formal documentation. Earlier multilingual writing is on Medium and being moved to here.
 
