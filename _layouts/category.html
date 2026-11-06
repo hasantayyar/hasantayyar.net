@@ -5,14 +5,11 @@ layout: notes
 
 <p class="category-summary">{{ page.posts.size }} post{% if page.posts.size != 1 %}s{% endif %} in <strong>{{ page.title }}</strong>.</p>
 
-<div class="posts">
+<ol class="home-latest posts">
   {% for post in page.posts %}
     {% include feed-proto.html post=post %}
     {% include post-item.html post=post %}
-    {% unless forloop.last %}
-      {% include post-divider.html %}
-    {% endunless %}
   {% endfor %}
-</div>
+</ol>
 
 <p class="notes-back"><a href="{{ site.baseurl }}/feed/">← All notes</a></p>

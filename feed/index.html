@@ -5,7 +5,7 @@ description: "Quick snippets, links, and notes on security, cloud, music, and mo
 permalink: /feed/
 pagination:
   enabled: true
-  per_page: 10
+  per_page: 13
   permalink: "/feed/page/:num/"
   sort_field: date
   sort_reverse: true
@@ -17,15 +17,12 @@ pagination:
 
 {% include category-list.html %}
 
-<div class="posts">
+<ol class="home-latest posts">
   {% for post in paginator.posts %}
     {% include feed-proto.html post=post %}
     {% include post-item.html post=post %}
-    {% unless forloop.last %}
-      {% include post-divider.html %}
-    {% endunless %}
   {% endfor %}
-</div>
+</ol>
 
 {% if paginator.total_pages > 1 %}
 <nav class="pagination" aria-label="Notes pagination">
