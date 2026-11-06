@@ -284,6 +284,30 @@ html[data-theme="light"] .theme-toggle-thumb{transform:translateX(1.15rem)}
   text-overflow:ellipsis;
   white-space:nowrap;
 }
+.home-signoff{
+  margin:3rem 0 0;
+  padding-top:1.5rem;
+}
+.home-signature{
+  display:block;
+  width:min(14rem,72%);
+  height:auto;
+  color:var(--fg);
+  overflow:visible;
+}
+.home-signature path{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+  animation:home-signature-draw 4.2s ease forwards .4s;
+}
+@keyframes home-signature-draw{
+  to{stroke-dashoffset:0}
+}
 
 /* Notes */
 .notes-lede{margin:0 0 1rem;color:var(--fg-soft);line-height:1.75}
@@ -412,5 +436,9 @@ html[data-theme="light"] .theme-toggle-thumb{transform:translateX(1.15rem)}
     animation-duration:.01ms!important;
     animation-iteration-count:1!important;
     transition-duration:.01ms!important;
+  }
+  .home-signature path{
+    animation:none;
+    stroke-dashoffset:0;
   }
 }

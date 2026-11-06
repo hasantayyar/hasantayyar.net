@@ -10,7 +10,7 @@
     <span class="home-name-line">{{ given }}</span>
     <span class="home-name-line home-name-accent">{{ family }}</span>
   </h1>
-  <p class="home-meta">{{ site.description }} · {{ host }}</p>
+  <p class="home-meta">{{ site.description }}</p>
 
   <p class="home-skills" aria-label="Focus areas">
     {% for item in site.data.person.knowsAbout %}
@@ -66,4 +66,8 @@
       </li>
     </ul>
   </nav>
+
+  <div class="home-signoff">
+    {% include home-signature.html %}
+  </div>
 </section>
